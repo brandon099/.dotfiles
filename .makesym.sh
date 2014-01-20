@@ -32,10 +32,6 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone https://github.com/brandon099/oh-my-zsh.git
     fi
-    # Set the default shell to zsh if it isn't currently set to zsh
-    if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-        chsh -s $(which zsh)
-    fi
 else
     echo "Please install zsh, then re-run this script."
     exit
