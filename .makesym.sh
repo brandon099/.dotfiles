@@ -20,7 +20,7 @@ echo "done"
 # from the homedir to any files in the ~/dotfiles
 for file in $files; do
     echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file ~/dotfiles_old/
+    mv ~/.$file ~/.dotfiles_old/
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
@@ -37,51 +37,8 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
         chsh -s $(which zsh)
     fi
 else
-    # If zsh isn't installed, get the platform of the current machine
-    detected_distro="Unknown"
-    lsbinfo_regex="Description:[[:space:]]*([^ ]*)"
-    lsbfile_regex="/etc/(.*)[-_]"
-
-    if [ `which lsb_release 2>/dev/null` ]; then
-       lsb_info=`lsb_release -d`
-       if [[ $lsb_Info =~ $lsbinfo_regex ]]; then
-          detected_distro=${BASH_REMATCH[1]}
-       else
-          echo "ERROR: Didn't find distro name in lsb_release output"
-          exit 1
-       fi
-
-    elif
-       etcFiles=`ls /etc/*[-_]{release,version} 2>/dev/null`
-       for file in $etcFiles; do
-          if [[ $file =~ $lsbfile_regex ]]; then
-             detected_distro=${BASH_REMATCH[1]}
-             break
-          else
-             echo "ERROR: Didn't find any /etc Files"
-             exit 1
-          fi
-       done
-
-    case $detected_distro in
-        suse)   detected_distro="opensuse" ;;
-        linux)  detected_distro="linuxmint" ;;
-    esac
-
-    if [[ $detected_distro == 'Ubuntu' ]]; then
-        sudo apt-get install zsh
-        install_zsh
-
-    elif [[ $detected_distro == 'Fedora' ]]; then
-        sudo yum install zsh
-        install_zsh
-
-    else
-        echo "Please install zsh, then re-run this script."
-        exit
-
-    fi
-
+    echo "Please install zsh, then re-run this script."
+    exit
 fi
 }
 
