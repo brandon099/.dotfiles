@@ -30,7 +30,7 @@ install_zsh () {
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone https://github.com/brandon099/oh-my-zsh.git
+        git clone git@github.com:brandon099/oh-my-zsh.git
     fi
 else
     echo "Please install zsh, then re-run this script."
