@@ -2,7 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
   source ~/.vimrc.before
@@ -27,6 +26,7 @@ set gcr=a:blinkon0 "Disable cursor blink
 set visualbell "No sounds
 set autoread "Reload files changed outside vim
 set cursorline "Highlight Current selected line
+set shortmess=atI "Shorten command-line text and other info tokens
 match Error /\%81v.\+/
 
 " This makes vim act like all other editors, buffers can
@@ -63,7 +63,6 @@ set nowb
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
-" Only works all the time.
 
 if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -111,11 +110,9 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-"
-
 " ================ Scrolling ========================
 
-set scrolloff=8 "Start scrolling when we're 8 lines away from margins
+set scrolloff=3 "Start scrolling when we're 3 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
