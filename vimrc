@@ -27,7 +27,7 @@ set visualbell "No sounds
 set autoread "Reload files changed outside vim
 set cursorline "Highlight Current selected line
 set shortmess=atI "Shorten command-line text and other info tokens
-match Error /\%81v.\+/
+match Error /\%>80v.\+/ "Highlight any text over 80 characters
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
