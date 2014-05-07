@@ -6,3 +6,10 @@
     lga = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
 [core]
     editor = vim
+	autocrlf = true
+	whitespace = cr-at-eol
+[mergetool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
