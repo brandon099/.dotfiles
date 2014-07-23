@@ -27,7 +27,9 @@ set visualbell "No sounds
 set autoread "Reload files changed outside vim
 set cursorline "Highlight Current selected line
 set shortmess=atI "Shorten command-line text and other info tokens
-set colorcolumn=80 "Highlight 81st column
+if version >= 703
+    set colorcolumn=119 "Highlight 119th column
+endif
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -124,15 +126,6 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-" =============== Auto Completion ===================
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-
 " =============== Airline (Powerline) ===============
 
 let g:airline_theme                         = 'solarized'
@@ -150,3 +143,4 @@ let g:airline_branch_prefix     = '⎇'
 let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 set laststatus=2
+let g:syntastic_python_checkers = ['pylint']
