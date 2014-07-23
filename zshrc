@@ -29,7 +29,7 @@ ZSH_THEME="af-magic"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rsync hg)
+plugins=(git rsync hg python pylint cp encode64 jira)
 
 source $ZSH/oh-my-zsh.sh
 
