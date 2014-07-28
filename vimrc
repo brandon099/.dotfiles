@@ -27,8 +27,10 @@ set visualbell "No sounds
 set autoread "Reload files changed outside vim
 set cursorline "Highlight Current selected line
 set shortmess=atI "Shorten command-line text and other info tokens
-if version >= 703
-    set colorcolumn=119 "Highlight 119th column
+if version >= 703 "Highlight 119th column
+    set colorcolumn=119
+else
+    2mat ErrorMsg '\%119v.'
 endif
 
 " This makes vim act like all other editors, buffers can
