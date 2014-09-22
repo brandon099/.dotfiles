@@ -14,3 +14,7 @@
 [merge]
     tool = vimdiff
     conflictstyle = diff3
+[color]
+	ui = auto
+[diff]
+	renames = copies

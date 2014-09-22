@@ -146,3 +146,5 @@ let g:airline_readonly_symbol   = '⭤'
 let g:airline_linecolumn_prefix = '⭡'
 set laststatus=2
 let g:syntastic_python_checkers = ['pylint']
+
+au BufNewFile,BufRead *.less set filetype=less
