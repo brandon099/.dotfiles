@@ -34,7 +34,7 @@ plugins=(git rsync hg python pylint cp encode64 jira)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.scripts
 
 # Disable Automatic Title changing
 # DISABLE_AUTO_TITLE=true
@@ -49,3 +49,13 @@ fi
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/bin/virtualenvwrapper.sh
+
+# Credentials
+source /home/bclifford/.credentials
+
+# Timezone
+export TZ=America/Denver
+
+# bspwm Panel
+export PANEL_FIFO="/tmp/panel-fifo"
+export XINERAMA=1

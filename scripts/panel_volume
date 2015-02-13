@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# VOLUME ICONS:
+
+VOL=$(amixer get Master | grep Left: | awk '{print $5}' | tr -d []%)
+MUTE=$(amixer get Master | grep Left: | grep "\[off\]")
+
+# Set Icon
+icon=""
+if [[ ! -z $MUTE ]]; then
+    icon="⮝"
+elif [[ $VOL -le 30 ]]; then
+    icon="⮟"
+else
+    icon="⮞"
+fi
+
+echo "%{F#FF54ADCD}$icon %{F-}%$VOL"

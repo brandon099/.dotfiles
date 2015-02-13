@@ -1,0 +1,44 @@
+#!/bin/bash
+
+QUAL=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $3}'`
+MAX=`iwconfig wlp3s0 | grep 'Link Quality=' | awk '{gsub(/[=/]/," "); print $4}'`
+
+LAN_STATE=`cat /sys/class/net/em1/operstate`
+WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
+WIFI_ESSID=`iwgetid wlp3s0 --raw`
+
+if [ "$LAN_STATE" = "up" ]
+then
+    icon="⮼"
+    text="LAN"
+elif [ "$WIFI_STATE" = "up" ]
+then
+    PERC=`echo $QUAL*100/$MAX | bc`
+    icon=""
+    text="$WIFI_ESSID"
+    case $PERC in
+        [0-4])
+            icon="⮹"
+        ;;
+        [4-9])
+            icon="⮷"
+        ;;
+        [2-3]*)
+            icon="⮸"
+        ;;
+        [4-5]*)
+            icon="⮷"
+        ;;
+        [6-7]*)
+            icon="⮷"
+        ;;
+        *)
+            icon="⮷"
+        ;;
+    esac
+else
+    icon="⮼"
+    text="Off"
+fi
+
+echo "%{F#FF54ADCD}$icon %{F-}$text"

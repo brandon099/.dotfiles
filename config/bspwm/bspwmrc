@@ -1,0 +1,31 @@
+#! /bin/sh
+
+monitors="`bspc query --monitors | wc -l`"
+
+if [ "$monitors" -eq 1 ]
+then
+    bspc monitor LVDS1 -n 0 -d 1 2 3 4 5
+elif [ "$monitors" -gt 1 ]
+then
+    bspc monitor VGA1 -n 0 -d 1 2 3
+    bspc monitor DP-2 -n 1 -d 4 5 6
+    bspc monitor LVDS1 -n 2 -d 7 8 9
+    bspc monitor ^2 -s ^3
+    bspc monitor ^1 -s ^3
+fi
+
+bspc config top_padding         24
+bspc config left_padding        10
+bspc config right_padding       10
+bspc config bottom_padding      10
+bspc config border_width        2
+bspc config window_gap          18
+bspc config split_ratio         0.5
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_by_distance   true
+
+# Rules
+bspc rule -a conky sticky=one manage=off lower=on
+bspc rule -a gimp desktop=^8 follow=on floating=on
+bspc rule -a steam desktop=^5
