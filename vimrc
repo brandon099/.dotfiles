@@ -130,7 +130,6 @@ endif
 
 " =============== Airline (Powerline) ===============
 
-let g:airline_powerline_fonts               = 1
 let g:airline_theme                         = 'solarized'
 let g:airline_enable_branch                 = 1
 let g:airline_enable_virtualenv             = 1
@@ -144,7 +143,7 @@ let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
 let g:airline_linecolumn_prefix = '␊'
 let g:airline_branch_prefix = '⎇'
-let g:airline_readonly_symbol   = '⭤'
+let g:airline_readonly_symbol   = '●'
 set laststatus=2
 let g:syntastic_python_checkers = ['pylint']
 
