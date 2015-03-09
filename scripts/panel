@@ -1,26 +1,71 @@
-#!/bin/sh
+#!/bin/bash
+BLACK=#FF525252
+RED=#FFDC322F
+GREEN=#FF859900
+YELLOW=#FFB58900
+BLUE=#FF268BD2
+MAGENTA=#FF9F9CA9
+CYAN=#FF2AA198
+WHITE=#FFFDF6E3
+DARK=#FF002B36
+GREY=#FF586E75
+FONT="-benis-lemon-medium-r-normal-*-*-*-*-*-*-*-*-*"
+FG=#FFEDDCD3
+BG=#FF181512
 
-fg="#FFeddcd3"
-bg="#FF181512"
-font1="-benis-lemon-medium-r-normal-*-*-*-*-*-*-*-*-*"
+function statusbar {
 
-cd $(dirname $0)
+    bat() {
+        bat0=`cat /sys/class/power_supply/BAT0/capacity`
+        echo $bat0
+    }
 
-if [ $(pgrep -cx panel) -gt 1 ] ; then
-    printf "%s\n" "The panel is already running." >&2
-    exit 1
-fi
+    clock() {
+        time=$(date "+%a %b %d, %Y %l:%M %p")
+        echo $time
+    }
 
-trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+    vol() {
+        vol=$(amixer sget Master | awk '/^ *Front Left.*/ {print $6=="[off]"?$6:$5}' | tr -d [])
+        echo $vol
+    }
 
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
+    desktops() {
+        for desktop in `bspc query -D`
+        do
+            if [ $desktop = "`bspc query -d focused -D`" ]
+            then
+                desktops="$desktops%{B$CYAN} $desktop %{B-}"
+            else
+                desktops="$desktops%{F$WHITE} $desktop %{F-}"
+            fi
+        done
+        echo $desktops
+    }
 
-echo "T" >  "$PANEL_FIFO" &
-#bspc control --subscribe > "$PANEL_FIFO" &
-./panel_workspaces > "$PANEL_FIFO" &
-conky -c ./panel_conky > "$PANEL_FIFO" &
+    networks() {
+        LAN_STATE=`cat /sys/class/net/em1/operstate`
+        WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
 
-cat "$PANEL_FIFO" | ./panel_bar | bar -g x15  -f "$font1" -F "$fg" -B "$bg" -u 1 &
+        if [ "$LAN_STATE" = "up" ]
+        then
+            text="LAN"
+        elif [ "$WIFI_STATE" = "up" ]
+        then
+            text="`iwgetid wlp3s0 --raw`"
+        else
+            text="off"
+        fi
 
-wait
+        network="$text"
+        echo $network
+    }
+
+    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$CYAN} ⮷ %{F-}%{F$WHITE}$(networks) %{F-}%{F$CYAN} ⮞ %{F-}%{F$WHITE}$(vol) %{F-}%{F$CYAN} ⮏ %{F-}%{F$WHITE}$(bat)%% %{F-}"
+}
+
+while true
+do
+    echo "$(statusbar)"
+    sleep 0.5
+done | bar -g x15 -f "$FONT" -B "$BG" -F "$FG" -p &
