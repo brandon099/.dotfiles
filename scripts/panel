@@ -9,7 +9,8 @@ CYAN=#FF2AA198
 WHITE=#FFFDF6E3
 DARK=#FF002B36
 GREY=#FF586E75
-FONT="-benis-lemon-medium-r-normal-*-*-*-*-*-*-*-*-*"
+FONT2="-*-stlarch-medium-r-normal-*-10-*-*-*-*-*-*-*"
+FONT1="-*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*"
 FG=#FFEDDCD3
 BG=#FF181512
 
@@ -35,7 +36,7 @@ function statusbar {
         do
             if [ $desktop = "`bspc query -d focused -D`" ]
             then
-                desktops="$desktops%{B$CYAN} $desktop %{B-}"
+                desktops="$desktops%{F$CYAN} $desktop %{F-}"
             else
                 desktops="$desktops%{F$WHITE} $desktop %{F-}"
             fi
@@ -49,7 +50,7 @@ function statusbar {
 
         if [ "$LAN_STATE" = "up" ]
         then
-            text="LAN"
+            text="lan"
         elif [ "$WIFI_STATE" = "up" ]
         then
             text="`iwgetid wlp3s0 --raw`"
@@ -61,11 +62,11 @@ function statusbar {
         echo $network
     }
 
-    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$CYAN} ⮷ %{F-}%{F$WHITE}$(networks) %{F-}%{F$CYAN} ⮞ %{F-}%{F$WHITE}$(vol) %{F-}%{F$CYAN} ⮏ %{F-}%{F$WHITE}$(bat)%% %{F-}"
+    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$CYAN}  %{F-}%{F$WHITE}$(networks) %{F-}%{F$CYAN}  %{F-}%{F$WHITE}$(vol) %{F-}%{F$CYAN}  %{F-}%{F$WHITE}$(bat)%% %{F-}"
 }
 
 while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | bar -g x15 -f "$FONT" -B "$BG" -F "$FG" -p &
+done | bar -g x15 -f "$FONT1,$FONT2" -B "$BG" -F "$FG" -p &

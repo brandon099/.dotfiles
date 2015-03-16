@@ -1,4 +1,4 @@
-" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather then Vi settings.
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -9,7 +9,6 @@ endif
 
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
 
   runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
   call pathogen#infect()
@@ -17,29 +16,24 @@ endif
 
 " ================ General Config ====================
 
-set number "Line numbers are good
-set backspace=indent,eol,start "Allow backspace in insert mode
-set history=1000 "Store lots of :cmdline history
-set showcmd "Show incomplete cmds down the bottom
-set showmode "Show current mode down the bottom
-set gcr=a:blinkon0 "Disable cursor blink
-set visualbell "No sounds
-set autoread "Reload files changed outside vim
-set cursorline "Highlight Current selected line
-set shortmess=atI "Shorten command-line text and other info tokens
-if version >= 703 "Highlight 119th column
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set noshowmode                  "Do not show current mode down the bottom
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set cursorline                  "Highlight Current selected line
+set shortmess=atI               "Shorten command-line text and other info tokens
+set noru                        "Turn off ruler
+set hidden                      "Allow buffers to exist in the background
+syntax on                       "Turn on syntax highlighting
+if version >= 703               "Highlight 119th column
     set colorcolumn=119
 else
     2mat ErrorMsg '\%119v.'
 endif
-
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
-"turn on syntax highlighting
-syntax on
 
 " ================ Solarized Settings ==============
 
@@ -55,8 +49,8 @@ colorscheme solarized
 
 " ================ Search Settings =================
 
-set incsearch "Find the next match as we type the search
-set hlsearch "Hilight searches by default
+set incsearch       "Find the next match as we type the search
+set hlsearch        "Hilight searches by default
 set viminfo='100,f1 "Save up to 100 marks, enable capital marks
 
 " ================ Turn Off Swap Files ==============
@@ -87,23 +81,22 @@ set expandtab
 filetype plugin on
 filetype indent on
 
-" Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
 
-set nowrap "Don't wrap lines
-set linebreak "Wrap lines at convenient points
+set list listchars=tab:\ \ ,trail:· " Display tabs and trailing spaces visually
+set nowrap                          "Don't wrap lines
+set linebreak                       "Wrap lines at convenient points
 
 " ================ Folds ============================
 
-set foldmethod=indent "fold based on indent
-set foldnestmax=3 "deepest fold is 3 levels
-set nofoldenable "dont fold by default
+set foldmethod=indent               "fold based on indent
+set foldnestmax=3                   "deepest fold is 3 levels
+set nofoldenable                    "dont fold by default
 
 " ================ Completion =======================
 
 set wildmode=list:longest
-set wildmenu "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildmenu                        "Enable ctrl-n and ctrl-p to scroll through matches
+set wildignore=*.o,*.obj,*~         "Ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -116,12 +109,11 @@ set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Scrolling ========================
 
-set scrolloff=3 "Start scrolling when we're 3 lines away from margins
+set scrolloff=3                     "Start scrolling when we're 3 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
 if &term =~ '^screen'
-  " tmux will send xterm-style keys when its xterm-keys option is on
   execute "set <xUp>=\e[1;*A"
   execute "set <xDown>=\e[1;*B"
   execute "set <xRight>=\e[1;*C"
@@ -130,6 +122,7 @@ endif
 
 " =============== Airline (Powerline) ===============
 
+let g:airline_symbols =                     {}
 let g:airline_theme                         = 'solarized'
 let g:airline_enable_branch                 = 1
 let g:airline_enable_virtualenv             = 1
@@ -137,14 +130,14 @@ let g:airline#extensions#syntastic#enabled  = 1
 let g:airline#extensions#branch#enabled     = 1
 
 " vim-powerline symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_linecolumn_prefix = '␊'
-let g:airline_branch_prefix = '⎇'
-let g:airline_readonly_symbol   = '●'
-set laststatus=2
+let g:airline_left_sep = '⮁'
+let g:airline_left_sep = '⮀'
+let g:airline_right_sep = '⮃'
+let g:airline_right_sep = '⮂'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_symbols.branch = '⭠'
+let g:airline_readonly_symbol   = '⭤'
 let g:syntastic_python_checkers = ['pylint']
+set laststatus=2
 
 au BufNewFile,BufRead *.less set filetype=less

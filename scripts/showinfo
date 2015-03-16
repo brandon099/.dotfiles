@@ -1,0 +1,34 @@
+#!/bin/sh
+
+f0=$'\e[1;30m'
+f1=$'\e[1;37m'
+f2=$'\e[0;37m'
+
+kernel=`uname -rmo`
+cpuspe="`sed -n '/model\ name/s/^.*:\ //p' /proc/cpuinfo | uniq` (x`nproc`)"
+system=`cat /etc/redhat-release`
+
+if [ -n "$DISPLAY" ]; then
+    termfn=`sed -n 's/^.*\*font:\s* -\*-\([^-]*\)-.*/\1/p' ~/.Xresources|sed 1q`
+    systfn=`sed -n 's/^.*font.*"\(.*\)".*$/\1/p' ~/.gtkrc-2.0`
+else
+    termfn="none"
+    systfn="none"
+fi
+
+wmname="bspwm"
+
+cat << EOF
+▉▉  | ${f1}OS ${f0}........... $f2$system
+  ▉▉| ${f1}name ${f0}......... $f2$HOSTNAME
+▉▉  |
+  ▉▉| ${f1}wm ${f0}........... $f2$wmname
+▉▉  | ${f1}shell ${f0}........ $f2$SHELL
+  ▉▉| ${f1}terminal ${f0}..... $f2$TERM
+▉▉  | ${f1}term font ${f0}.... $f2$termfn
+  ▉▉| ${f1}system font ${f0}.. $f2$systfn
+▉▉  |
+  ▉▉| ${f1}kernel ${f0}....... $f2$kernel
+▉▉  | ${f1}processor ${f0}.... $f2$cpuspe
+  ▉▉|
+EOF

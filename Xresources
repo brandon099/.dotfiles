@@ -15,7 +15,9 @@ URxvt*termName:                         xterm-256color
 URxvt*:borderLess:                      true
 URxvt*cursorBlink:                      true
 URxvt*jumpScroll:                       true
-URxvt*font:                             -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-*-1, -xos4-terminesspowerline-medium-r-normal-*-12-120-72-72-c-60-*-1
+!URxvt*font:                             -xos4-terminus-medium-r-normal-*-12-120-72-72-c-60-*-1
+URxvt*font:                             -*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*
+URxvt*boldFont:
 URxvt*scrollBar:                        false
 URxvt*scrollTtyOutput:                  false
 URxvt*scrollTtyKeypress:                true

@@ -59,3 +59,5 @@ export TZ=America/Denver
 # bspwm Panel
 export PANEL_FIFO="/tmp/panel-fifo"
 export XINERAMA=1
+
+export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
