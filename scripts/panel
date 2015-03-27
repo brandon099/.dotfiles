@@ -1,47 +1,96 @@
 #!/bin/bash
-BLACK=#FF525252
-RED=#FFDC322F
-GREEN=#FF859900
-YELLOW=#FFB58900
-BLUE=#FF268BD2
-MAGENTA=#FF9F9CA9
-CYAN=#FF2AA198
-WHITE=#FFFDF6E3
-DARK=#FF002B36
-GREY=#FF586E75
 FONT2="-*-stlarch-medium-r-normal-*-10-*-*-*-*-*-*-*"
 FONT1="-*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*"
+BLACK=#FF2C3E50
+RED=#FFC0392B
+GREEN=#FF27AE60
+ORANGE=#FFD35400
+YELLOW=#FFF1C40F
+BLUE=#FF2980B9
+MAGENTA=#FFE74C3C
+CYAN=#FF16A085
+WHITE=#FFBDC3C7
+DARK=#FF34495E
+GREY=#FF586E75
 FG=#FFEDDCD3
-BG=#FF181512
+BG=#FF191919
+
+monitors="`bspc query --monitors | wc -l`"
 
 function statusbar {
 
-    bat() {
-        bat0=`cat /sys/class/power_supply/BAT0/capacity`
-        echo $bat0
+    batt() {
+        batt_level=$(battery | awk -F' ' '{print $2}')
+        echo $batt_level
     }
 
     clock() {
-        time=$(date "+%a %b %d, %Y %l:%M %p")
+        time=$(/usr/local/bin/clock -f "%a %l:%M %p")
         echo $time
     }
 
     vol() {
-        vol=$(amixer sget Master | awk '/^ *Front Left.*/ {print $6=="[off]"?$6:$5}' | tr -d [])
+        vol_level=$(volume | awk -F' ' '{print $1}')
+        if [ $vol_level == 'off' ] ; then
+            vol="$vol_level"
+        else
+            vol=$(volume | awk -F' ' '{print $2}')
+        fi
         echo $vol
     }
 
     desktops() {
-        for desktop in `bspc query -D`
-        do
-            if [ $desktop = "`bspc query -d focused -D`" ]
-            then
-                desktops="$desktops%{F$CYAN} $desktop %{F-}"
-            else
-                desktops="$desktops%{F$WHITE} $desktop %{F-}"
-            fi
+        desktop="`bspc control --get-status`"
+        # bspwm state
+        wm_info=""
+        IFS=':'
+        set -- ${desktop#?}
+        while [ $# -gt 0 ] ; do
+            item=$1
+            case $item in
+                M*)
+                    # active monitor
+                    #if [ $monitors -gt 1 ] ; then
+                    #    wm_info="$wm_info %{F$RED}%{F-}  "
+                    #fi
+                    ;;
+                m*)
+                    # inactive monitor
+                    #if [ $monitors -gt 1 ] ; then
+                    #    wm_info="$wm_info %{F$GREY}%{F-}  "
+                    #fi
+                    ;;
+                O*)
+                    # focused occupied desktop
+                    wm_info="${wm_info} %{F$WHITE}%{U$ORANGE}%{+u}  %{-u}%{F-}"
+                    ;;
+                F*)
+                    # focused free desktop
+                    wm_info="${wm_info} %{F$WHITE}%{U$ORANGE}%{+u}  %{-u}%{F-}"
+                    ;;
+                U*)
+                    # focused urgent desktop
+                    wm_info="${wm_info} %{F$WHITE}%{U$MAGENTA}%{+u}  %{-u}%{F-}"
+                    ;;
+                o*)
+                    # occupied desktop
+                    wm_info="${wm_info} %{F$WHITE}%{U$BLUE}%{+u}  %{-u}%{F-}"
+                    ;;
+                f*)
+                    # free desktop
+                    wm_info="${wm_info} %{F$GREY}%{U$GREY}%{+u}  %{-u}%{F-}"
+                    ;;
+                u*)
+                    # urgent desktop
+                    wm_info="${wm_info} %{F$WHITE}%{U$MAGENTA}%{+u}  %{-u}%{F-}"
+                    ;;
+                L*)
+                    # layout
+                    ;;
+            esac
+            shift
         done
-        echo $desktops
+        printf "%s\n" "${wm_info}"
     }
 
     networks() {
@@ -53,7 +102,7 @@ function statusbar {
             text="lan"
         elif [ "$WIFI_STATE" = "up" ]
         then
-            text="`iwgetid wlp3s0 --raw`"
+            text="`essid -w wlp3s0`"
         else
             text="off"
         fi
@@ -62,11 +111,11 @@ function statusbar {
         echo $network
     }
 
-    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$CYAN}  %{F-}%{F$WHITE}$(networks) %{F-}%{F$CYAN}  %{F-}%{F$WHITE}$(vol) %{F-}%{F$CYAN}  %{F-}%{F$WHITE}$(bat)%% %{F-}"
+    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$BLUE}  %{F-}%{F$WHITE}$(networks) %{F-}%{F$BLUE}  %{F-}%{F$WHITE}$(vol) %{F-}%{F$BLUE}  %{F-}%{F$WHITE}$(batt)%% %{F-}"
 }
 
 while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | bar -g x15 -f "$FONT1,$FONT2" -B "$BG" -F "$FG" -p &
+done | lemonbar -g x15 -f "$FONT1,$FONT2" -B "$BG" -F "$FG" -p &
