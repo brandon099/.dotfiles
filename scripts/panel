@@ -25,7 +25,7 @@ function statusbar {
     }
 
     clock() {
-        time=$(/usr/local/bin/clock -f "%a %l:%M %p")
+        time=$(/usr/local/bin/clock -f "%a %b %d %l:%M %p")
         echo $time
     }
 
