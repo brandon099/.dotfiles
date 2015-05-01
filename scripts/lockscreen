@@ -1,0 +1,37 @@
+#!/bin/bash
+
+scrot /tmp/screen.png
+
+# Pixelated Blur BG
+convert /tmp/screen.png -scale 10% -scale 1000% -modulate 50,25 /tmp/screen.png
+
+# Smooth Blur BG
+#convert /tmp/screen.png -blur 0x3 -modulate 60,25 /tmp/screen.png
+
+if [[ -f $HOME/.lockscreen/lock.png ]]
+then
+    # placement x/y
+    PX=0
+    PY=0
+    # lockscreen image info
+    R=$(file ~/.lockscreen/lock.png | grep -o '[0-9]* x [0-9]*')
+    RX=$(echo $R | cut -d' ' -f 1)
+    RY=$(echo $R | cut -d' ' -f 3)
+
+    # Connected displays
+    SR=$(xrandr --query | grep ' connected' | grep -Po '\d+x\d+\+\d+\+\d+')
+    for RES in $SR
+    do
+        # monitor position/offset
+        SRX=$(echo $RES | cut -d'x' -f 1)                   # x pos
+        SRY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 1)  # y pos
+        SROX=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 2) # x offset
+        SROY=$(echo $RES | cut -d'x' -f 2 | cut -d'+' -f 3) # y offset
+        PX=$(($SROX + $SRX/2 - $RX/2))
+        PY=$(($SROY + $SRY/2 - $RY/2))
+
+        convert /tmp/screen.png $HOME/.lockscreen/lock.png -geometry +$PX+$PY -composite -matte  /tmp/screen.png
+    done
+fi
+
+i3lock -u -n -i /tmp/screen.png

@@ -45,6 +45,8 @@ if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
+export EDITOR=vim
+
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
@@ -61,3 +63,4 @@ export PANEL_FIFO="/tmp/panel-fifo"
 export XINERAMA=1
 
 export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
+export LPASS_DISABLE_PINENTRY=1
