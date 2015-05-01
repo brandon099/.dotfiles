@@ -3,7 +3,7 @@
 scrot /tmp/screen.png
 
 # Pixelated Blur BG
-convert /tmp/screen.png -scale 10% -scale 1000% -modulate 50,25 /tmp/screen.png
+convert /tmp/screen.png -scale 10% -scale 1000% -modulate 30,15 /tmp/screen.png
 
 # Smooth Blur BG
 #convert /tmp/screen.png -blur 0x3 -modulate 60,25 /tmp/screen.png
