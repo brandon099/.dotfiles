@@ -1,4 +1,5 @@
 #!/bin/bash
+FONT3="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 FONT2="-*-stlarch-medium-r-normal-*-10-*-*-*-*-*-*-*"
 FONT1="-*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*"
 BLACK=#FF2C3E50
@@ -6,10 +7,10 @@ RED=#FFC0392B
 GREEN=#FF27AE60
 ORANGE=#FFD35400
 YELLOW=#FFF1C40F
-BLUE=#FF2980B9
+BLUE=#FF22A7F0
 MAGENTA=#FFE74C3C
 CYAN=#FF16A085
-WHITE=#FFBDC3C7
+WHITE=#FFFFFFFF
 DARK=#FF34495E
 GREY=#FF586E75
 FG=#FFEDDCD3
@@ -20,8 +21,17 @@ monitors="`bspc query --monitors | wc -l`"
 function statusbar {
 
     batt() {
+        batt_status=$(battery | awk -F' ' '{print $1}')
         batt_level=$(battery | awk -F' ' '{print $2}')
-        echo $batt_level
+        if [ $batt_status == 'Charging' ] ; then
+            echo "%{F$BLUE}%{F-} $batt_level"
+        elif [ $batt_level -lt 10 ] ; then
+            echo "%{F$ORANGE}%{F-} $batt_level"
+        elif [ $batt_level -lt 50 ] ; then
+            echo "%{F$BLUE}%{F-} $batt_level"
+        elif [ $batt_level -le 100 ] ; then
+            echo "%{F$BLUE}%{F-} $batt_level"
+        fi
     }
 
     clock() {
@@ -62,27 +72,27 @@ function statusbar {
                     ;;
                 O*)
                     # focused occupied desktop
-                    wm_info="${wm_info} %{F$WHITE}%{U$ORANGE}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$BLUE}%{+u}%{-u}"
                     ;;
                 F*)
                     # focused free desktop
-                    wm_info="${wm_info} %{F$WHITE}%{U$ORANGE}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$BLUE}%{+u}%{-u}"
                     ;;
                 U*)
                     # focused urgent desktop
-                    wm_info="${wm_info} %{F$WHITE}%{U$MAGENTA}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$MAGENTA}%{+u}%{-u}"
                     ;;
                 o*)
                     # occupied desktop
-                    wm_info="${wm_info} %{F$WHITE}%{U$BLUE}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$WHITE}%{+u}  %{-u}"
                     ;;
                 f*)
                     # free desktop
-                    wm_info="${wm_info} %{F$GREY}%{U$GREY}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$GREY}%{+u}  %{-u}"
                     ;;
                 u*)
                     # urgent desktop
-                    wm_info="${wm_info} %{F$WHITE}%{U$MAGENTA}%{+u}  %{-u}%{F-}"
+                    wm_info="${wm_info} %{U$MAGENTA}%{+u}  %{-u}"
                     ;;
                 L*)
                     # layout
@@ -99,10 +109,10 @@ function statusbar {
 
         if [ "$LAN_STATE" = "up" ]
         then
-            text="lan"
+            text="%{F$BLUE}%{F-} lan"
         elif [ "$WIFI_STATE" = "up" ]
         then
-            text="`essid -w wlp3s0`"
+            text="%{F$BLUE}%{F-} `essid -w wlp3s0`"
         else
             text="off"
         fi
@@ -111,11 +121,11 @@ function statusbar {
         echo $network
     }
 
-    echo " $(desktops) %{c}%{F$WHITE}$(clock)%{F-}%{r}%{F$BLUE}  %{F-}%{F$WHITE}$(networks) %{F-}%{F$BLUE}  %{F-}%{F$WHITE}$(vol) %{F-}%{F$BLUE}  %{F-}%{F$WHITE}$(batt)%% %{F-}"
+    echo " $(desktops) %{c}$(clock)%{r}$(networks)%{F$BLUE}  %{F-}$(vol) $(batt)%% "
 }
 
 while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | lemonbar -g x15 -f "$FONT1,$FONT2" -B "$BG" -F "$FG" -p &
+done | lemonbar -g x15 -f "$FONT1,$FONT3" -B "$BG" -F "$FG" -p &
