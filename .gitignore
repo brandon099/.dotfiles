@@ -1,3 +1,7 @@
 oh-my-zsh/
 vim/backups
 vim/.netrwhist
+vivint_auth*
+config/*
+!config/bspwm/*
+!config/sxhkd/*
