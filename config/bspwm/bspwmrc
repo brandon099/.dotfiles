@@ -4,14 +4,11 @@ monitors="`bspc query --monitors | wc -l`"
 
 if [ "$monitors" -eq 1 ]
 then
-    bspc monitor LVDS1 -n 0 -d 1 2 3 4 5
-elif [ "$monitors" -gt 1 ]
+    bspc monitor LVDS2 -n 0 -d 1 2 3 4 5
+elif [ "$monitors" -eq 2 ]
 then
-    bspc monitor VGA1 -n 0 -d 1 2 3
-    bspc monitor DP-2 -n 1 -d 4 5 6
-    bspc monitor LVDS1 -n 2 -d 7 8 9
-    bspc monitor ^2 -s ^3
-    bspc monitor ^1 -s ^3
+    bspc monitor DP-2 -n 0 -d 1 2 3
+    bspc monitor DP-1 -n 1 -d 4 5 6
 fi
 
 bspc config top_padding         24

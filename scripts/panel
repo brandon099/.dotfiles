@@ -1,7 +1,6 @@
 #!/bin/bash
-FONT3="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
-FONT2="-*-stlarch-medium-r-normal-*-10-*-*-*-*-*-*-*"
 FONT1="-*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*"
+FONT2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 BLACK=#FF2C3E50
 RED=#FFC0392B
 GREEN=#FF27AE60
@@ -104,7 +103,7 @@ function statusbar {
     }
 
     networks() {
-        LAN_STATE=`cat /sys/class/net/em1/operstate`
+        LAN_STATE=`cat /sys/class/net/enp0s25/operstate`
         WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
 
         if [ "$LAN_STATE" = "up" ]
@@ -128,4 +127,4 @@ while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | lemonbar -g x15 -f "$FONT1,$FONT3" -B "$BG" -F "$FG" -p &
+done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BG" -F "$FG" -p &

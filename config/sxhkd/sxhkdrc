@@ -81,7 +81,7 @@ super + @button{1-3}
 #
 
 alt + shift + z
-    slock
+    /home/bclifford/.scripts/lockscreen
 
 super + Return
     urxvt256c
@@ -92,6 +92,10 @@ super + space
 # Nautilus
 super + n
     nautilus --no-desktop
+
+# Chrome
+super + {_,shift + }Return
+    google-chrome
 
 # make sxhkd reload its configuration files:
 super + Escape
