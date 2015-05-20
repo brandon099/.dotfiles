@@ -6,7 +6,7 @@ scrot /tmp/screen.png
 convert /tmp/screen.png -scale 10% -scale 1000% -modulate 30,10 /tmp/screen.png
 
 # Smooth Blur BG
-#convert /tmp/screen.png -blur 0x3 -modulate 60,25 /tmp/screen.png
+#convert /tmp/screen.png -blur 0x3 -modulate 40,20 /tmp/screen.png
 
 if [[ -f $HOME/.lockscreen/lock.png ]]
 then
