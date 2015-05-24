@@ -84,7 +84,7 @@ alt + shift + z
     /home/bclifford/.scripts/lockscreen
 
 super + Return
-    urxvt256c
+    urxvtc
 
 super + space
     dmenu_run
@@ -95,7 +95,7 @@ super + n
 
 # Chrome
 super + {_,shift + }Return
-    google-chrome
+    google-chrome-stable
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -103,10 +103,10 @@ super + Escape
 
 ## Media keys
 XF86AudioRaiseVolume
-    pactl set-sink-volume 0 +5%
+    amixer set Master 5%+
 
 XF86AudioLowerVolume
-    pactl set-sink-volume 0 -- -5%
+    amixer set Master 5%-
 
 XF86AudioMute
     amixer -q set Master toggle

@@ -23,10 +23,6 @@ numlockx &
 # Add fonts to path and rehash
 xset fp+ /usr/share/fonts/siji
 xset fp+ /usr/share/fonts/tewi
-xset fp+ /usr/share/fonts/lemon
-xset fp+ /usr/share/fonts/stlarch
-xset fp+ /usr/share/fonts/uushi
-xset fp+ /usr/share/fonts/terminess
 xset fp rehash
 
 # Source Xresources

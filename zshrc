@@ -34,7 +34,7 @@ plugins=(git rsync hg python pylint cp encode64 jira)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.scripts
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.scripts:/usr/bin/core_perl
 
 # Disable Automatic Title changing
 # DISABLE_AUTO_TITLE=true
