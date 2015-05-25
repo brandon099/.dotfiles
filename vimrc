@@ -35,17 +35,13 @@ else
     2mat ErrorMsg '\%119v.'
 endif
 
-" ================ Solarized Settings ==============
+" ================ Color Theme Settings ==============
 
 syntax enable
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
+set background=dark
+let base16colorspace=256
 set t_Co=16
-let g:solarized_termcolors=16
-colorscheme solarized
+colorscheme base16-ocean
 
 " ================ Search Settings =================
 
@@ -123,7 +119,7 @@ endif
 " =============== Airline (Powerline) ===============
 
 let g:airline_symbols =                     {}
-let g:airline_theme                         = 'solarized'
+"let g:airline_theme                         = 'solarized'
 let g:airline_enable_branch                 = 1
 let g:airline_enable_virtualenv             = 1
 let g:airline#extensions#syntastic#enabled  = 1
