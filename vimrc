@@ -28,6 +28,8 @@ set cursorline                  "Highlight Current selected line
 set shortmess=atI               "Shorten command-line text and other info tokens
 set noru                        "Turn off ruler
 set hidden                      "Allow buffers to exist in the background
+set timeoutlen=1000             " Set mapping timeout length to 1000ms
+set ttimeoutlen=10              " Set Key code delay to 10ms
 syntax on                       "Turn on syntax highlighting
 if version >= 703               "Highlight 119th column
     set colorcolumn=119

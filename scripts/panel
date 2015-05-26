@@ -114,7 +114,7 @@ function statusbar {
         echo $network
     }
 
-    echo " $(desktops) %{c}$(clock)%{r}$(networks)%{F$BLUE}  %{F-}$(vol) $(batt)%% "
+    echo " %{F$BLUE}%{F-}$(desktops) %{c}$(clock)%{r}$(networks)%{F$BLUE}  %{F-}$(vol) $(batt)%% "
 }
 
 while true
