@@ -8,7 +8,8 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="af-magic"
 
 # Apply 256 color Ocean Dark Base16 theme
-/home/bclifford/.scripts/ocean-dark
+BASE16_SHELL="$HOME/.scripts/ocean-dark"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(git rsync hg python pylint cp encode64 jira)
