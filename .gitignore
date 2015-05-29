@@ -3,5 +3,6 @@ vim/backups
 vim/.netrwhist
 vivint_auth*
 config/*
-!config/bspwm/*
-!config/sxhkd/*
+!config/bspwm*
+!config/sxhkd*
+!config/dunst*
