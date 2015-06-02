@@ -1,0 +1,32 @@
+#!/bin/sh
+
+source ~/.config/global.conf
+
+DMENU_PROMPT='>>'
+DMENU_FN=$FONT1
+DMENU_DIM=0.3
+
+DMENU_NORMBG=$BAR_BG
+DMENU_NORMFG=$BAR_FG
+DMENU_SELBG=$BLUE
+DMENU_SELFG=$WHITE
+
+DMENU_X=535
+DMENU_Y=250
+DMENU_WIDTH=300
+DMENU_HEIGHT=20
+DMENU_LINES=5
+
+dmenu_run \
+    -i -r -l $DMENU_LINES \
+    -p "$DMENU_PROMPT" \
+    -x $DMENU_X \
+    -y $DMENU_Y \
+    -w $DMENU_WIDTH \
+    -h $DMENU_HEIGHT \
+    -dim $DMENU_DIM \
+    -fn $DMENU_FN \
+    -nb $DMENU_NORMBG \
+    -nf $DMENU_NORMFG \
+    -sb $DMENU_SELBG \
+    -sf $DMENU_SELFG

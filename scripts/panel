@@ -1,13 +1,6 @@
 #!/bin/bash
-FONT1="-*-tewi-medium-r-normal-*-11-*-*-*-*-*-*-*"
-FONT2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
-BLUE=#FF96B5B4
-MAGENTA=#FFBF616A
-CYAN=#FF16A085
-WHITE=#FFEFF1F5
-GREY=#FF4F5B66
-FG=#FFEFF1F5
-BG=#FF2B303B
+
+source ~/.config/global.conf
 
 monitors="`bspc query --monitors | wc -l`"
 
@@ -121,4 +114,4 @@ while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BG" -F "$FG" -p &
+done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BAR_BG" -F "$BAR_FG" -p &

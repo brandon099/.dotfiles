@@ -87,11 +87,11 @@ super + Return
     urxvtc -e zsh -c tmux
 
 super + space
-    dmenu_run -fn "-lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1" -nb "#2B303B" -nf "#EFF1F5" -sb "#96B5B4" -sf "#EFF1F5" -h 15
+    dmenuw
 
 # Nautilus
 super + n
-    nautilus --no-desktop
+    pcmanfm
 
 # Chrome
 super + {_,shift + }Return
