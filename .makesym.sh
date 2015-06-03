@@ -4,7 +4,7 @@ dir=~/.dotfiles
 olddir=~/.dotfiles_old
 
 # List of files/folders to symlink in homedir
-files="bashrc vimrc vim zshrc oh-my-zsh dircolors gitconfig scripts Xresources config compton.conf xinitrc tmux.conf"
+files="bashrc vimrc vim zshrc dircolors gitconfig scripts Xresources config compton.conf xinitrc tmux.conf"
 
 # Create .dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles..."
@@ -24,20 +24,3 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
-install_zsh () {
-# Test to see if zsh is installed.
-if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-    # Clone oh-my-zsh repository from GitHub only if it isn't already present
-    if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone https://github.com/brandon099/oh-my-zsh.git
-        cd oh-my-zsh
-        git checkout bclifford/custom
-    fi
-else
-    echo "Please install zsh, then re-run this script."
-    exit
-fi
-}
-
-install_zsh
