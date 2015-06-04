@@ -2,6 +2,8 @@ vim/backups
 vim/.netrwhist
 vivint_auth*
 config/*
+scripts/google-music
+scripts/webmail
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*
