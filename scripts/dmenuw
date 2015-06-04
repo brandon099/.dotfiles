@@ -1,6 +1,13 @@
 #!/bin/sh
 
 source ~/.config/global.conf
+source ~/.scripts/monitor-center
+
+# Get centered dimensions based on display resolution
+for RES in $SR
+do
+    center_object $RES
+done
 
 DMENU_PROMPT='>>'
 DMENU_FN=$FONT1
@@ -11,11 +18,11 @@ DMENU_NORMFG=$BAR_FG
 DMENU_SELBG=$BLUE
 DMENU_SELFG=$WHITE
 
-DMENU_X=535
-DMENU_Y=250
 DMENU_WIDTH=300
 DMENU_HEIGHT=20
-DMENU_LINES=5
+DMENU_X=$(($PX - $DMENU_WIDTH/2))
+DMENU_Y=$(($PY - $DMENU_HEIGHT/2))
+DMENU_LINES=3
 
 dmenu_run \
     -i -r -l $DMENU_LINES \
