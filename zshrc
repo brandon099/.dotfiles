@@ -10,16 +10,20 @@ export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
 export LPASS_DISABLE_PINENTRY=1
 
 # Virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/bin/virtualenvwrapper.sh
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/bin/virtualenvwrapper.sh
+fi
 
 # bspwm Panel
 export PANEL_FIFO="/tmp/panel-fifo"
 export XINERAMA=1
 
 # Credentials
-source ~/.credentials
+if [  -f ~/.credentials ]; then
+    source ~/.credentials
+fi
 
 # Load zgen
 source ~/.zgen.zsh
