@@ -22,7 +22,7 @@ export XINERAMA=1
 source ~/.credentials
 
 # Load zgen
-source /usr/share/zsh/scripts/zgen/zgen.zsh
+source ~/.zgen.zsh
 
 # Check for init script
 if ! zgen saved; then
