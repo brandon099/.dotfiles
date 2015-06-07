@@ -9,28 +9,34 @@ function statusbar {
     batt() {
         batt_status=$(battery | awk -F' ' '{print $1}')
         batt_level=$(battery | awk -F' ' '{print $2}')
-        if [ $batt_status == 'Charging' ] ; then
-            echo "%{F$BLUE}%{F-} $batt_level"
-        elif [ $batt_level -lt 10 ] ; then
-            echo "%{F$ORANGE}%{F-} $batt_level"
+        if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+            echo "%{F$BLUE}%{F-}"
+        elif [ $batt_status == 'Charging' ] ; then
+            echo "%{F$BLUE}%{F-}"
+        elif [ $batt_level -le 10 ] ; then
+            echo "%{F$MAGENTA}%{F-}"
         elif [ $batt_level -lt 50 ] ; then
-            echo "%{F$BLUE}%{F-} $batt_level"
+            echo "%{F$BLUE}%{F-}"
         elif [ $batt_level -le 100 ] ; then
-            echo "%{F$BLUE}%{F-} $batt_level"
+            echo "%{F$BLUE}%{F-}"
         fi
     }
 
     clock() {
-        time=$(/usr/sbin/clock -f "%a %b %d %l:%M %p")
-        echo $time
+        date=$(/usr/sbin/clock -f "%a, %b %d")
+        time=$(/usr/sbin/clock -f "%l:%M %p")
+        echo "%{F$BLUE}$date%{F-} $time"
     }
 
     vol() {
-        vol_level=$(volume | awk -F' ' '{print $1}')
-        if [ $vol_level == 'off' ] ; then
-            vol="$vol_level"
+        vol=$(volume | awk -F' ' '{print $1}')
+        vol_level=$(volume | awk -F' ' '{print $2}')
+        if [ $vol == 'off' ] ; then
+            vol="%{F$MAGENTA}%{F-}"
+        elif [ $vol_level -lt 50 ] ; then
+            vol="%{F$BLUE}%{F-}"
         else
-            vol=$(volume | awk -F' ' '{print $2}')
+            vol="%{F$BLUE}%{F-}"
         fi
         echo $vol
     }
@@ -95,19 +101,19 @@ function statusbar {
 
         if [ "$LAN_STATE" = "up" ]
         then
-            text="%{F$BLUE}%{F-} lan"
+            text="%{F$BLUE}%{F-}"
         elif [ "$WIFI_STATE" = "up" ]
         then
-            text="%{F$BLUE}%{F-} `essid -w wlp3s0`"
+            text="%{F$BLUE}%{F-}"
         else
-            text="off"
+            text="%{F$MAGENTA}%{F-}"
         fi
 
         network="$text"
         echo $network
     }
 
-    echo " %{F$BLUE}%{F-}$(desktops) %{c}$(clock)%{r}$(networks)%{F$BLUE}  %{F-}$(vol) $(batt)%% "
+    echo " %{F$BLUE}%{F-}$(desktops) %{r}$(networks) $(vol) $(batt) %{F$GREY}|%{F-} $(clock) "
 }
 
 while true
