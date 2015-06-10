@@ -4,7 +4,7 @@ dir=~/.dotfiles
 olddir=~/.dotfiles_old
 
 # List of files/folders to symlink in homedir
-files="bashrc vimrc vim zshrc dircolors gitconfig scripts Xresources config compton.conf xinitrc tmux.conf zgen.zsh"
+files="bashrc vimrc vim zshrc dircolors gitconfig scripts Xresources config compton.conf xinitrc tmux.conf zgen.zsh dircolors"
 
 # Create .dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles..."

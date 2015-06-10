@@ -2,6 +2,11 @@
 BASE16_SHELL="$HOME/.scripts/ocean-dark"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
+# Source dircolors config
+if [[ -f ~/.dircolors ]] ; then
+    eval $(dircolors -b ~/.dircolors)
+fi
+
 # Exports
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/core_perl:~/.scripts
 export EDITOR=vim
