@@ -4,21 +4,49 @@ source ~/.config/global.conf
 
 monitors="`bspc query --monitors | wc -l`"
 
+TOGGLE_FILE='/tmp/toggle_panel'
+if [ ! -e "$TOGGLE_FILE" ] ; then
+    echo -n 0 > $TOGGLE_FILE
+fi
+
 function statusbar {
+
+    if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
+        TOGGLE=true
+        TOGGLE_ICON="-"
+    else
+        TOGGLE=false
+        TOGGLE_ICON="+"
+    fi
 
     batt() {
         batt_status=$(battery | awk -F' ' '{print $1}')
         batt_level=$(battery | awk -F' ' '{print $2}')
-        if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
-            echo "%{F$BLUE}%{F-}"
-        elif [ $batt_status == 'Charging' ] ; then
-            echo "%{F$BLUE}%{F-}"
-        elif [ $batt_level -le 10 ] ; then
-            echo "%{F$RED}%{F-}"
-        elif [ $batt_level -lt 50 ] ; then
-            echo "%{F$BLUE}%{F-}"
-        elif [ $batt_level -le 100 ] ; then
-            echo "%{F$BLUE}%{F-}"
+
+        if "$TOGGLE" ; then
+            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_status == 'Charging' ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_level -le 10 ] ; then
+                echo "%{F$RED} $batt_level%%%{F-}"
+            elif [ $batt_level -lt 50 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_level -le 100 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            fi
+        else
+            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_status == 'Charging' ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_level -le 10 ] ; then
+                echo "%{F$RED}%{F-}"
+            elif [ $batt_level -lt 50 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_level -le 100 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            fi
         fi
     }
 
@@ -31,14 +59,54 @@ function statusbar {
     vol() {
         vol=$(volume | awk -F' ' '{print $1}')
         vol_level=$(volume | awk -F' ' '{print $2}')
-        if [ $vol == 'off' ] ; then
-            vol="%{F$RED}%{F-}"
-        elif [ $vol_level -lt 50 ] ; then
-            vol="%{F$BLUE}%{F-}"
+        if "$TOGGLE" ; then
+            if [ $vol == 'off' ] ; then
+                vol="%{F$RED} Mute%{F-}"
+            elif [ $vol_level -lt 50 ] ; then
+                vol="%{F$BLUE} $vol_level%%%{F-}"
+            else
+                vol="%{F$BLUE} $vol_level%%%{F-}"
+            fi
         else
-            vol="%{F$BLUE}%{F-}"
+            if [ $vol == 'off' ] ; then
+                vol="%{F$RED}%{F-}"
+            elif [ $vol_level -lt 50 ] ; then
+                vol="%{F$BLUE}%{F-}"
+            else
+                vol="%{F$BLUE}%{F-}"
+            fi
         fi
         echo $vol
+    }
+
+    networks() {
+        LAN_STATE=`cat /sys/class/net/enp0s25/operstate`
+        WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
+
+        if "$TOGGLE" ; then
+            if [ "$LAN_STATE" = "up" ]
+            then
+                text="%{F$BLUE} LAN%{F-}"
+            elif [ "$WIFI_STATE" = "up" ]
+            then
+                text="%{F$BLUE} `essid -w wlp3s0`%{F-}"
+            else
+                text="%{F$RED} Off%{F-}"
+            fi
+        else
+            if [ "$LAN_STATE" = "up" ]
+            then
+                text="%{F$BLUE}%{F-}"
+            elif [ "$WIFI_STATE" = "up" ]
+            then
+                text="%{F$BLUE}%{F-}"
+            else
+                text="%{F$RED}%{F-}"
+            fi
+        fi
+
+        network="$text"
+        echo $network
     }
 
     desktops() {
@@ -95,29 +163,11 @@ function statusbar {
         printf "%s\n" "${wm_info}"
     }
 
-    networks() {
-        LAN_STATE=`cat /sys/class/net/enp0s25/operstate`
-        WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
-
-        if [ "$LAN_STATE" = "up" ]
-        then
-            text="%{F$BLUE}%{F-}"
-        elif [ "$WIFI_STATE" = "up" ]
-        then
-            text="%{F$BLUE}%{F-}"
-        else
-            text="%{F$RED}%{F-}"
-        fi
-
-        network="$text"
-        echo $network
-    }
-
-    echo " %{F$BLUE}%{F-}$(desktops) %{r}$(networks) $(vol) $(batt) | $(clock) "
+    echo " %{F$BLUE}%{A3:shutdown -h now:}%{A3}%{F-}$(desktops) %{r}%{A:toggle_panel:}$TOGGLE_ICON%{A} $(networks) $(vol) $(batt) | $(clock) "
 }
 
 while true
 do
     echo "$(statusbar)"
     sleep 0.5
-done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BAR_BG" -F "$BAR_FG" -p &
+done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BAR_BG" -F "$BAR_FG" -p | sh &

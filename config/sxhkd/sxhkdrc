@@ -95,7 +95,7 @@ super + n
 
 # Chrome
 super + {_,shift + }Return
-    google-chrome-stable
+    chromium
 
 # make sxhkd reload its configuration files:
 super + Escape

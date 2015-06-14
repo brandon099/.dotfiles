@@ -76,7 +76,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 7
+    transparency = 0
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -156,7 +156,7 @@
 
 [frame]
     width = 1
-    color = "#C0C5CE"
+    color = "#8FA1B3"
 
 [shortcuts]
 

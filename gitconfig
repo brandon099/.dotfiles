@@ -18,3 +18,5 @@
 	ui = auto
 [diff]
 	renames = copies
+[push]
+	default = simple
