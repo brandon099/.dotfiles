@@ -21,8 +21,7 @@ compton -b
 numlockx &
 
 # Add fonts to path and rehash
-xset fp+ /usr/share/fonts/siji
-xset fp+ /usr/share/fonts/tewi
+xset fp+ /usr/share/fonts/misc
 xset fp rehash
 
 # Source Xresources
