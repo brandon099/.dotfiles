@@ -25,6 +25,9 @@ fi
 export PANEL_FIFO="/tmp/panel-fifo"
 export XINERAMA=1
 
+# Java GUI in BSPWM
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Credentials
 if [  -f ~/.credentials ]; then
     source ~/.credentials
