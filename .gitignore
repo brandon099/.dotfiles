@@ -5,6 +5,8 @@ vivint_auth*
 config/*
 scripts/google-music
 scripts/webmail
+scripts/plex
+scripts/TexturePacker
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*
