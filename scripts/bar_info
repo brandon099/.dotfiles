@@ -51,13 +51,13 @@ network() {
     if iwconfig $int1 >/dev/null 2>&1; then
         wifi=$int1
         eth=$int2
+        lan_state=`cat /sys/class/net/$eth/operstate`
+        wifi_state=`cat /sys/class/net/$wifi/operstate`
     else
         wifi=$int2
         eth=$int1
+        lan_state=`cat /sys/class/net/$eth/operstate`
     fi
-
-    lan_state=`cat /sys/class/net/$eth/operstate`
-    wifi_state=`cat /sys/class/net/$wifi/operstate`
 
     if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
         if [ "$lan_state" = "up" ]

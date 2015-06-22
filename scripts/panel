@@ -34,7 +34,10 @@ for i in $num_mon; do
     # This greps out the bspc control section of the current monitor we are on.
     # The while loop in the middle appends 'W' to the start because the panel_bar
     # script assumes input from a 'regular' bspc control --subscribe command
-    bspc control --subscribe > "$PANEL_FIFO$i" &
+    bspc control --subscribe |\
+        grep -oE "[Mm]$i[^TM]*[TML]" --line-buffered |\
+        while read line; do echo W$line; done \
+            > "$PANEL_FIFO$i" &
 
     # outputs system information.
     if [ -z "$(eval echo \$'barInfo'$i)" ]; then

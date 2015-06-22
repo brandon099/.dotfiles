@@ -27,9 +27,6 @@ xset fp rehash
 # Source Xresources
 xrdb ~/.Xresources
 
-# Start gnome-keyring for Remmina
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
-
 # Launch Urxvt daemon
 urxvtd -f -q -o
 
