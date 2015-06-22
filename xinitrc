@@ -2,7 +2,7 @@
 if [ "`xrandr --query | grep " connected" | wc -l`" -eq 3 ]
 then
     xrandr --output LVDS-0 --off
-    xrandr --output VGA-0 --off --output LVDS-0 --off --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-0 --off
+    xrandr --output VGA-0 --off --output LVDS-0 --off --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-1 --mode 1920x1080 --pos 0x0 --rotate normal --output DP-0 --off
 #elif [ ! -z "`xrandr --query | grep " connected" | grep "DP-1"`" ]
 #then
 #    xrandr --output VGA-2 --off --output LVDS-2 --off --output LVDS1 --mode 1600x900 --pos 0x0 --rotate normal --output DP-3 --off --output DP-2 --off --output DP-1 --mode 1920x1080 --pos 1600x0 --rotate normal --output VGA1 --off
@@ -35,9 +35,6 @@ urxvtd -f -q -o
 
 # Start Simple X Hotkey Daemon
 sxhkd &
-
-# Start Lemonbar
-panel &
 
 # Start Window Manager
 exec bspwm

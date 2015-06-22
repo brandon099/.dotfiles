@@ -1,0 +1,97 @@
+#!/bin/sh
+# info.sh
+# Output information with formatted background colors in lemonbar format
+
+source ~/.config/global.conf
+
+TOGGLE_FILE=/tmp/toggle_panel
+
+clock() {
+    date=$(/usr/sbin/clock -f "%a, %b %d")
+    time=$(/usr/sbin/clock -f "%l:%M %p")
+    echo "| %{F$BLUE}$date%{F-} $time"
+}
+
+battery() {
+    batt_file=/sys/class/power_supply/BAT0/capacity
+
+    if [ -f $batt_file ]; then
+        batt_level=`cat $batt_file`
+        batt_status=`cat /sys/class/power_supply/BAT0/status`
+        if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
+            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_status == 'Charging' ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_level -le 10 ] ; then
+                echo "%{F$RED} $batt_level%%%{F-}"
+            elif [ $batt_level -lt 50 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            elif [ $batt_level -le 100 ] ; then
+                echo "%{F$BLUE} $batt_level%%%{F-}"
+            fi
+        else
+            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_status == 'Charging' ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_level -le 10 ] ; then
+                echo "%{F$RED}%{F-}"
+            elif [ $batt_level -lt 50 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            elif [ $batt_level -le 100 ] ; then
+                echo "%{F$BLUE}%{F-}"
+            fi
+        fi
+    fi
+}
+
+network() {
+    read lo int1 int2 <<< `ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p'`
+    if iwconfig $int1 >/dev/null 2>&1; then
+        wifi=$int1
+        eth=$int2
+    else
+        wifi=$int2
+        eth=$int1
+    fi
+
+    lan_state=`cat /sys/class/net/$eth/operstate`
+    wifi_state=`cat /sys/class/net/$wifi/operstate`
+
+    if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
+        if [ "$lan_state" = "up" ]
+        then
+            text="%{F$BLUE} LAN%{F-}"
+        elif [ "$wifi_state" = "up" ]
+        then
+            text="%{F$BLUE} `essid -w wlp3s0`%{F-}"
+        else
+            text="%{F$RED} Off%{F-}"
+        fi
+    else
+        if [ "$lan_state" = "up" ]
+        then
+            text="%{F$BLUE}%{F-}"
+        elif [ "$wifi_state" = "up" ]
+        then
+            text="%{F$BLUE}%{F-}"
+        else
+            text="%{F$RED}%{F-}"
+        fi
+    fi
+
+    echo "$text"
+}
+
+while :; do
+    buf="S"
+    if [ -z "$*" ];then
+        buf="${buf} $(battery) "
+        buf="${buf} $(network) "
+        buf="${buf} $(clock) "
+    fi
+
+    echo "$buf"
+    sleep 0.5 # The panel will be updated every half second
+done

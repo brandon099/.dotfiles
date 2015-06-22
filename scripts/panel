@@ -1,173 +1,58 @@
-#!/bin/bash
+#!/bin/sh
+# panel
+# Start a panel on every monitor
+# This script makes some assumptions if using multihead setup:
+# The leftmost monitor is the tallest(reaches the highest in xroot window) - lemonbars -g flag acts differently if this is not the case
+# Monitors names are arranged left to right, named in increasing int value(1 2 3..)
 
 source ~/.config/global.conf
 
-monitors="`bspc query --monitors | wc -l`"
-
-TOGGLE_FILE='/tmp/toggle_panel'
-if [ ! -e "$TOGGLE_FILE" ] ; then
-    echo -n 0 > $TOGGLE_FILE
+# Kill the panel if it is currently running
+if [ $(pgrep -cx lemonbar) -gt 1 ] ; then
+	printf "%s\n" "The panel is already running."
+    while [[ $(pgrep -c "lemonbar") != 0 ]]
+    do
+        pkill -n -9 "lemonbar"
+    done
 fi
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-function statusbar {
+# Track the current offset for making a bar per monitor, so we can make bars with specific geometries.
+CUR_X_OFFSET=0
 
-    if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
-        TOGGLE=true
-        TOGGLE_ICON="-"
+# Get the number of monitors we will be making bars for
+num_mon=$(bspc query -M)
+
+# panel_gap to 0 if no gaps.
+PANEL_GAP=0
+
+for i in $num_mon; do
+    # remove any open panel fifo, and then create one
+    [ -e "$PANEL_FIFO$i" ] && rm "$PANEL_FIFO$i"
+    mkfifo "$PANEL_FIFO$i"
+
+    # This greps out the bspc control section of the current monitor we are on.
+    # The while loop in the middle appends 'W' to the start because the panel_bar
+    # script assumes input from a 'regular' bspc control --subscribe command
+    bspc control --subscribe > "$PANEL_FIFO$i" &
+
+    # outputs system information.
+    if [ -z "$(eval echo \$'barInfo'$i)" ]; then
+        bar_info $barInfo > "$PANEL_FIFO$i" &
     else
-        TOGGLE=false
-        TOGGLE_ICON="+"
+        #Custom bar options per monitor. (defined barInfo$i var for this monitor)
+        bar_info $(eval echo \$'barInfo'$i) > "$PANEL_FIFO$i" &
     fi
 
-    batt() {
-        batt_status=$(battery | awk -F' ' '{print $1}')
-        batt_level=$(battery | awk -F' ' '{print $2}')
+    # Grep for current monitor width (will be first number regex match from bspc query command below).
+    CUR_MON_WIDTH=$(bspc query -T -m $i | grep -oE "[0-9]{2,6}" | head -n 1)
 
-        if "$TOGGLE" ; then
-            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
-                echo "%{F$BLUE} $batt_level%%%{F-}"
-            elif [ $batt_status == 'Charging' ] ; then
-                echo "%{F$BLUE} $batt_level%%%{F-}"
-            elif [ $batt_level -le 10 ] ; then
-                echo "%{F$RED} $batt_level%%%{F-}"
-            elif [ $batt_level -lt 50 ] ; then
-                echo "%{F$BLUE} $batt_level%%%{F-}"
-            elif [ $batt_level -le 100 ] ; then
-                echo "%{F$BLUE} $batt_level%%%{F-}"
-            fi
-        else
-            if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
-                echo "%{F$BLUE}%{F-}"
-            elif [ $batt_status == 'Charging' ] ; then
-                echo "%{F$BLUE}%{F-}"
-            elif [ $batt_level -le 10 ] ; then
-                echo "%{F$RED}%{F-}"
-            elif [ $batt_level -lt 50 ] ; then
-                echo "%{F$BLUE}%{F-}"
-            elif [ $batt_level -le 100 ] ; then
-                echo "%{F$BLUE}%{F-}"
-            fi
-        fi
-    }
+    # The nested expr statements account for gap settings and current offset.
+    # PANEL_GAP value is set in profile.
+    cat "$PANEL_FIFO$i" | panel_bar | lemonbar -g $(expr $CUR_MON_WIDTH - $(expr $PANEL_GAP + $PANEL_GAP))x15+$(expr $CUR_X_OFFSET + $PANEL_GAP)+$PANEL_GAP -f "$FONT1" -f "$FONT2" -F "$BAR_FG" -B "$BAR_BG"| sh &
 
-    clock() {
-        date=$(/usr/sbin/clock -f "%a, %b %d")
-        time=$(/usr/sbin/clock -f "%l:%M %p")
-        echo "%{F$BLUE}$date%{F-} $time"
-    }
+    # Increment the x offset for the next monitor.
+    CUR_X_OFFSET=$(expr $CUR_X_OFFSET + $CUR_MON_WIDTH )
+done
 
-    vol() {
-        vol=$(volume | awk -F' ' '{print $1}')
-        vol_level=$(volume | awk -F' ' '{print $2}')
-        if "$TOGGLE" ; then
-            if [ $vol == 'off' ] ; then
-                vol="%{F$RED} Mute%{F-}"
-            elif [ $vol_level -lt 50 ] ; then
-                vol="%{F$BLUE} $vol_level%%%{F-}"
-            else
-                vol="%{F$BLUE} $vol_level%%%{F-}"
-            fi
-        else
-            if [ $vol == 'off' ] ; then
-                vol="%{F$RED}%{F-}"
-            elif [ $vol_level -lt 50 ] ; then
-                vol="%{F$BLUE}%{F-}"
-            else
-                vol="%{F$BLUE}%{F-}"
-            fi
-        fi
-        echo $vol
-    }
-
-    networks() {
-        LAN_STATE=`cat /sys/class/net/enp0s25/operstate`
-        WIFI_STATE=`cat /sys/class/net/wlp3s0/operstate`
-
-        if "$TOGGLE" ; then
-            if [ "$LAN_STATE" = "up" ]
-            then
-                text="%{F$BLUE} LAN%{F-}"
-            elif [ "$WIFI_STATE" = "up" ]
-            then
-                text="%{F$BLUE} `essid -w wlp3s0`%{F-}"
-            else
-                text="%{F$RED} Off%{F-}"
-            fi
-        else
-            if [ "$LAN_STATE" = "up" ]
-            then
-                text="%{F$BLUE}%{F-}"
-            elif [ "$WIFI_STATE" = "up" ]
-            then
-                text="%{F$BLUE}%{F-}"
-            else
-                text="%{F$RED}%{F-}"
-            fi
-        fi
-
-        network="$text"
-        echo $network
-    }
-
-    desktops() {
-        desktop="`bspc control --get-status`"
-        # bspwm state
-        wm_info=""
-        IFS=':'
-        set -- ${desktop#?}
-        while [ $# -gt 0 ] ; do
-            item=$1
-            case $item in
-                M*)
-                    # active monitor
-                    #if [ $monitors -gt 1 ] ; then
-                    #    wm_info="$wm_info %{F$RED}%{F-}  "
-                    #fi
-                    ;;
-                m*)
-                    # inactive monitor
-                    #if [ $monitors -gt 1 ] ; then
-                    #    wm_info="$wm_info %{F$GREY}%{F-}  "
-                    #fi
-                    ;;
-                O*)
-                    # focused occupied desktop
-                    wm_info="${wm_info} %{U$BLUE}%{+u}%{-u}"
-                    ;;
-                F*)
-                    # focused free desktop
-                    wm_info="${wm_info} %{U$BLUE}%{+u}%{-u}"
-                    ;;
-                U*)
-                    # focused urgent desktop
-                    wm_info="${wm_info} %{U$RED}%{+u}%{-u}"
-                    ;;
-                o*)
-                    # occupied desktop
-                    wm_info="${wm_info} %{U$WHITE}%{+u}  %{-u}"
-                    ;;
-                f*)
-                    # free desktop
-                    wm_info="${wm_info} %{U$GREY}%{+u}  %{-u}"
-                    ;;
-                u*)
-                    # urgent desktop
-                    wm_info="${wm_info} %{U$RED}%{+u}  %{-u}"
-                    ;;
-                L*)
-                    # layout
-                    ;;
-            esac
-            shift
-        done
-        printf "%s\n" "${wm_info}"
-    }
-
-    echo " %{F$BLUE}%{A3:shutdown -h now:}%{A3}%{F-}$(desktops) %{r}%{A:toggle_panel:}$TOGGLE_ICON%{A} $(networks) $(vol) $(batt) | $(clock) "
-}
-
-while true
-do
-    echo "$(statusbar)"
-    sleep 0.5
-done | lemonbar -g x15 -f "$FONT1" -f "$FONT2" -B "$BAR_BG" -F "$BAR_FG" -p | sh &
+wait
