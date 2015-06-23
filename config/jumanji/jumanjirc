@@ -1,0 +1,26 @@
+# Settings
+set homepage file:///home/bclifford/.dotfiles/start.html
+set user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.125 Safari/537.36"
+searchengine g https://google.com/search?q=%s
+
+# Base16 Ocean Dark
+set default-bg                  "#2B303B"
+set default-fg                  "#C0C5CE"
+set inputbar-bg                 "#2B303B"
+set inputbar-fg                 "#C0C5CE"
+set statusbar-bg                "#2B303B"
+set statusbar-fg                "#C0C5CE"
+set tabbar-focus-bg             "#343D46"
+set tabbar-focus-fg             "#EFF1F5"
+set tabbar-bg                   "#2B303B"
+set tabbar-fg                   "#C0C5CE"
+set completion-bg               "#343D46"
+set completion-fg               "#C0C5CE"
+set completion-highlight-bg     "#C0C5CE"
+set completion-highlight-fg     "#343D46"
+set notification-error-bg       "#BF616A"
+set notification-error-fg       "#2B303B"
+set notification-warning-bg     "#BF616A"
+set notification-warning-fg     "#2B303B"
+set notification-bg             "#A3BE8C"
+set notification-fg             "#2B303B"
