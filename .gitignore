@@ -10,4 +10,5 @@ scripts/TexturePacker
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*
+!config/jumanji*
 !config/global.conf
