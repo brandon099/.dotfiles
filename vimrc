@@ -137,11 +137,13 @@ let g:pymode_rope = 0
 
 " Documentation
 let g:pymode_doc = 1
-let g:pymode_doc_key = 'K'
+let g:pymode_doc_key = "K"
 
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checkers = "pyflakes,pep8"
+let g:pymode_lint_ignore = "E501"
+
 " Auto check on save
 let g:pymode_lint_write = 1
 
@@ -158,8 +160,8 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
-" Don't autofold code
-let g:pymode_folding = 0
+" Set Python file colorcolumn
+autocmd FileType python set colorcolumn=120
 
 " =============== Airline (Powerline) ===============
 
