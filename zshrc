@@ -53,9 +53,8 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/command-not-found
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-completions src
-
-    # Theme
-    zgen load brandon099/oh-my-zsh themes/af-magic bclifford/custom
+    zgen load mafredri/zsh-async
+    zgen load brandon099/pure
 
     # Save zgen init
     zgen save
