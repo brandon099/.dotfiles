@@ -8,6 +8,7 @@ scripts/plex
 scripts/TexturePacker
 scripts/vauth
 scripts/vauth_cron
+scripts/ynab
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*
