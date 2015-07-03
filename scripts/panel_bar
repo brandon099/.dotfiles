@@ -11,10 +11,10 @@ while read -r line ; do
 
     if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
         TOGGLE=true
-        TOGGLE_ICON="-"
+        TOGGLE_ICON="›"
     else
         TOGGLE=false
-        TOGGLE_ICON="+"
+        TOGGLE_ICON="‹"
     fi
 
     case $line in

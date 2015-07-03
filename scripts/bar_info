@@ -9,7 +9,7 @@ TOGGLE_FILE=/tmp/toggle_panel
 clock() {
     date=$(/usr/sbin/clock -f "%a, %b %d")
     time=$(/usr/sbin/clock -f "%l:%M %p")
-    echo " | %{F$BLUE}$date%{F-} $time "
+    echo " %{B$DARK_GREY} $date $time %{B-}"
 }
 
 battery() {
@@ -87,11 +87,11 @@ network() {
 while :; do
     buf="S"
     if [ -z "$*" ];then
-        buf="${buf}$(battery)"
         buf="${buf}$(network)"
+        buf="${buf}$(battery)"
         buf="${buf}$(clock)"
     fi
 
     echo "$buf"
-    sleep 0.5 # The panel will be updated every half second
+    sleep 0.3
 done

@@ -14,6 +14,10 @@
 Xft*dpi:                                96.0
 Xft*antialias:                          true
 Xft*hinting:                            1
+Xft*autohint:                           0
+Xft*hintstyle:                          hintfull
+Xft*lcdfilter:                          lcddefault
+Xft*rgba:                               rgb
 
 !---- URxvt - General settings
 URxvt*termName:                         xterm-256color
