@@ -89,6 +89,9 @@ super + Return
 super + space
     dmenuw
 
+super + shift + space
+    dmenup
+
 # Nautilus
 super + n
     nautilus --no-desktop

@@ -9,8 +9,8 @@ do
     center_object $RES
 done
 
-DMENU_PROMPT='>>'
-DMENU_FN=$FONT1
+DMENU_PROMPT='❯'
+DMENU_FN='tewi'
 DMENU_DIM=0.3
 
 DMENU_NORMBG=$BAR_BG

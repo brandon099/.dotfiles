@@ -63,6 +63,7 @@ numlockx
 openconnect
 openssh
 os-prober
+pass
 pkgfile
 powertop
 python-pip
