@@ -29,6 +29,7 @@ gimp
 git
 glew
 gnome-calculator
+gpick
 hwinfo
 i3lock
 imagemagick
@@ -48,6 +49,7 @@ libxxf86dga
 lockdev
 lrzip
 lxappearance
+medit
 mlocate
 mtr
 nasm
