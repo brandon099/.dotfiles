@@ -1,11 +1,24 @@
 #!/bin/bash
+echo
+echo Table for 16-color terminal escape sequences.
+echo Replace ESC with \033 in bash.
+echo
+echo "Background | Foreground colors"
+echo "---------------------------------------------------------------------"
+for((bg=40;bg<=47;bg++)); do
+    for((bold=0;bold<=1;bold++)) do
+        echo -en "\033[0m"" ESC[${bg}m   | "
+        for((fg=30;fg<=37;fg++)); do
+            if [ $bold == "0" ]; then
+                echo -en "\033[${bg}m\033[${fg}m [${fg}m  "
+            else
+                echo -en "\033[${bg}m\033[1;${fg}m [1;${fg}m"
+            fi
+        done
+        echo -e "\033[0m"
+    done
+    echo "--------------------------------------------------------------------- "
+done
 
-#setterm -regtabs 4
-COLS="$(xrdb -query| grep -Ei [.*]color[01-9] | sort -n -tr -k2  | tr -d [*[:blank:]])"
-
-for i in {0..7}; do echo -en "\e[0;3${i}m$(echo -e "$COLS" | sed -n $(($i+1))'p' | cut -d ':' -f 1)\e[0m\t"; done; echo
-for i in {0..7}; do echo -en "\e[0;3${i}m$(echo -e "$COLS" | sed -n $(($i+1))'p' | cut -d ':' -f 2)\e[0m\t"; done; echo
-for i in {0..7}; do echo -en "\e[0;3${i}m▉▉▉▉▉▉▉\t"; done; echo
-for i in {0..7}; do echo -en "\e[0;9${i}m$(echo -e "$COLS" | sed -n $(($i+9))'p' | cut -d ':' -f 1)\e[0m\t"; done; echo
-for i in {0..7}; do echo -en "\e[0;9${i}m$(echo -e "$COLS" | sed -n $(($i+9))'p' | cut -d ':' -f 2)\e[0m\t"; done; echo
-for i in {0..7}; do echo -en "\e[0;9${i}m▉▉▉▉▉▉▉\t"; done; echo -e "\033[0m"
+echo
+echo
