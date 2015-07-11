@@ -96,9 +96,9 @@ super + shift + space
 super + n
     nautilus --no-desktop
 
-# Chrome
+# Browser
 super + {_,shift + }Return
-    chromium
+    firefox
 
 # make sxhkd reload its configuration files:
 super + Escape
