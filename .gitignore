@@ -13,4 +13,5 @@ scripts/ynab
 !config/sxhkd*
 !config/dunst*
 !config/jumanji*
+!config/zathura*
 !config/global.conf
