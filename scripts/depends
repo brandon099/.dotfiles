@@ -5,12 +5,9 @@ alsa-utils
 arandr
 bspwm
 bzip2
-cdrkit
 chromium
 cmake
-conky
 cronie
-cwiid
 dhclient
 dialog
 dmxproto
@@ -21,9 +18,7 @@ doxygen
 dunst
 feh
 firefox
-freeglut
 freerdp
-freetds
 gcolor2
 gimp
 git
@@ -35,8 +30,7 @@ i3lock
 imagemagick
 inkscape
 iotop
-iw
-jsoncpp
+jumanji
 libaacs
 libcec
 libdmx
@@ -110,6 +104,7 @@ xorg-xfontsel
 xorg-xinit
 xorg-xlsfonts
 xorg-xwininfo
+zathura
 zip
 zsh
 archey
