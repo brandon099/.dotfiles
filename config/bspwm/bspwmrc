@@ -20,18 +20,9 @@ bspc config unfocused_border_color  $GREY
 
 desktops=$(bspc query --monitors)
 
-if [[ $(echo "$desktops" | wc -l) -eq 3 ]]; then
-    bspc monitor ^1 -s ^3
-    bspc monitor ^1 -s ^2
-fi
-
-echo "$desktops" | grep -q "[a-zA-Z]"
-if [ $? -eq 0 ]; then IsInitialRun=true; else IsInitialRun=false; fi
-
-# Create desktops or reset desktop configuration if it already exists.
+# Create desktops
 i=1
 for monitor in $desktops; do
-    [ "$IsInitialRun" = true ] && \
         bspc monitor "$monitor" -n $i -d $i/{i,ii,iii,iiii,iiiii} || \
         bspc monitor "$monitor" -d $i/{i,ii,iii,iiii,iiiii}
     let i++
