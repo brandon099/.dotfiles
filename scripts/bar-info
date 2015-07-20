@@ -4,7 +4,7 @@
 
 source ~/.config/global.conf
 
-TOGGLE_FILE=/tmp/toggle_panel
+TOGGLE_FILE=/tmp/toggle-panel
 
 clock() {
     date=$(/usr/sbin/clock -f "%a, %b %d")

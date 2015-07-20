@@ -30,17 +30,17 @@ for i in $num_mon; do
 
     # System information
     if [ -z "$(eval echo \$'barInfo'$i)" ]; then
-        bar_info $barInfo > "$PANEL_FIFO$i" &
+        bar-info $barInfo > "$PANEL_FIFO$i" &
     else
         # Custom bar options per monitor
-        bar_info $(eval echo \$'barInfo'$i) > "$PANEL_FIFO$i" &
+        bar-info $(eval echo \$'barInfo'$i) > "$PANEL_FIFO$i" &
     fi
 
     # Current monitor width
     CUR_MON_WIDTH=$(bspc query -T -m $i | grep -oE "[0-9]{2,6}" | head -n 1)
 
     # Pipe inof to Lemonbar
-    cat "$PANEL_FIFO$i" | panel_bar | lemonbar -g $(expr $CUR_MON_WIDTH - $(expr $PANEL_GAP + $PANEL_GAP))x15+$(expr $CUR_X_OFFSET + $PANEL_GAP)+$PANEL_GAP -f "$FONT1" -f "$FONT2" -F "$BAR_FG" -B "$BAR_BG"| sh &
+    cat "$PANEL_FIFO$i" | panel-bar | lemonbar -g $(expr $CUR_MON_WIDTH - $(expr $PANEL_GAP + $PANEL_GAP))x15+$(expr $CUR_X_OFFSET + $PANEL_GAP)+$PANEL_GAP -f "$FONT1" -f "$FONT2" -F "$BAR_FG" -B "$BAR_BG"| sh &
 
     # Increment the x offset for the next monitor.
     CUR_X_OFFSET=$(expr $CUR_X_OFFSET + $CUR_MON_WIDTH )
