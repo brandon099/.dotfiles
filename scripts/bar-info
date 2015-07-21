@@ -20,15 +20,15 @@ battery() {
         batt_status=`cat /sys/class/power_supply/BAT0/status`
         if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
             if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
-                echo " %{F$BLUE} $batt_level%%%{F-}"
+                echo " %{F$BLUE}%{F-} $batt_level%%"
             elif [ $batt_status == 'Charging' ] ; then
-                echo " %{F$BLUE} $batt_level%%%{F-}"
+                echo " %{F$BLUE}%{F-} $batt_level%%"
             elif [ $batt_level -le 10 ] ; then
-                echo " %{F$RED} $batt_level%%%{F-}"
+                echo " %{F$RED}%{F-} $batt_level%%"
             elif [ $batt_level -lt 50 ] ; then
-                echo " %{F$BLUE} $batt_level%%%{F-}"
+                echo " %{F$BLUE}%{F-} $batt_level%%"
             elif [ $batt_level -le 100 ] ; then
-                echo " %{F$BLUE} $batt_level%%%{F-}"
+                echo " %{F$BLUE}%{F-} $batt_level%%"
             fi
         else
             if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
@@ -59,15 +59,17 @@ network() {
         lan_state=`cat /sys/class/net/$eth/operstate`
     fi
 
+    ip_addr=`hostname -i | sed 's/[ \t]*$//'`
+
     if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
         if [ "$lan_state" = "up" ]
         then
-            text=" %{F$BLUE} LAN%{F-}"
+            text=" %{F$BLUE}%{F-} $ip_addr"
         elif [ "$wifi_state" = "up" ]
         then
-            text=" %{F$BLUE} `essid -w wlp3s0`%{F-}"
+            text=" %{F$BLUE}%{F-} `essid -w wlp3s0`"
         else
-            text=" %{F$RED} Off%{F-}"
+            text=" %{F$RED}%{F-} Off"
         fi
     else
         if [ "$lan_state" = "up" ]
