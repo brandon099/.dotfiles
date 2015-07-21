@@ -2,6 +2,7 @@
 xrandr --setprovideroutputsource nouveau Intel
 
 # Set up displays -- monitors script returns the xrandr command needed to set up the displays
+xrandr --auto
 xrandr --query | grep "connected" | awk -F' ' '{print $1 $2}' | xargs string_set | monitors | sh
 
 # Set default cursor

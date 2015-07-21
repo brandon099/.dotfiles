@@ -20,6 +20,11 @@ bspc config unfocused_border_color  $GREY
 
 desktops=$(bspc query --monitors)
 
+if [[ $(echo "$desktops" | wc -l) -eq 3 ]]; then
+    bspc monitor ^1 -s ^3
+    bspc monitor ^1 -s ^2
+fi
+
 # Create desktops
 i=1
 for monitor in $desktops; do
