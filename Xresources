@@ -3,12 +3,6 @@
 !   Man pages: xrdb, Xsession
 !
 ! --------------------------------------------
-! Note that $HOME/.Xdefaults is a relic from
-! X Version 10 (and  X11R1)  days, before
-! app-defaults  files were implemented.
-! It has been deprecated for over ten years
-! .Xresources should be used instead.
-! --------------------------------------------
 
 !--- Global Settings
 Xft*dpi:                                96.0
@@ -44,6 +38,19 @@ URxvt*keysym.Control-Left:              \033[1;5D
 URxvt*keysym.Control-Right:             \033[1;5C
 URxvt*keysym.Home:                      \033OH
 URxvt*keysym.End:                       \033OF
+
+!---- Rofi - General Settings
+rofi*lines:                             5
+rofi*width:                             25
+rofi*font:                              tewi
+rofi*bg:                                #2b303b
+rofi*fg:                                #c0c5ce
+rofi*hlbg:                              #343d46
+rofi*hlfg:                              #c0c5ce
+rofi*hlfg-active:                       #c0c5ce
+rofi*bc:                                #8fa1b3
+rofi*terminal:                          urxvt
+
 
 ! Base16 Ocean
 ! Scheme: Chris Kempson (http://chriskempson.com)

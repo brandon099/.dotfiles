@@ -87,10 +87,10 @@ super + Return
     urxvtc -e zsh -c tmux
 
 super + space
-    dmenuw
+    rofi -show run
 
 super + shift + space
-    dmenup
+    pass-prompt
 
 # Nautilus
 super + n

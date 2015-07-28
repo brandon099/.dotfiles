@@ -22,7 +22,7 @@ battery() {
             if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
                 echo " %{F$BLUE}%{F-} $batt_level"
             elif [ $batt_status == 'Charging' ] ; then
-                echo " %{F$BLUE}%{F-} $batt_level"
+                echo " %{F$BLUE}%{F-} $batt_level"
             elif [ $batt_level -le 10 ] ; then
                 echo " %{F$RED}%{F-} $batt_level"
             elif [ $batt_level -lt 50 ] ; then
