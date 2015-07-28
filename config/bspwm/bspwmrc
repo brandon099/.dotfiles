@@ -21,17 +21,15 @@ bspc config unfocused_border_color  $GREY
 desktops=$(bspc query --monitors)
 
 if [[ $(echo "$desktops" | wc -l) -eq 3 ]]; then
-    bspc monitor ^1 -s ^3
-    bspc monitor ^1 -s ^2
+    bspc monitor ^2 -s ^3
 fi
 
 # Create desktops
 i=1
 for monitor in $desktops; do
-        bspc monitor "$monitor" -n $i -d $i/{i,ii,iii,iiii,iiiii} || \
         bspc monitor "$monitor" -d $i/{i,ii,iii,iiii,iiiii}
     let i++
 done
 
 killall panel
-exec ~/.scripts/panel
+~/.scripts/panel &

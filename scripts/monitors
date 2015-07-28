@@ -1,7 +1,9 @@
-#!/bin/python
-monitors = input()
+#!/bin/python2
+import os
 
-monitor_pref = ["DP-1-1", "DP-1-2", "DP-1-3", "LVDS2"]
+monitors = raw_input()
+
+monitor_pref = os.environ.get("MONITOR_PREFS", "").split(",")
 xargs_cmd = ["xrandr"]
 connected_monitors = set()
 
@@ -15,7 +17,9 @@ add_missing = pref_connected + list(connected_monitors.difference(set(pref_conne
 
 for index, monitor in enumerate(add_missing):
     output_string = "--output {} --auto"
-    if index > 0:
+    if index ==  0:
+        output_string += " --primary "
+    elif index > 0:
         output_string += " --right-of " + add_missing[index - 1]
     xargs_cmd.append(output_string.format(monitor))
 

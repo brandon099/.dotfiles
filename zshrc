@@ -13,6 +13,7 @@ export EDITOR=vim
 export TZ=America/Denver
 export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
 export LPASS_DISABLE_PINENTRY=1
+export MONITOR_PREFS="DP-1-1,DP-1-2,DP-1-3,LVDS2"
 
 # Virtualenvwrapper
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
