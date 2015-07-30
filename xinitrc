@@ -8,7 +8,7 @@ xrandr --query | grep "connected" | awk -F' ' '{print $1 $2}' | xargs string_set
 xsetroot -cursor_name left_ptr
 
 # Set Desktop Background
-feh --bg-fill /home/bclifford/Pictures/wallpapers/yosemite.png
+feh --bg-fill /home/bclifford/pictures/wallpapers/yosemite.png
 
 # Start compositor
 compton -b
