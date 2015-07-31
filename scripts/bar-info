@@ -86,7 +86,7 @@ network() {
     echo "$text"
 }
 
-while :; do
+while [ "$(pidof bspwm)" != "" ]; do
     buf="S"
     if [ -z "$*" ];then
         buf="${buf}$(network)"
