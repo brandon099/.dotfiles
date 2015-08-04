@@ -16,8 +16,8 @@ battery() {
     batt_file=/sys/class/power_supply/BAT0/capacity
 
     if [ -f $batt_file ]; then
-        batt_level=`cat $batt_file`
-        batt_status=`cat /sys/class/power_supply/BAT0/status`
+        batt_level=$(cat $batt_file)
+        batt_status=$(cat /sys/class/power_supply/BAT0/status)
         if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
             if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
                 echo " %{F$BLUE}%{F-} $batt_level"
@@ -47,19 +47,19 @@ battery() {
 }
 
 network() {
-    read lo int1 int2 <<< `ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p'`
+    read lo int1 int2 <<< $(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
     if iwconfig $int1 >/dev/null 2>&1; then
         wifi=$int1
         eth=$int2
-        lan_state=`cat /sys/class/net/$eth/operstate`
-        wifi_state=`cat /sys/class/net/$wifi/operstate`
+        lan_state=$(cat /sys/class/net/$eth/operstate)
+        wifi_state=$(cat /sys/class/net/$wifi/operstate)
     else
         wifi=$int2
         eth=$int1
-        lan_state=`cat /sys/class/net/$eth/operstate`
+        lan_state=$(cat /sys/class/net/$eth/operstate)
     fi
 
-    ip_addr=`hostname -i | sed 's/[ \t]*$//'`
+    ip_addr=$(hostname -i | sed 's/[ \t]*$//')
 
     if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
         if [ "$lan_state" = "up" ]
@@ -67,7 +67,7 @@ network() {
             text=" %{F$BLUE}%{F-} $ip_addr"
         elif [ "$wifi_state" = "up" ]
         then
-            text=" %{F$BLUE}%{F-} `essid -w wlp3s0`"
+            text=" %{F$BLUE}%{F-} $(essid -w wlp3s0)"
         else
             text=" %{F$RED}%{F-} Off"
         fi
