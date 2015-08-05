@@ -41,5 +41,5 @@ while read -r line ; do
         wm_info="$wm_info "
     ;;
     esac
-    printf "%s\n" "%{l} %{F$BLUE}%{A3:shutdown -h now:}%{A3}%{F-}$wm_info %{r}%{A:toggle-panel:}$TOGGLE_ICON%{A}$sys_infos"
+    printf "%s\n" "%{l} %{F$BLUE}%{A3:shutdown -h now:}%{A3}%{F-}$wm_info %{r}%{A:toggle-panel:}$TOGGLE_ICON$sys_infos%{A}"
 done
