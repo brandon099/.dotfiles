@@ -13,6 +13,7 @@ export EDITOR=vim
 export TZ=America/Denver
 export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
 export LPASS_DISABLE_PINENTRY=1
+export QT_STYLE_OVERRIDE=GTK+
 export MONITOR_PREFS="DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
 
 # Virtualenvwrapper
