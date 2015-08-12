@@ -7,6 +7,9 @@ xrandr --query | grep "connected" | awk -F' ' '{print $1 $2}' | xargs string_set
 # Set default cursor
 xsetroot -cursor_name left_ptr
 
+# Set mouse acceleration
+xset m 3/1 4
+
 # Set Desktop Background
 feh --bg-fill /home/bclifford/pictures/wallpapers/yosemite.png
 
