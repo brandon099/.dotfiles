@@ -1,14 +1,15 @@
 #!/bin/bash
 
 source ~/.scripts/monitor-center
+IMAGE=/tmp/screen.png
 
-scrot /tmp/screen.png
+scrot $IMAGE
 
 # Pixelated Blur BG
-convert /tmp/screen.png -scale 10% -scale 1000% -modulate 30,10 /tmp/screen.png
+convert $IMAGE -scale 10% -scale 1000% -modulate 40,10 $IMAGE
 
 # Smooth Blur BG
-#convert /tmp/screen.png -blur 0x3 -modulate 40,20 /tmp/screen.png
+#convert $IMAGE -blur 0x3 -modulate 40,20 $IMAGE
 
 if [[ -f $HOME/.lockscreen/lock.png ]]
 then
@@ -21,8 +22,9 @@ then
     for RES in $SR
     do
         center_object $RES
-        convert /tmp/screen.png $HOME/.lockscreen/lock.png -geometry +$POX+$POY -composite -matte  /tmp/screen.png
+        convert $IMAGE $HOME/.lockscreen/lock.png -geometry +$POX+$POY -composite -matte  $IMAGE
     done
 fi
 
-i3lock -u -n -i /tmp/screen.png
+i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c -i $IMAGE
+rm $IMAGE
