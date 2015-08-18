@@ -11,6 +11,7 @@ fi
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/core_perl:~/.scripts
 export EDITOR=vim
 export TZ=America/Denver
+export LANG="en_US.UTF-8"
 export SFDC_DEPTOOL_CONFIG_FILE="/home/bclifford/deptool-config.ini"
 export LPASS_DISABLE_PINENTRY=1
 export QT_STYLE_OVERRIDE=GTK+
