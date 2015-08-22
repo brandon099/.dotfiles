@@ -18,3 +18,4 @@ scripts/reddit
 !config/zathura*
 !config/fontconfig*
 !config/global.conf
+!config/roxterm*
