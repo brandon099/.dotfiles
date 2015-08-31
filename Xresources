@@ -18,7 +18,7 @@ URxvt*termName:                         xterm-256color
 URxvt*:borderLess:                      true
 URxvt*cursorBlink:                      true
 URxvt*jumpScroll:                       true
-URxvt*font:                             xft:tewi
+URxvt*font:                             xft:tewi:pixelsize=9
 URxvt*boldFont:
 URxvt*scrollBar:                        false
 URxvt*scrollTtyOutput:                  false
@@ -42,7 +42,7 @@ URxvt*keysym.End:                       \033OF
 !---- Rofi - General Settings
 rofi*lines:                             5
 rofi*width:                             25
-rofi*font:                              tewi
+rofi*font:                              tewi 9
 rofi*bg:                                #2b303b
 rofi*bg-active:                         #2b303b
 rofi*fg:                                #c0c5ce
