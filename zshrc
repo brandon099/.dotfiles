@@ -19,6 +19,11 @@ export MONITOR_PREFS="DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
 export PURE_GIT_DOWN_ARROW="↓"
 export PURE_GIT_UP_ARROW="↑"
 
+# ZSH Functions
+if [  -f ~/.zfuncs ]; then
+    source ~/.zfuncs
+fi
+
 # Virtualenvwrapper
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
