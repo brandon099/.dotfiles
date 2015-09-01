@@ -19,6 +19,9 @@ compton -b
 # Numlock state save
 numlockx &
 
+# Unclutter mouse cursor
+unclutter &
+
 # Add fonts to path and rehash
 xset fp+ /usr/share/fonts/misc
 xset fp rehash
