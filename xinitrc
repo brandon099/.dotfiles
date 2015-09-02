@@ -10,6 +10,11 @@ xsetroot -cursor_name left_ptr
 # Set mouse acceleration
 xset m 3/1 4
 
+# Map menu button to Mod4
+if [ -s ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
 # Set Desktop Background
 feh --bg-fill /home/bclifford/pictures/wallpapers/yosemite.png
 
