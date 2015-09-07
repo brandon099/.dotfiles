@@ -48,17 +48,19 @@ battery() {
 
 network() {
     read lo int1 int2 <<< $(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
-    if iwconfig $int1 >/dev/null 2>&1; then
+    if iwconfig $int1 > /dev/null 2>&1; then
         wifi=$int1
         eth=$int2
-        lan_state=$(cat /sys/class/net/$eth/operstate)
-        wifi_state=$(cat /sys/class/net/$wifi/operstate)
-    else
+    elif iwconfig $int2 > /dev/null 2>&1; then
         wifi=$int2
         eth=$int1
-        lan_state=$(cat /sys/class/net/$eth/operstate)
+    else
+        wifi=""
+        eth=""
     fi
 
+    lan_state=$(cat /sys/class/net/$eth/operstate 2>&1)
+    wifi_state=$(cat /sys/class/net/$wifi/operstate 2>&1)
     ip_addr=$(hostname -i | sed 's/[ \t]*$//')
 
     if [[ $(< $TOGGLE_FILE) -eq 1 ]] ; then
@@ -67,7 +69,7 @@ network() {
             text=" %{F$BLUE}%{F-} $ip_addr"
         elif [ "$wifi_state" = "up" ]
         then
-            text=" %{F$BLUE}%{F-} $(essid -w wlp3s0)"
+            text=" %{F$BLUE}%{F-} $(essid -w $wifi)"
         else
             text=" %{F$RED}%{F-} Off"
         fi
