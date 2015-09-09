@@ -2,9 +2,7 @@
     email = brandon.clifford@vivint.com
     name = Brandon Clifford
 [alias]
-    lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)'
-    lga = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold red)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(yellow)%d%C(reset)' --all
-    lu = !git for-each-ref --sort='-authordate:iso8601' --format='%(color:bold red)%(objectname:short)%(color:reset) - %(color:bold green)%(authordate:relative)%(color:reset) %(color:white)%(subject)%(color:reset) %(color:dim white)- %(authorname)%(color:reset)%(color:yellow) (%(refname:short))%(color:reset)' refs/heads refs/remotes
+    lu = !git for-each-ref --sort='-authordate:iso8601' --format='%(color:bold red)%(objectname:short)%(color:reset) - %(color:reset)%(color:yellow) (%(refname:short)) %(color:reset)%(color:white)%(subject)%(color:reset) %(color:bold green)(%(authordate:relative))%(color:reset)%(color:dim white) %(color:bold blue)<%(authorname)>' refs/heads refs/remotes
 [core]
     editor = vim
     autocrlf = input
