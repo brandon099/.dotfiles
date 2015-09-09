@@ -10,7 +10,7 @@ scripts/vauth
 scripts/vauth_cron
 scripts/ynab
 scripts/postman
-scripts/reddit
+scripts/reditr
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*
