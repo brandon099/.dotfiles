@@ -118,71 +118,35 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-" =============== Python-mode ===============
-" Activate rope
-" Keys:
-" K             Show python docs
-" <Ctrl-Space>  Rope autocomplete
-" <Ctrl-c>g     Rope goto definition
-" <Ctrl-c>d     Rope show documentation
-" <Ctrl-c>f     Rope find occurrences
-" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
-" [[            Jump on previous class or function (normal, visual, operator modes)
-" ]]            Jump on next class or function (normal, visual, operator modes)
-" [M            Jump on previous class or method (normal, visual, operator modes)
-" ]M            Jump on next class or method (normal, visual, operator modes)
+" ================ Syntastic ========================
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" Disable rope in favor of jedi-vim
-let g:pymode_rope = 0
-
-" Documentation
-let g:pymode_doc = 1
-let g:pymode_doc_key = "K"
-
-"Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checkers = "pyflakes,pep8"
-let g:pymode_lint_ignore = "E501"
-
-" Auto check on save
-let g:pymode_lint_write = 1
-
-" Support virtualenv
-let g:pymode_virtualenv = 1
-
-" Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
-
-" syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_syntax_indent_errors = g:pymode_syntax_all
-let g:pymode_syntax_space_errors = g:pymode_syntax_all
-
-" Don't autofold code
-let g:pymode_folding = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 " Set Python file colorcolumn
 autocmd FileType python set colorcolumn=120
 
-" =============== Airline (Powerline) ===============
+" ================ Airline (Powerline) ==============
 
 let g:airline_symbols =                     {}
 let g:airline_enable_branch                 = 1
 let g:airline_enable_virtualenv             = 1
 let g:airline#extensions#syntastic#enabled  = 1
 let g:airline#extensions#branch#enabled     = 1
-
-" vim-powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.branch = ''
-let g:airline_readonly_symbol   = ''
-let g:syntastic_python_checkers = ['pylint']
+let g:airline_left_sep                      = ''
+let g:airline_left_sep                      = ''
+let g:airline_right_sep                     = ''
+let g:airline_right_sep                     = ''
+let g:airline_symbols.linenr                = ''
+let g:airline_symbols.branch                = ''
+let g:airline_readonly_symbol               = ''
 set laststatus=2
 
 au BufNewFile,BufRead *.less set filetype=less
