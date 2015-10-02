@@ -7,9 +7,9 @@
 !--- Global Settings
 Xft*dpi:                                96.0
 Xft*antialias:                          true
-Xft*hinting:                            1
+Xft*hinting:                            0
 Xft*autohint:                           0
-Xft*hintstyle:                          hintfull
+Xft*hintstyle:                          hintslight
 Xft*lcdfilter:                          lcddefault
 Xft*rgba:                               rgb
 
