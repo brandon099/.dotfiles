@@ -19,7 +19,6 @@ URxvt*:borderLess:                      true
 URxvt*cursorBlink:                      true
 URxvt*jumpScroll:                       true
 URxvt*font:                             xft:tewi:pixelsize=9
-URxvt*boldFont:
 URxvt*scrollBar:                        false
 URxvt*scrollTtyOutput:                  false
 URxvt*scrollTtyKeypress:                true
