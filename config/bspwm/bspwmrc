@@ -32,7 +32,7 @@ fi
 # Create desktops
 i=1
 for monitor in $desktops; do
-        bspc monitor "$monitor" -d $i/{i,ii,iii,iiii,iiiii}
+        bspc monitor "$monitor" -d $i/{i,ii,iii}
     let i++
 done
 
