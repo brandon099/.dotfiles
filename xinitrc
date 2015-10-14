@@ -21,6 +21,9 @@ feh --bg-fill /home/bclifford/pictures/wallpapers/mountain.jpg
 # Start compositor
 compton -b
 
+# Start Dunst Notification Daemon
+dunst &
+
 # Numlock state save
 numlockx &
 
