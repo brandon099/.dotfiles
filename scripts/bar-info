@@ -47,17 +47,16 @@ battery() {
 }
 
 network() {
-    read lo int1 int2 <<< $(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
-    if iwconfig $int1 > /dev/null 2>&1; then
-        wifi=$int1
-        eth=$int2
-    elif iwconfig $int2 > /dev/null 2>&1; then
-        wifi=$int2
-        eth=$int1
-    else
-        wifi=""
-        eth=""
-    fi
+    eth=''
+    wifi=''
+    interfaces=$(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
+    for interface in $interfaces; do
+        if [[ $interface == *"enp"* ]] ; then
+            eth=$interface
+        elif [[ $interface == *"wlp"* ]] ; then
+            wifi=$interface
+        fi
+    done
 
     lan_state=$(cat /sys/class/net/$eth/operstate 2>&1)
     wifi_state=$(cat /sys/class/net/$wifi/operstate 2>&1)
