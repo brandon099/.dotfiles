@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+buildroot=$(mktemp -d)
+sudo -v
+gpg --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
+sudo pacman -S --needed --noconfirm base-devel curl
+mkdir -p ${buildroot}
+mkdir ${buildroot}/cower ${buildroot}/pacaur
+# Install Cower
+cd ${buildroot}/cower
+curl -L https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower > PKGBUILD
+makepkg --syncdeps --install --noconfirm
+# Install Pacaur
+cd ${buildroot}/pacaur
+curl -L https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur > PKGBUILD
+makepkg --syncdeps --install --noconfirm
+# Cleanup temporary directory
+rm -rf ${buildroot}
