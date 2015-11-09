@@ -1,6 +1,4 @@
 #!/bin/sh
-# info.sh
-# Output information with formatted background colors in lemonbar format
 
 source ~/.config/global.conf
 
