@@ -115,8 +115,8 @@ XF86AudioMute
     amixer -q set Master toggle
 
 XF86MonBrightnessUp
-    xbacklight -inc 20
+    xbacklight -inc 5
 
 XF86MonBrightnessDown
-    xbacklight -dec 20
+    xbacklight -dec 5
 
