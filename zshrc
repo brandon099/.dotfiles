@@ -8,7 +8,7 @@ if [[ -f ~/.dircolors ]] ; then
 fi
 
 # Exports
-export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/bin/core_perl:~/.scripts
+export PATH=$PATH:~/.scripts
 export EDITOR=vim
 export VISUAL=vim
 export TZ=America/Denver
