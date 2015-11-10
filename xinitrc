@@ -16,7 +16,7 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # Set Desktop Background
-feh --bg-fill /home/bclifford/pictures/wallpapers/mountain.jpg
+feh --bg-fill /home/bclifford/Pictures/wallpapers/wallpaper.jpg
 
 # Start compositor
 compton -b
