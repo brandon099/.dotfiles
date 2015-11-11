@@ -3,7 +3,7 @@
 echo "Installing from depends.txt:"
 if [ $(which pacaur) ]; then
     for package in $(cat ./depends); do
-        pacaur -Sq $package --needed --devel
+        pacaur -S $package --needed --devel
     done
 else
     echo "Please install pacaur"
