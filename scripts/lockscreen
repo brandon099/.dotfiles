@@ -1,30 +1,13 @@
 #!/bin/bash
+BG=2B303B
+TEXT=FFFFFF00
+INSIDE_CIR=313D46FF
+INSIDE_CIR_VER=0000001C
+OUTSIDE_CIR=4F5B66FF
+LINE_SEP=FFFFFF00
+KEYPRESS_HL=C0C5CEFF
+OUTER_RING_VERIFY=00000000
+OUTER_RING_WRONG=BF616AFF
+INSIDE_RING_WRONG=0000001C
 
-source ~/.scripts/monitor-center
-IMAGE=/tmp/screen.png
-
-scrot $IMAGE
-
-# Pixelated Blur BG
-convert $IMAGE -scale 10% -scale 1000% -modulate 40,10 $IMAGE
-
-# Smooth Blur BG
-#convert $IMAGE -blur 0x3 -modulate 40,20 $IMAGE
-
-if [[ -f $HOME/.lockscreen/lock.png ]]
-then
-    # Lockscreen image dimensions
-    R=$(file ~/.lockscreen/lock.png | grep -o '[0-9]* x [0-9]*')
-    RX=$(echo $R | cut -d' ' -f 1)
-    RY=$(echo $R | cut -d' ' -f 3)
-
-    # Center image on each monitor
-    for RES in $SR
-    do
-        center_object $RES
-        convert $IMAGE $HOME/.lockscreen/lock.png -geometry +$POX+$POY -composite -matte  $IMAGE
-    done
-fi
-
-i3lock --textcolor=ffffff00 --insidecolor=ffffff1c --ringcolor=ffffff3e --linecolor=ffffff00 --keyhlcolor=00000080 --ringvercolor=00000000 --insidevercolor=0000001c --ringwrongcolor=00000055 --insidewrongcolor=0000001c -i $IMAGE
-rm $IMAGE
+i3lock -c $BG --textcolor=$TEXT --insidecolor=$INSIDE_CIR --ringcolor=$OUTSIDE_CIR --linecolor=$LINE_SEP --keyhlcolor=$KEYPRESS_HL --ringvercolor=$OUTER_RING_VERIFY --insidevercolor=$OUTER_RING_VERIFY --ringwrongcolor=$OUTER_RING_WRONG --insidewrongcolor=$INSIDE_RING_WRONG
