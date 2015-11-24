@@ -40,9 +40,8 @@ URxvt*keysym.Home:                      \033OH
 URxvt*keysym.End:                       \033OF
 
 !---- Rofi - General Settings
-rofi*lines:                             5
-rofi*width:                             25
-rofi*font:                              tewi 9
+rofi*lines:                             3
+rofi*font:                              Inconsolata for Powerline 12
 rofi*bg:                                #2b303b
 rofi*bg-active:                         #2b303b
 rofi*fg:                                #c0c5ce
@@ -53,6 +52,13 @@ rofi*hlfg:                              #EFF1F5
 rofi*hlfg-active:                       #96B5B4
 rofi*bc:                                #8fa1b3
 rofi*terminal:                          urxvt
+rofi*eh:                                2
+rofi*opacity:                           90
+rofi*padding:                           300
+rofi*bw:                                0
+rofi*fullscreen:                        true
+rofi*hide-scrollbar:                    true
+rofi*separator-style:                   solid
 
 !---- Base16 Ocean
 URxvt*background:                       #2b303b
