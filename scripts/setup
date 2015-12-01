@@ -1,10 +1,11 @@
-#!/bin/sh
+#!/bin/zsh
 
-echo "Installing from depends.txt:"
+autoload -U colors
+colors
+
+echo Installing from depends...\n
 if [ $(which pacaur) ]; then
-    for package in $(cat ./depends); do
-        pacaur -S $package --needed --devel
-    done
+    pacaur -S $(cat ~/.dotfiles/scripts/depends | tr '\n' ' ') --needed --devel --noconfirm
 else
-    echo "Please install pacaur"
+    echo $fg[red]Please install Pacaur first.${reset_color}
 fi
