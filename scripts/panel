@@ -32,7 +32,7 @@ for i in $monitor_name; do
     bar-info > "$PANEL_FIFO$i" &
 
     # Current monitor width
-    CUR_MON_WIDTH=$(bspc query -T -m $i | grep -oE "[0-9]{3,6}" | head -n 1)
+    CUR_MON_WIDTH=$(bspc query -T -m $i | jq '.["rectangle"]["width"]')
 
     # Pipe inof to Lemonbar
     cat "$PANEL_FIFO$i" | panel-bar | lemonbar -g $(expr $CUR_MON_WIDTH - $(expr $PANEL_GAP + $PANEL_GAP))x15+$(expr $CUR_X_OFFSET + $PANEL_GAP)+$PANEL_GAP -f "$FONT1" -f "$FONT2" -F "$BAR_FG" -B "$BAR_BG"| sh &
