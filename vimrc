@@ -119,17 +119,10 @@ if &term =~ '^screen'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-" ================ Syntastic ========================
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" ================ Pymode ===========================
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['pep8']
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:pymode_lint_on_fly = 1
+let g:pymode_lint_ignore="E501,W601"
 
 " Set Python file colorcolumn
 autocmd FileType python set colorcolumn=120
