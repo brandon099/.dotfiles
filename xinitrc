@@ -13,7 +13,7 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # Set Desktop Background
-feh --bg-fill /home/bclifford/Pictures/wallpapers/wallpaper.jpg
+feh --bg-fill /home/bclifford/Pictures/wallpapers/wallpaper.png
 
 # Start compositor
 compton -b
