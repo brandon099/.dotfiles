@@ -19,3 +19,4 @@ scripts/reditr
 !config/fontconfig*
 !config/global.conf
 !config/roxterm*
+!config/termite*

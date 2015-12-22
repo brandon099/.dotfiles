@@ -21,7 +21,7 @@ export PURE_GIT_DOWN_ARROW="↓"
 export PURE_GIT_UP_ARROW="↑"
 
 # ZSH Functions
-if [ -f ~/.zfuncs ]; then
+if [  -f ~/.zfuncs ]; then
     source ~/.zfuncs
 fi
 

@@ -84,7 +84,7 @@ alt + shift + z
     /home/bclifford/.scripts/lockscreen
 
 super + Return
-    urxvtc -e zsh -c tmux
+    termite -e tmux
 
 super + space
     rofi -show run
