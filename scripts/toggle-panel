@@ -1,4 +1,0 @@
-#!/bin/sh
-TOGGLE_FILE='/tmp/toggle-panel'
-
-[[ $(< $TOGGLE_FILE) -eq 0 ]] && echo -n 1 > $TOGGLE_FILE || echo -n 0 > $TOGGLE_FILE

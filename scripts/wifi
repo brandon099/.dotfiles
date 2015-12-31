@@ -1,4 +1,0 @@
-#!/bin/sh
-
-sudo wpa_supplicant -B -i wlp3s0 -c /home/bclifford/.wifi/ssids.conf
-sudo dhclient wlp3s0

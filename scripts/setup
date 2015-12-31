@@ -3,9 +3,9 @@
 autoload -U colors
 colors
 
-echo Installing from depends...\n
 if [ $(which pacaur) ]; then
+    echo $fg[green]Installing from depends ${reset_color}
     pacaur -S $(cat ~/.dotfiles/scripts/depends | tr '\n' ' ') --needed --devel --noconfirm
 else
-    echo $fg[red]Please install Pacaur first.${reset_color}
+    echo $fg[red]Please install Pacaur first ${reset_color}
 fi
