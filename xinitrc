@@ -1,5 +1,5 @@
 # Set up displays -- monitors script returns the xrandr command needed to set up the displays
-xrandr --query | grep "connected" | awk -F' ' '{print $1 $2}' | xargs string_set | monitors | sh
+xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | monitors | sh
 
 # Set default cursor
 xsetroot -cursor_name left_ptr
@@ -13,7 +13,7 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # Set Desktop Background
-feh --bg-fill /home/bclifford/Pictures/wallpapers/wallpaper.png
+sh ~/.fehbg &
 
 # Start compositor
 compton -b
