@@ -1,0 +1,32 @@
+#!/bin/sh
+
+source ~/.config/global.conf
+
+network() {
+    eth=''
+    wifi=''
+    interfaces=$(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
+    for interface in $interfaces; do
+        if [[ $interface == *"enp"* ]] ; then
+            eth=$interface
+        elif [[ $interface == *"wlp"* ]] ; then
+            wifi=$interface
+        fi
+    done
+
+    lan_state=$(cat /sys/class/net/$eth/operstate 2>&1)
+    wifi_state=$(cat /sys/class/net/$wifi/operstate 2>&1)
+    ip_addr=$(hostname -i | sed 's/[ \t]*$//')
+
+    if [ "$lan_state" = "up" ]
+    then
+        popup -e "$(echo "%{F$BLUE}%{F-} $ip_addr")"
+    elif [ "$wifi_state" = "up" ]
+    then
+        popup -e "$(echo "%{Sf}%{F$BLUE}%{F-} $(essid -w $wifi)")"
+    else
+        popup -e "$(echo "%{F$RED}%{F-} Off")" -w 75
+    fi
+}
+
+network
