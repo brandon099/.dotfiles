@@ -1,5 +1,5 @@
 # Set up displays -- monitors script returns the xrandr command needed to set up the displays
-xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | monitors | sh
+xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | xargs string_set | monitors | sh
 
 # Set default cursor
 xsetroot -cursor_name left_ptr
