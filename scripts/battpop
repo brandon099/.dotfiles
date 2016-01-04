@@ -1,10 +1,6 @@
 #!/bin/sh
 source ~/.config/global.conf
 
-batt_file=/sys/class/power_supply/BAT0/capacity
-batt_level=$(cat $batt_file)
-batt_status=$(cat /sys/class/power_supply/BAT0/status)
-
 battery() {
     if [ -f $batt_file ]; then
         if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then

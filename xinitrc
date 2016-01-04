@@ -34,11 +34,11 @@ xset fp rehash
 # Source Xresources
 xrdb ~/.Xresources
 
-# Launch Urxvt daemon
-urxvtd -f -q -o
-
 # Start Simple X Hotkey Daemon
 sxhkd &
+
+# Monitor Scripts
+battmon &
 
 # Start Window Manager
 exec bspwm

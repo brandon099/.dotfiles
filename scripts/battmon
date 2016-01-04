@@ -1,0 +1,17 @@
+#!/bin/sh
+source ~/.config/global.conf
+
+# Only start up this if BSPWM is running
+while [ "$(pidof bspwm)" != "" ]; do
+    # Check if there is a battery`
+    if [ -f $batt_file ]; then
+        # If the battery level is less than or equal to 10% and not plugged in, launch battery popup
+        if [ $batt_level -le 10 ] && [ $batt_status == 'Discharging' ]; then
+            battpop
+        else
+            sleep 60
+        fi
+    else
+        exit 0
+    fi
+done
