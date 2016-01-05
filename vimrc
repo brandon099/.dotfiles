@@ -129,8 +129,8 @@ autocmd FileType python set colorcolumn=120
 " ================ Airline (Powerline) ==============
 
 let g:airline_symbols =                     {}
-let g:airline_enable_branch                 = 1
-let g:airline_enable_virtualenv             = 1
+let g:airline#extensions#branch#enabled     = 1
+let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#syntastic#enabled  = 1
 let g:airline#extensions#branch#enabled     = 1
 let g:airline_left_sep                      = ''
@@ -139,7 +139,7 @@ let g:airline_right_sep                     = ''
 let g:airline_right_sep                     = ''
 let g:airline_symbols.linenr                = ''
 let g:airline_symbols.branch                = ''
-let g:airline_readonly_symbol               = ''
+let g:airline_symbols.readonly              = ''
 set laststatus=2
 
 au BufNewFile,BufRead *.less set filetype=less
