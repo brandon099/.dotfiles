@@ -1,7 +1,8 @@
 zgen.zsh
-vim/backups
-vim/.netrwhist
+vim/*
+zsh/*
 config/*
+.peru
 scripts/google-music
 scripts/webmail
 scripts/plex

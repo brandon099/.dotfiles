@@ -10,7 +10,6 @@ endif
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
 
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 execute pathogen#helptags()
 

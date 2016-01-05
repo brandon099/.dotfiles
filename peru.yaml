@@ -1,0 +1,82 @@
+imports:
+  oh-my-zsh: zsh/oh-my-zsh
+  zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
+  zsh-completions: zsh/zsh-completions
+  zsh-async: zsh/zsh-async
+  pure-prompt: zsh/pure-prompt
+  zgen: zsh/zgen
+
+  vim-airline: vim/bundle/airline
+  vim-base16: vim/bundle/base16-vim
+  vim-ctrlp: vim/bundle/ctrlp
+  vim-fugitive: vim/bundle/fugitive
+  vim-markdown: vim/bundle/vim-markdown
+  vim-pathogen: vim
+  vim-salt: vim/bundle/salt-vim
+  vim-sensible: vim/bundle/sensible
+  vim-syntastic: vim/bundle/syntastic
+  vim-tmuxline: vim/bundle/tmuxline
+
+git module oh-my-zsh:
+    url: https://github.com/robbyrussell/oh-my-zsh.git
+    rev: 686e46025890cba38d2cb7ad7cc229bf6beeba57
+
+git module zsh-syntax-highlighting:
+    url: https://github.com/zsh-users/zsh-syntax-highlighting
+    rev: 9b64ad750f356f828c3cfa96bc42489b2f081d8a
+
+git module zsh-completions:
+    url: https://github.com/zsh-users/zsh-completions
+    rev: c2dde89fb34e2734106e50689bf4127f6b0a288d
+
+git module zsh-async:
+    url: https://github.com/mafredri/zsh-async
+    rev: 032703d9773381ee35db87601a88493c5b54d79c
+
+git module pure-prompt:
+    url: https://github.com/brandon099/pure
+    rev: b1fe7ad21ccd98df74ca8baa35bafb51a94dbfe8
+
+git module zgen:
+    url: https://github.com/tarjoilija/zgen
+    rev: 3a0f26ed2f2d0b7b2f34fa5bac3c3a58d58cfc59
+
+git module vim-airline:
+    url: https://github.com/bling/vim-airline
+    rev: 01383136565840a63aa056b82c74be40afcb8ba3
+
+git module vim-base16:
+    url: https://github.com/chriskempson/base16-vim
+    rev: e711e9b1412b55fec7e8a5cff4ac5c06f9078729
+
+git module vim-ctrlp:
+    url: https://github.com/kien/ctrlp.vim
+    rev: 564176f01d7f3f7f8ab452ff4e1f5314de7b0981
+
+git module vim-fugitive:
+    url: https://github.com/tpope/vim-fugitive
+    rev: 18d6d1ab82d9ac15586d7d3c1a36f9ef6fb50eae
+
+git module vim-markdown:
+    url: https://github.com/plasticboy/vim-markdown
+    rev: c45a152fcb95075120ad7f99fad08b6b1b720299
+
+git module vim-pathogen:
+    url: https://github.com/tpope/vim-pathogen
+    rev: 4d584ea8c85408ca0d68b7b1693f3e2db8aa762a
+
+git module vim-salt:
+    url: https://github.com/saltstack/salt-vim
+    rev: 5b15d379fbcbb84f82c6a345abc08cea9d374be9
+
+git module vim-sensible:
+  url: https://github.com/tpope/vim-sensible
+  rev: 680a5c693213daa158c816f068fffa895d961dc9
+
+git module vim-syntastic:
+    url: https://github.com/scrooloose/syntastic
+    rev: 189be0ae74372c13d5a87c72753a86e796812b58
+
+git module vim-tmuxline:
+    url: https://github.com/edkolev/tmuxline.vim
+    rev: 1e638ef6b2673130db123f25b1ae1160c5289bb8

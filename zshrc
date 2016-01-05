@@ -52,7 +52,7 @@ if [  -f ~/.credentials ]; then
 fi
 
 # Load zgen
-source ~/.zgen.zsh
+source ~/.dotfiles/zsh/zgen/zgen.zsh
 
 # Check for init script
 if ! zgen saved; then
@@ -61,18 +61,18 @@ if ! zgen saved; then
     zgen oh-my-zsh
 
     # Plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/sudo
-    zgen oh-my-zsh plugins/rsync
-    zgen oh-my-zsh plugins/python
-    zgen oh-my-zsh plugins/pylint
-    zgen oh-my-zsh plugins/cp
-    zgen oh-my-zsh plugins/encode64
-    zgen oh-my-zsh plugins/command-not-found
-    zgen load zsh-users/zsh-syntax-highlighting
-    zgen load zsh-users/zsh-completions src
-    zgen load mafredri/zsh-async
-    zgen load brandon099/pure
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/git
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/sudo
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/rsync
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/python
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/pylint
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/cp
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/encode64
+    zgen load ~/.dotfiles/zsh/oh-my-zsh/plugins/command-not-found
+    zgen load ~/.dotfiles/zsh/zsh-syntax-highlighting
+    zgen load ~/.dotfiles/zsh/zsh-completions
+    zgen load ~/.dotfiles/zsh/zsh-async
+    zgen load ~/.dotfiles/zsh/pure-prompt
 
     # Save zgen init
     zgen save
