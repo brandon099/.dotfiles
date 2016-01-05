@@ -7,6 +7,9 @@ xsetroot -cursor_name left_ptr
 # Set mouse acceleration
 xset m 3/1 4
 
+# Disable screen blanking
+xset s off
+
 # Map menu button to Mod4
 if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap

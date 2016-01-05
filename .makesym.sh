@@ -14,7 +14,6 @@ echo "done"
 # Change to the dotfiles directory
 echo -n "Changing to the $dir directory ..."
 cd $dir
-echo "done"
 
 # Move any existing dotfiles to dotfiles_old directory, and create symlinks
 # from the homedir to any files in the ~/dotfiles

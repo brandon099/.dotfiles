@@ -3,7 +3,7 @@ source ~/.config/global.conf
 
 battery() {
     if [ -f $batt_file ]; then
-        if [ $batt_status == 'Charging'  ] && [ $batt_level -gt 98 ] ; then
+        if [ $batt_status == 'Charging'  ] || [ $batt_status == 'Unknown' ] && [ $batt_level -gt 98 ] ; then
             popup -e "$(echo " $batt_level | $batt_status")" -b "$GREEN" -f "$DARK_GREY"
         elif [ $batt_status == 'Charging' ] ; then
             popup -e "$(echo " $batt_level | $batt_status")" -b "$BLUE" -f "$DARK_GREY"
@@ -11,7 +11,7 @@ battery() {
             popup -e "$(echo " $batt_level | $batt_status")" -b "$RED" -s 60
         elif [ $batt_level -lt 50 ] ; then
             popup -e "$(echo " $batt_level | $batt_status")"
-        elif [ $batt_level -le 100 ] ; then
+        elif [ $batt_level -le 105 ] ; then
             popup -e "$(echo " $batt_level | $batt_status")"
         fi
     fi
