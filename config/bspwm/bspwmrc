@@ -22,6 +22,8 @@ bspc config remove_disabled_monitors    true
 bspc config remove_unplugged_monitors   true
 
 bspc rule -a gpick state=floating
+bspc rule -a lxappearance state=floating
+bspc rule -a pavucontrol state=floating
 bspc rule -a rofi manage=off
 
 desktops=$(bspc query --monitors)
