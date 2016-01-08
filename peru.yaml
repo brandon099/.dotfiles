@@ -67,7 +67,7 @@ git module vim-gitgutter:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 65a5391f576066792cf7c22d3e1b8810619ae119
+    rev: ffba73263b1fb5291390bb9b2bf313552147f922
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
