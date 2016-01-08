@@ -35,12 +35,10 @@ while getopts "w:h:b:f:n:s:e:" opt; do
 done
 
 # Start bar
+baropts="-n "$barname" -g "$width"x"$height+$xoffset+$yoffset" -f "$font1" -f "$font2" -B "$bg" -F "$fg""
 
 # Kill previous notifications
 ps -ef | awk -v name="$barname" '$0 ~ name {print $2}' | xargs kill 2>/dev/null
 
 # Echo notification
-(echo "%{c} $echo %{c}"; sleep $sleep) |
-
-# Pipe to bar
-lemonbar -n "$barname" -d -g "$width"x"$height+$xoffset+$yoffset" -f "$font1" -f "$font2" -B "$bg" -F "$fg"
+(echo "%{c} $echo %{c}"; sleep $sleep) | lemonbar ${baropts}
