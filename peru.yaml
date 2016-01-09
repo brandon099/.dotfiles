@@ -59,7 +59,7 @@ git module vim-ctrlp:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: 18d6d1ab82d9ac15586d7d3c1a36f9ef6fb50eae
+    rev: fd36aa9c61e06d71befdbe8931f97137c489b065
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
@@ -67,7 +67,7 @@ git module vim-gitgutter:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: ffba73263b1fb5291390bb9b2bf313552147f922
+    rev: 917624e16c47de87c2adcacd08bc9472f718ec12
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -95,7 +95,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 189be0ae74372c13d5a87c72753a86e796812b58
+    rev: 2db6f539d081baac7570186a96e7d9621893156c
 
 git module vim-tmuxline:
     url: https://github.com/edkolev/tmuxline.vim
