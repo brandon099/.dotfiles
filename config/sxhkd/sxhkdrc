@@ -89,6 +89,9 @@ super + Return
 super + space
     rofi -show run
 
+alt + Tab
+    rofi -show window
+
 super + shift + space
     pass-prompt
 

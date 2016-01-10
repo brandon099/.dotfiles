@@ -7,8 +7,8 @@ xsetroot -cursor_name left_ptr
 # Set mouse acceleration
 xset m 3/1 4
 
-# Disable screen blanking
-xset s off
+# Disable screen blanking and disable dpms. This can be removed once the bug with mulitple DP displays gets fixed.
+xset s off -dpms
 
 # Map menu button to Mod4
 if [ -s ~/.Xmodmap ]; then
