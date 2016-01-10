@@ -47,7 +47,7 @@ git module zgen:
 
 git module vim-airline:
     url: https://github.com/bling/vim-airline
-    rev: 01383136565840a63aa056b82c74be40afcb8ba3
+    rev: ca6ab34e3ce2d25e5625fe56ef31d5032c69dbec
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
@@ -95,7 +95,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 2db6f539d081baac7570186a96e7d9621893156c
+    rev: 1f4846fecca79fa6a56f054d40761bd8c63a236f
 
 git module vim-tmuxline:
     url: https://github.com/edkolev/tmuxline.vim
