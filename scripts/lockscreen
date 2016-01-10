@@ -10,4 +10,10 @@ OUTER_RING_VERIFY=00000000
 OUTER_RING_WRONG=BF616AFF
 INSIDE_RING_WRONG=0000001C
 
-i3lock -c $BG --textcolor=$TEXT --insidecolor=$INSIDE_CIR --ringcolor=$OUTSIDE_CIR --linecolor=$LINE_SEP --keyhlcolor=$KEYPRESS_HL --ringvercolor=$OUTER_RING_VERIFY --insidevercolor=$OUTER_RING_VERIFY --ringwrongcolor=$OUTER_RING_WRONG --insidewrongcolor=$INSIDE_RING_WRONG
+# Suspend notifications
+notify-send DUNST_COMMAND_PAUSE
+
+i3lock -c $BG --textcolor=$TEXT --insidecolor=$INSIDE_CIR --ringcolor=$OUTSIDE_CIR --linecolor=$LINE_SEP --keyhlcolor=$KEYPRESS_HL --ringvercolor=$OUTER_RING_VERIFY --insidevercolor=$OUTER_RING_VERIFY --ringwrongcolor=$OUTER_RING_WRONG --insidewrongcolor=$INSIDE_RING_WRONG -n
+
+# Resume notifications
+notify-send DUNST_COMMAND_RESUME
