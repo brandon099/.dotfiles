@@ -6,6 +6,6 @@ mon_height=$(bspc query -T -m primary | jq '.["rectangle"]["height"]')
 uri="https://source.unsplash.com/category/nature"
 
 curl -L $uri/"$mon_width"x"$mon_height" > ~/Pictures/wallpapers/wall.jpg
-convert ~/Pictures/wallpapers/wall.jpg -blur "0x8" ~/Pictures/wallpapers/wallblur.jpg
+convert ~/Pictures/wallpapers/wall.jpg -blur "512x256" ~/Pictures/wallpapers/wallblur.jpg
 
 feh --bg-fill ~/Pictures/wallpapers/wallblur.jpg

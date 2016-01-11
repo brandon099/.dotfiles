@@ -52,7 +52,11 @@ if [  -f ~/.credentials ]; then
 fi
 
 # Load zgen
-source ~/.dotfiles/zsh/zgen/zgen.zsh
+lazy_source () {
+    eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
+}
+
+lazy_source zgen ${HOME}/.dotfiles/zsh/zgen/zgen.zsh
 
 # Check for init script
 if ! zgen saved; then
