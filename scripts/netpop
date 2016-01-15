@@ -20,13 +20,16 @@ network() {
     if [ "$lan_state" = "up" ]
     then
         ip_addr=$(ip -4 addr show $eth | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-        popup -e "$(echo "%{F$BLUE}%{F-} $ip_addr")"
+        #popup -e "$(echo "%{F$BLUE}%{F-} $ip_addr")"
+        notify-send "$ip_addr"
     elif [ "$wifi_state" = "up" ]
     then
         ip_addr=$(ip -4 addr show $wifi | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-        popup -e "$(echo "%{Sf}%{F$BLUE}%{F-} $(essid -w $wifi) | $ip_addr")"
+        #popup -e "$(echo "%{Sf}%{F$BLUE}%{F-} $(essid -w $wifi) | $ip_addr")"
+        notify-send "$(essid -w $wifi) $ip_addr"
     else
-        popup -e "$(echo "%{F$RED}%{F-} Off")" -w 75
+        #popup -e "$(echo "%{F$RED}%{F-} Off")" -w 75
+        notify-send "Off"
     fi
 }
 

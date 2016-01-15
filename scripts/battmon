@@ -8,8 +8,7 @@ while true; do
     if [ -f $batt_file ]; then
         # If the battery level is less than or equal to 10% and not plugged in, launch battery popup
         if [ $batt_level -le 10 ] && [ $batt_status == 'Discharging' ]; then
-            battpop
-        else
+            $(battpop)
             sleep 60
         fi
     else
