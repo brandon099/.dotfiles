@@ -1,7 +1,7 @@
 [options]
 font = tewi 11
-[colors]
 
+[colors]
 # special
 foreground      = #c0c5ce
 foreground_bold = #c0c5ce

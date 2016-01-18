@@ -31,11 +31,6 @@ set timeoutlen=1000             " Set mapping timeout length to 1000ms
 set ttimeoutlen=10              " Set Key code delay to 10ms
 set mouse-=a                    "Turn off mouse mode
 syntax on                       "Turn on syntax highlighting
-if version >= 703               "Highlight 119th column
-    set colorcolumn=119
-else
-    2mat ErrorMsg '\%119v.'
-endif
 
 " ================ Color Theme Settings ==============
 
@@ -124,7 +119,7 @@ let g:pymode_lint_on_fly = 1
 let g:pymode_lint_ignore="E501,W601"
 
 " Set Python file colorcolumn
-autocmd FileType python set colorcolumn=120
+autocmd FileType python set colorcolumn=80
 
 " ================ Airline (Powerline) ==============
 

@@ -9,9 +9,9 @@ while true; do
         # If the battery level is less than or equal to 10% and not plugged in, launch battery popup
         if [ $batt_level -le 10 ] && [ $batt_status == 'Discharging' ]; then
             $(battpop)
-            sleep 60
         fi
     else
         exit 0
     fi
+    sleep 60
 done
