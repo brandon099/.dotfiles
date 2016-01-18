@@ -1,10 +1,10 @@
 imports:
   oh-my-zsh: zsh/oh-my-zsh
-  zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
-  zsh-completions: zsh/zsh-completions
-  zsh-async: zsh/zsh-async
   pure-prompt: zsh/pure-prompt
   zgen: zsh/zgen
+  zsh-async: zsh/zsh-async
+  zsh-completions: zsh/zsh-completions
+  zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
 
   vim-airline: vim/bundle/airline
   vim-base16: vim/bundle/base16-vim
@@ -22,20 +22,8 @@ imports:
   vim-tmuxline: vim/bundle/tmuxline
 
 git module oh-my-zsh:
-    url: https://github.com/robbyrussell/oh-my-zsh.git
-    rev: 686e46025890cba38d2cb7ad7cc229bf6beeba57
-
-git module zsh-syntax-highlighting:
-    url: https://github.com/zsh-users/zsh-syntax-highlighting
-    rev: 9b64ad750f356f828c3cfa96bc42489b2f081d8a
-
-git module zsh-completions:
-    url: https://github.com/zsh-users/zsh-completions
-    rev: c2dde89fb34e2734106e50689bf4127f6b0a288d
-
-git module zsh-async:
-    url: https://github.com/mafredri/zsh-async
-    rev: 032703d9773381ee35db87601a88493c5b54d79c
+    url: https://github.com/robbyrussell/oh-my-zsh
+    rev: d60cf5cb1079a2f523deab38eeb810b6959781da
 
 git module pure-prompt:
     url: https://github.com/brandon099/pure
@@ -45,9 +33,21 @@ git module zgen:
     url: https://github.com/tarjoilija/zgen
     rev: 3a0f26ed2f2d0b7b2f34fa5bac3c3a58d58cfc59
 
+git module zsh-async:
+    url: https://github.com/mafredri/zsh-async
+    rev: 032703d9773381ee35db87601a88493c5b54d79c
+
+git module zsh-completions:
+    url: https://github.com/zsh-users/zsh-completions
+    rev: c2dde89fb34e2734106e50689bf4127f6b0a288d
+
+git module zsh-syntax-highlighting:
+    url: https://github.com/zsh-users/zsh-syntax-highlighting
+    rev: 282c7134e8acdf241397c207300a65ad9be12e16
+
 git module vim-airline:
     url: https://github.com/bling/vim-airline
-    rev: ca6ab34e3ce2d25e5625fe56ef31d5032c69dbec
+    rev: 348663f7f8826b82efdd9ef11c98b8eddaba2e2b
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
@@ -63,11 +63,11 @@ git module vim-fugitive:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: f52f875fc7b25b601366bd6c0d67c53ad84f9559
+    rev: ff4f592c582c0c4181f3c7e40977d1c00c392ce3
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 917624e16c47de87c2adcacd08bc9472f718ec12
+    rev: 2311f984f121f3f7b5b3d60394a2de2376831612
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -91,11 +91,11 @@ git module vim-sudoedit:
 
 git module vim-supertab:
   url: https://github.com/ervandew/supertab
-  rev: 9f7da6d4988daf863ebc414f221bb12c2614f59e
+  rev: 66511772a430a5eaad7f7d03dbb02e8f33c4a641
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 1f4846fecca79fa6a56f054d40761bd8c63a236f
+    rev: d1a179d750bd1d136d7f38e69f2c5b8439886de7
 
 git module vim-tmuxline:
     url: https://github.com/edkolev/tmuxline.vim
