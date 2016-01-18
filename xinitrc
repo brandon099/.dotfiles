@@ -30,6 +30,9 @@ numlockx &
 # Unclutter mouse cursor
 unclutter &
 
+# Redshift for location based monitor tint
+redshift &
+
 # Add fonts to path and rehash
 xset fp+ /usr/share/fonts/misc
 xset fp rehash

@@ -21,3 +21,4 @@ scripts/reditr
 !config/global.conf
 !config/roxterm*
 !config/termite*
+!config/redshift.conf
