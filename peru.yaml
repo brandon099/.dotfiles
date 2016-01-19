@@ -23,7 +23,7 @@ imports:
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh
-    rev: d60cf5cb1079a2f523deab38eeb810b6959781da
+    rev: 5464fe3e4ad02a33243f42bcd8c91a287bc26185
 
 git module pure-prompt:
     url: https://github.com/brandon099/pure
@@ -63,11 +63,11 @@ git module vim-fugitive:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: ff4f592c582c0c4181f3c7e40977d1c00c392ce3
+    rev: 4510e9b33506b4b09168c99934c42ee1ce89bba2
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 2311f984f121f3f7b5b3d60394a2de2376831612
+    rev: 07f5c794b9885bf53dd5c9c9c6b72a5bb135ec67
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
