@@ -114,7 +114,11 @@ super + {Left,Down,Up,Right}
 
 # start move/resize
 super + button{1-3}
-	; bspc pointer -g {move,resize_side,resize_corner}
+	bspc pointer -g {move,resize_side,resize_corner}
+
+# track move/resize on drag
+super + !button{1-3}
+    bspc pointer -t %i %i
 
 # end move/resize
 super + @button{1-3}
