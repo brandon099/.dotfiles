@@ -19,6 +19,8 @@ export QT_STYLE_OVERRIDE=GTK+
 export MONITOR_PREFS="DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
 export PURE_GIT_DOWN_ARROW="↓"
 export PURE_GIT_UP_ARROW="↑"
+export INFINALITY_FT_BRIGHTNESS="-10"
+export INFINALITY_FT_FILTER_PARAMS="0.00 0.35 0.35 0.35 0.00"
 
 # ZSH Functions
 if [  -f ~/.zfuncs ]; then
