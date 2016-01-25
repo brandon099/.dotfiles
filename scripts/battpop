@@ -7,9 +7,9 @@ battery() {
         batt_level=$(cat $batt_file)
         batt_status=$(cat /sys/class/power_supply/BAT0/status)
         if [ $batt_status == 'Charging'  ] || [ $batt_status == 'Unknown' ] && [ $batt_level -gt 98 ] ; then
-            notify-send "$batt_level $batt_status"
+            notify-send -h string:bgcolor:"$GREEN" -h string:fgcolor:"$DARK_GREY" "$batt_level $batt_status"
         elif [ $batt_status == 'Charging' ] ; then
-            notify-send "$batt_level $batt_status"
+            notify-send -h string:bgcolor:"$BLUE" -h string:fgcolor:"$DARK_GREY" "$batt_level $batt_status"
         elif [ $batt_level -le 10 ] ; then
             notify-send -u critical "$batt_level $batt_status"
         elif [ $batt_level -lt 50 ] ; then
