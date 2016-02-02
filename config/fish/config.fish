@@ -1,3 +1,18 @@
+# General Settings
+set fish_greeting ""
+
+# Exports
+set PATH $PATH ~/.scripts
+set EDITOR vim
+set VISUAL vim
+set LANG "en_US.UTF-8"
+set MONITOR_PREFS "DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
+set INFINALITY_FT_BRIGHTNESS "-10"
+set INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
+
+# Java GUI in BSPWM
+set _JAVA_AWT_WM_NONREPARENTING=1
+
 # Base16 Shell
 eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh
 
