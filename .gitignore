@@ -22,3 +22,5 @@ scripts/reditr
 !config/roxterm*
 !config/termite*
 !config/redshift.conf
+config/fish/*
+!config/fish/config.fish
