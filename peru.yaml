@@ -5,6 +5,8 @@ imports:
   zsh-async: zsh/zsh-async
   zsh-completions: zsh/zsh-completions
   zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
+  fish-pure-prompt: config/fish/functions
+  base16-shell: config/base16-shell
 
   vim-airline: vim/bundle/airline
   vim-base16: vim/bundle/base16-vim
@@ -20,6 +22,14 @@ imports:
   vim-supertab: vim/bundle/supertab
   vim-syntastic: vim/bundle/syntastic
   vim-tmuxline: vim/bundle/tmuxline
+
+git module base16-shell:
+    url: https://github.com/chriskempson/base16-shell
+    rev: 5acf5629a8bd186399a378c37c10507675525514
+
+git module fish-pure-prompt:
+    url: https://github.com/brandonweiss/pure.fish
+    rev: 87ae8d0f16283c4995f953f0799dc0e04b977eee
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh
@@ -43,11 +53,11 @@ git module zsh-completions:
 
 git module zsh-syntax-highlighting:
     url: https://github.com/zsh-users/zsh-syntax-highlighting
-    rev: 282c7134e8acdf241397c207300a65ad9be12e16
+    rev: 683f4837a037e35e6a5236020e855fcd262ed48d
 
 git module vim-airline:
     url: https://github.com/bling/vim-airline
-    rev: 348663f7f8826b82efdd9ef11c98b8eddaba2e2b
+    rev: d6a42528a10f6a1a6811254c8c0fa1e8a95571b8
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
@@ -59,19 +69,19 @@ git module vim-ctrlp:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: fd36aa9c61e06d71befdbe8931f97137c489b065
+    rev: 9835920a3c91236021fc8c88cc4157304e24356b
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 4510e9b33506b4b09168c99934c42ee1ce89bba2
+    rev: e884a0e26dcce8d86c95c13fb3305fe065815eaf
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 07f5c794b9885bf53dd5c9c9c6b72a5bb135ec67
+    rev: 2c44359fbba26ae9f39d574f8844f6002814e685
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: 4d584ea8c85408ca0d68b7b1693f3e2db8aa762a
+    rev: 8c91196cfd9c8fe619f35fac6f2ac81be10677f8
 
 git module vim-python-mode:
     url: https://github.com/klen/python-mode
@@ -87,7 +97,7 @@ git module vim-sensible:
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
-  rev: 5b823d42628a1274f6644680efe05431f99b194d
+  rev: c23091d5c74b4805844c24d248f18ecb4fae7bad
 
 git module vim-supertab:
   url: https://github.com/ervandew/supertab
@@ -95,7 +105,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: d1a179d750bd1d136d7f38e69f2c5b8439886de7
+    rev: de0106e839e6ee21a5dd3c42f1abb7d79d931bdd
 
 git module vim-tmuxline:
     url: https://github.com/edkolev/tmuxline.vim

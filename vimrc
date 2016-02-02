@@ -15,6 +15,7 @@ execute pathogen#helptags()
 
 " ================ General Config ====================
 
+set shell=/bin/bash             "Set bash as shell
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
