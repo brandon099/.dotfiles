@@ -6,6 +6,7 @@ imports:
   zsh-completions: zsh/zsh-completions
   zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
   fish-pure-prompt: config/fish/functions
+  fish-git-alias: config/fish/functions/git
   base16-shell: config/base16-shell
 
   vim-airline: vim/bundle/airline
@@ -31,6 +32,10 @@ git module base16-shell:
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
     rev: 43afd2e7abac91d22687f28d1ab6dbb365374b56
+
+git module fish-git-alias:
+    url: https://github.com/brandon099/fish-git-alias
+    rev: 9b06f060d8d0003d62bcf3ed32a78139297132bd
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh

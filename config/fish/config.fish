@@ -4,6 +4,9 @@ set fish_greeting ""
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_color_dirtystate yellow
 
+# Python Virtualenv
+eval (python -m virtualfish compat_aliases)
+
 # Exports
 set PATH $PATH ~/.scripts
 set EDITOR vim
