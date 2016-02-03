@@ -4,9 +4,6 @@ xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | xargs string_se
 # Set default cursor
 xsetroot -cursor_name left_ptr
 
-# Set mouse acceleration
-xset m 3/1 4
-
 # Disable screen blanking and disable dpms. This can be removed once the bug with mulitple DP displays gets fixed.
 xset s off -dpms
 

@@ -7,7 +7,7 @@ network() {
     wifi=''
     interfaces=$(ip link | sed -n 's/^[0-9]: \(.*\):.*$/\1/p')
     for interface in $interfaces; do
-        if [[ $interface == *"enp"* ]] ; then
+        if [[ $interface == *"en"* ]] ; then
             eth=$interface
         elif [[ $interface == *"wlp"* ]] ; then
             wifi=$interface

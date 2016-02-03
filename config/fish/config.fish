@@ -11,7 +11,7 @@ set INFINALITY_FT_BRIGHTNESS "-10"
 set INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
 
 # Java GUI in BSPWM
-set _JAVA_AWT_WM_NONREPARENTING=1
+set _JAVA_AWT_WM_NONREPARENTING 1
 
 # Base16 Shell
 eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh

@@ -2,7 +2,7 @@
 
 buildroot=$(mktemp -d)
 sudo -v
-gpg --recv-keys 487EACC08557AD082088DABA1EB2638FF56C0C53
+gpg --recv-keys F56C0C53
 sudo pacman -S --needed --noconfirm base-devel curl
 mkdir -p ${buildroot}
 mkdir ${buildroot}/cower ${buildroot}/pacaur
