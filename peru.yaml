@@ -29,8 +29,8 @@ git module base16-shell:
     rev: 5acf5629a8bd186399a378c37c10507675525514
 
 git module fish-pure-prompt:
-    url: https://github.com/brandonweiss/pure.fish
-    rev: 87ae8d0f16283c4995f953f0799dc0e04b977eee
+    url: https://github.com/brandon099/pure.fish
+    rev: 43afd2e7abac91d22687f28d1ab6dbb365374b56
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh
@@ -58,10 +58,11 @@ git module zsh-syntax-highlighting:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: d6a42528a10f6a1a6811254c8c0fa1e8a95571b8
+    rev: 9d1196f40aac7bbef5cec0c9307e80e207a4dfca
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
+    rev: 6d3710e4b12963c78a599b9f69a58b8da23728d2
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
@@ -73,6 +74,7 @@ git module vim-ctrlp:
 
 git module vim-fish:
     url: https://github.com/aliva/vim-fish
+    rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive

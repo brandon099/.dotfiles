@@ -1,6 +1,9 @@
 # General Settings
 set fish_greeting ""
 
+set __fish_git_prompt_showdirtystate 'yes'
+set __fish_git_prompt_color_dirtystate yellow
+
 # Exports
 set PATH $PATH ~/.scripts
 set EDITOR vim
