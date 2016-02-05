@@ -4,9 +4,6 @@ set fish_greeting ""
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_color_dirtystate yellow
 
-# Python Virtualenv
-eval (python -m virtualfish compat_aliases)
-
 # Exports
 set PATH $PATH ~/.scripts
 set EDITOR vim
@@ -43,6 +40,12 @@ set fish_pager_color_completion C0C5CE
 set fish_pager_color_description 65737E EBCB8B
 set fish_pager_color_prefix 96B5B4
 set fish_pager_color_progress 96B5B4
+
+# Custom Key Bindings
+function fish_user_key_bindings
+    # Prepend Sudo
+    bind \e\e prepend_sudo
+end
 
 # Start X at login
 if status --is-login

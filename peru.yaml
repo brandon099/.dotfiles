@@ -6,7 +6,8 @@ imports:
   zsh-completions: zsh/zsh-completions
   zsh-syntax-highlighting: zsh/zsh-syntax-highlighting
   fish-pure-prompt: config/fish/functions
-  fish-git-alias: config/fish/functions/git
+  fish-git-alias: config/fish/functions
+  fish-prepend-sudo: config/fish/functions
   base16-shell: config/base16-shell
 
   vim-airline: vim/bundle/airline
@@ -31,11 +32,15 @@ git module base16-shell:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 43afd2e7abac91d22687f28d1ab6dbb365374b56
+    rev: af39799eea1bf3e96da076100fb8136c57342c93
+
+git module fish-prepend-sudo:
+    url: https://github.com/brandon099/fish-prepend-sudo
+    rev: babbf5f3ad2b99bd85d579cc5032775c0c8332e8
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
-    rev: 9b06f060d8d0003d62bcf3ed32a78139297132bd
+    rev: df176149db18e929d5dbde4184835b0502af100f
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh
@@ -55,7 +60,7 @@ git module zsh-async:
 
 git module zsh-completions:
     url: https://github.com/zsh-users/zsh-completions
-    rev: c2dde89fb34e2734106e50689bf4127f6b0a288d
+    rev: 173ae7249a6ab4a5b70bebb283f3f156eb79f908
 
 git module zsh-syntax-highlighting:
     url: https://github.com/zsh-users/zsh-syntax-highlighting
@@ -63,7 +68,7 @@ git module zsh-syntax-highlighting:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 9d1196f40aac7bbef5cec0c9307e80e207a4dfca
+    rev: 3f927b587d07b145c1920bfd447bf052e2bfc42f
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -91,7 +96,7 @@ git module vim-gitgutter:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 2c44359fbba26ae9f39d574f8844f6002814e685
+    rev: 7bfbcf41b6c2578fff0b14bf23c65d139bb81094
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -119,4 +124,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: de0106e839e6ee21a5dd3c42f1abb7d79d931bdd
+    rev: d8af5028ecd541f721dab769479092b643f47a76
