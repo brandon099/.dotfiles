@@ -26,17 +26,11 @@ bspc rule -a Gpick state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a rofi manage=off
-bspc rule -a Firefox desktop=^1
-bspc rule -a google-chrome desktop=^1
-bspc rule -a Roxterm desktop=^2
-bspc rule -a Termite desktop=^2
 
 desktops=$(bspc query --monitors)
 
 if [[ $(echo "$desktops" | wc -l) -eq 3 ]]; then
     bspc monitor ^2 -s ^3
-    bspc rule -a Roxterm desktop=^4
-    bspc rule -a Termite desktop=^4
 fi
 
 # Create desktops
