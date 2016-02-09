@@ -32,7 +32,7 @@ git module base16-shell:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: af39799eea1bf3e96da076100fb8136c57342c93
+    rev: 9849dc58538249e31f6cf5292d2bade751628511
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo
@@ -44,7 +44,7 @@ git module fish-git-alias:
 
 git module oh-my-zsh:
     url: https://github.com/robbyrussell/oh-my-zsh
-    rev: 5464fe3e4ad02a33243f42bcd8c91a287bc26185
+    rev: 15d52fd4fbabda6c3c9fad80cb4378478d86a40b
 
 git module pure-prompt:
     url: https://github.com/brandon099/pure
@@ -60,7 +60,7 @@ git module zsh-async:
 
 git module zsh-completions:
     url: https://github.com/zsh-users/zsh-completions
-    rev: 173ae7249a6ab4a5b70bebb283f3f156eb79f908
+    rev: b10a35134a96e2877d0af15a3853e12c93cb8788
 
 git module zsh-syntax-highlighting:
     url: https://github.com/zsh-users/zsh-syntax-highlighting
@@ -68,7 +68,7 @@ git module zsh-syntax-highlighting:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 3f927b587d07b145c1920bfd447bf052e2bfc42f
+    rev: b48b166a22fa36b172b69fa8ad109912ebecb768
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -96,7 +96,7 @@ git module vim-gitgutter:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 7bfbcf41b6c2578fff0b14bf23c65d139bb81094
+    rev: 7ef40b4cc5f95752bdf3def42d67c3b1c0da7409
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -124,4 +124,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: d8af5028ecd541f721dab769479092b643f47a76
+    rev: d445e18fe10a4e06c25ff396a4e9d57a3bc20032
