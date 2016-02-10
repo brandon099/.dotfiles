@@ -41,7 +41,6 @@ python-pip
 rofi-git
 roxterm
 rsync
-rxvt-unicode
 scrot
 siji-git
 slop
@@ -71,4 +70,3 @@ xorg-xlsfonts
 xorg-xwininfo
 zathura
 zathura-pdf-poppler
-zsh

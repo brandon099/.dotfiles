@@ -215,6 +215,7 @@ EXEC                    00;32       # Files with execute permission
 .cc                     01;36
 .sqlite                 01;36
 .go                     01;36
+.yaml                   01;36
 
 # "unimportant" files as logs and backups
 .log                    01;30
