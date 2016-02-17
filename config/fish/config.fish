@@ -7,18 +7,20 @@ set __fish_git_prompt_color_dirtystate yellow
 
 # Exports
 set PATH ~/.scripts $PATH
-set EDITOR vim
-set VISUAL vim
-set LANG "en_US.UTF-8"
-set MONITOR_PREFS "DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
-set INFINALITY_FT_BRIGHTNESS "-10"
-set INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
+set -x EDITOR vim
+set -x VISUAL vim
+set -x LANG "en_US.UTF-8"
+set -x MONITOR_PREFS "DP2-1,DP2-8,DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
+set -x INFINALITY_FT_BRIGHTNESS "-10"
+set -x INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
 
 # Java GUI in BSPWM
-set _JAVA_AWT_WM_NONREPARENTING 1
+set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # Base16 Shell
-eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh
+if not set -q SSH_CONNECTION
+    eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh
+end
 
 # Base16-Ocean Syntax
 set fish_color_autosuggestion 65737E EBCB8B

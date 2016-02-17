@@ -15,7 +15,7 @@ Xft*rgba:                               rgb
 
 !---- Rofi - General Settings
 rofi*lines:                             3
-rofi*font:                              Inconsolata for Powerline 12
+rofi*font:                              Roboto Light 12
 rofi*bg:                                #2b303b
 rofi*bg-active:                         #2b303b
 rofi*fg:                                #c0c5ce
@@ -27,7 +27,7 @@ rofi*hlfg-active:                       #96B5B4
 rofi*bc:                                #8fa1b3
 rofi*terminal:                          termite
 rofi*eh:                                2
-rofi*opacity:                           90
+rofi*opacity:                           95
 rofi*padding:                           300
 rofi*bw:                                0
 rofi*fullscreen:                        true
