@@ -124,7 +124,8 @@ autocmd FileType python set colorcolumn=80
 
 " ================ Airline (Powerline) ==============
 
-let g:airline_symbols =                     {}
+let g:airline_symbols                       = {}
+let g:airline_theme                         = "base16"
 let g:airline#extensions#branch#enabled     = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#syntastic#enabled  = 1
