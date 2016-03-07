@@ -15,15 +15,10 @@ Xft*rgba:                               rgb
 
 !---- Rofi - General Settings
 rofi*lines:                             3
-rofi*font:                              Roboto Light 12
-rofi*bg:                                #2b303b
-rofi*bg-active:                         #2b303b
-rofi*fg:                                #c0c5ce
-rofi*fg-active:                         #96B5B4
-rofi*hlbg:                              #343d46
-rofi*hlbg-active:                       #343d46
-rofi*hlfg:                              #EFF1F5
-rofi*hlfg-active:                       #96B5B4
+rofi*font:                              Hack 12
+rofi*color-normal:                      #2b303b,#c0c5be,#2b303b,#343d46,#eff1f5
+rofi*color-active:                      #2b303b,#96b5b4,#2b303b,#343d46,#96b5b4
+rofi*color-window:                      #2b303b,#2b303b
 rofi*bc:                                #8fa1b3
 rofi*terminal:                          termite
 rofi*eh:                                2
