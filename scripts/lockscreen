@@ -13,7 +13,7 @@ INSIDE_RING_WRONG=0000001C
 # Suspend notifications
 notify-send DUNST_COMMAND_PAUSE
 
-i3lock -c $BG --textcolor=$TEXT --insidecolor=$INSIDE_CIR --ringcolor=$OUTSIDE_CIR --linecolor=$LINE_SEP --keyhlcolor=$KEYPRESS_HL --ringvercolor=$OUTER_RING_VERIFY --insidevercolor=$OUTER_RING_VERIFY --ringwrongcolor=$OUTER_RING_WRONG --insidewrongcolor=$INSIDE_RING_WRONG -n
+i3lock-color -c $BG --textcolor=$TEXT --insidecolor=$INSIDE_CIR --ringcolor=$OUTSIDE_CIR --linecolor=$LINE_SEP --keyhlcolor=$KEYPRESS_HL --ringvercolor=$OUTER_RING_VERIFY --insidevercolor=$OUTER_RING_VERIFY --ringwrongcolor=$OUTER_RING_WRONG --insidewrongcolor=$INSIDE_RING_WRONG -n
 
 # Resume notifications
 notify-send DUNST_COMMAND_RESUME
