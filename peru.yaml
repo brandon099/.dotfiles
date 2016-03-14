@@ -38,7 +38,7 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 110463970823f5cf7361fc9e5d5d29e6f28a2953
+    rev: 410429a95c67eed8eeb26681838d3766a2437806
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -58,11 +58,11 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: 099d65826e0e0863552a92f7e574e3f24c8f4197
+    rev: 19d1c944dbf59f252135688018610a12ce5718b4
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 0af9f2a3ab029054d279f69364351e95e107008a
+    rev: 28353bd0609ae7b8c7e01c70dce31700d8c6e654
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -94,4 +94,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 5057b5effb0be9a4bc12af9cd2f0fb0c9bca54ee
+    rev: 0f82191a74328ecb618ac74735645fbd1c36d9a1

@@ -50,25 +50,29 @@ function fish_user_key_bindings
     bind \e\e prepend_sudo
 end
 
-# Set the tmux window title
-if set -q TMUX
-    function fish_title
-        if [ "fish" != $_ ]
-            tmux rename-window "$argv"
-        else
-            _tmux_directory_title
-        end
+# Title functions
+function fish_title --description 'Set terminal title'
+    echo $HOSTNAME
+end
+
+function fish_tmux_title --description "Set the tmux window title"
+    set SUBSTR (echo $PWD | sed 's|^'$HOME'\(.*\)$|~\1|' | awk '{ print substr( $0, length($0) - 26, length($0) ) }')
+    set SUBSTR_LEN (echo "$SUBSTR" | wc -m)
+    if [ "$SUBSTR_LEN" -gt 25 ]
+        echo "..$SUBSTR"
+    else
+        echo "$SUBSTR"
     end
-    function _tmux_directory_title
-        set INPUT $PWD
-        set SUBSTRING (eval echo $INPUT | awk '{ print substr( $0, length($0) - 19, length($0) ) }')
-        set INPUT_LEN (eval echo $INPUT | wc -m)
-        if [ "$INPUT_LEN" -gt 18 ]
-            tmux rename-window "..$SUBSTRING"
-        else
-            tmux rename-window "$SUBSTRING"
-        end
-    end
+end
+
+test $TMUX
+    and test (tmux list-panes | wc -l) -eq 1
+    and set -x TMUX_PRIMARY_PANE set
+
+function fish_set_tmux_title --description "Sets tmux pane title to output of fish_tmux_title, with padding" --on-variable PWD
+    test $TMUX
+        and test $TMUX_PRIMARY_PANE
+        and printf "\\033k%s\\033\\\\" (fish_tmux_title)
 end
 
 # Start X at login
@@ -77,3 +81,5 @@ if status --is-login
         exec startx -- -keeptty
     end
 end
+
+fish_set_tmux_title
