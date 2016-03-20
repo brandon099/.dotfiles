@@ -58,7 +58,7 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: 19d1c944dbf59f252135688018610a12ce5718b4
+    rev: e1ae9effbcc9673bdc4bedbdbe6028f00114108c
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
@@ -66,7 +66,7 @@ git module vim-gitgutter:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 0a534a29f490adcd0612ff10a53b04109385404c
+    rev: 7c0578d6e84384c280a714b99d7ec08c3d45cda9
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -82,7 +82,7 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 2fb074e84169e177045e8bdb6ceb7eded3a80e8f
+  rev: 9e91be7e0fb42949831fe3161ef583363648aa58
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
@@ -94,4 +94,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 0f82191a74328ecb618ac74735645fbd1c36d9a1
+    rev: e4f4acd9ae842b451965fa5779e64f8a60860838
