@@ -5,7 +5,6 @@
 ! --------------------------------------------
 
 !--- Global Settings
-Xft*dpi:                                96.0
 Xft*antialias:                          true
 Xft*hinting:                            0
 Xft*autohint:                           0
@@ -15,7 +14,7 @@ Xft*rgba:                               rgb
 
 !---- Rofi - General Settings
 rofi*lines:                             3
-rofi*font:                              Hack 12
+rofi*font:                              Roboto Light 14
 rofi*color-normal:                      #2b303b,#c0c5be,#2b303b,#343d46,#eff1f5
 rofi*color-active:                      #2b303b,#96b5b4,#2b303b,#343d46,#96b5b4
 rofi*color-window:                      #2b303b,#2b303b
@@ -23,7 +22,7 @@ rofi*bc:                                #8fa1b3
 rofi*terminal:                          termite
 rofi*eh:                                2
 rofi*opacity:                           95
-rofi*padding:                           300
+rofi*padding:                           250
 rofi*bw:                                0
 rofi*fullscreen:                        true
 rofi*hide-scrollbar:                    true
