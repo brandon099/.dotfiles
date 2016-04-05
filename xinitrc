@@ -10,7 +10,7 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # Set Desktop Background
-sh ~/.fehbg &
+hsetroot -solid "#8FA1B3"
 
 # Start compositor
 compton -b
