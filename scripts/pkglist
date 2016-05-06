@@ -1,0 +1,96 @@
+#!/bin/env python
+import argparse
+import subprocess
+
+
+def _get_sproc_stdout_lines(*command):
+    """Run subprocess and return standard out split with new lines.
+
+    :param *command: Command to be run, including cli parameters
+    :return: Returns the subprocess standard out split by new lines
+    """
+    result = subprocess.run(command, universal_newlines=True,
+                            stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+    return result.stdout.splitlines()
+
+
+def get_inst_grp_pkgs(groups):
+    """Get installed group packages.
+
+    :param groups: Package groups for the package manager to query.
+                   If empty, will return all package groups installed on the
+                   system.
+    """
+    if not isinstance(groups, (tuple, list)):
+        raise ValueError(groups)
+    output = _get_sproc_stdout_lines('pacaur', '-Qg', *groups)
+    return set(l.split(None, 1)[1] for l in output)
+
+
+def get_exp_inst_pkgs():
+    """Get explicitly installed packages on the system"""
+    output = _get_sproc_stdout_lines('pacaur', '-Qe')
+    return set(l.split(None, 1)[0] for l in output)
+
+
+def get_packages_info(names):
+    """Get package information for each installed package passed in.
+
+    :param names: list of package names to retreive information for
+    """
+    packages = {}
+    output = _get_sproc_stdout_lines('pacaur', '-Si', *names)
+
+    info = {}
+    for line in output:
+        if not line:
+            if info:
+                packages[info['Name']] = info
+                info = {}
+            continue
+
+        if line.startswith(' '):
+            continue
+
+        line = line.strip()
+        key, value = line.split(':', 1)
+        info[key.strip()] = value.strip()
+    return packages
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--ignore-groups",
+                        help="Groups to ignore, comma seperated")
+    parser.add_argument("-s", "--show-groups",
+                        action="store_true",
+                        help="Show group package name in output")
+    args = parser.parse_args()
+
+    ignored_grp_pkgs = []
+    installed_pkgs = get_exp_inst_pkgs()
+
+    if args.ignore_groups:
+        ignored_grp_pkgs = get_inst_grp_pkgs(
+            [g.strip() for g in args.ignore_groups.split(',')])
+
+    result = []
+    filtered_pkgs = installed_pkgs.difference(ignored_grp_pkgs)
+    packages_info = get_packages_info(filtered_pkgs)
+
+    for name in sorted(filtered_pkgs):
+        repository = 'aur'
+
+        if name in packages_info:
+            repository = packages_info[name]['Repository']
+
+        if args.show_groups:
+            result.append('/'.join((repository, name)))
+        else:
+            result.append(name)
+
+    print('\n'.join(sorted(result)))
+
+
+if __name__ == '__main__':
+    main()
