@@ -6,6 +6,7 @@ imports:
 
   vim-airline: vim/bundle/airline
   vim-airline-themes: vim/bundle/airline-themes
+  vim-bufferline: vim/bundle/vim-bufferline
   vim-base16: vim/bundle/base16-vim
   vim-ctrlp: vim/bundle/ctrlp
   vim-fish: vim
@@ -13,6 +14,7 @@ imports:
   vim-gitgutter: vim/bundle/vim-gitgutter
   vim-markdown: vim/bundle/vim-markdown
   vim-pathogen: vim
+  vim-pydocstring: vim/bundle/pydocstring
   vim-python-mode: vim/bundle/python-mode
   vim-salt: vim/bundle/salt-vim
   vim-sensible: vim/bundle/sensible
@@ -38,11 +40,15 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 1bb8b6278e901cbc282535cabb1f6e17f8059e2a
+    rev: 30f078daf569e7d5e4f7829e39316387af349b41
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: 60105c7e8827623f646b9b030a68026cddee3d19
+    rev: 332678ba862e0fccf48ef8b7fdb836dd26f2a7f5
+
+git module vim-bufferline:
+    url: https://github.com/bling/vim-bufferline
+    rev: 651fd010aa9613a4b8636a4af8a2db0d22800262
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
@@ -62,7 +68,7 @@ git module vim-fugitive:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 78d83c7056e1973ed4cbf9b5b3f09263a3dbf968
+    rev: f03a1a1f021ae1f4d04b6a2dc533f3329a5fe7a4
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -71,6 +77,10 @@ git module vim-markdown:
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
     rev: 8c91196cfd9c8fe619f35fac6f2ac81be10677f8
+
+git module vim-pydocstring:
+    url: https://github.com/heavenshell/vim-pydocstring
+    rev: 1d0abf80aa1614fb2c6d2c5c8f1126cdc7652874
 
 git module vim-python-mode:
     url: https://github.com/klen/python-mode
@@ -94,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 3f320d02de084470e8573c08f2da59850df6de35
+    rev: f280ff22207ffcddaabc8557d32ceaae03aa3975

@@ -32,6 +32,8 @@ set timeoutlen=1000             " Set mapping timeout length to 1000ms
 set ttimeoutlen=10              " Set Key code delay to 10ms
 set mouse-=a                    "Turn off mouse mode
 syntax on                       "Turn on syntax highlighting
+:nnoremap <Tab> :bnext<CR>
+:nnoremap <S-Tab> :bprevious<CR>
 
 " ================ Color Theme Settings ==============
 
@@ -117,6 +119,8 @@ endif
 
 let g:pymode_lint_on_fly = 1
 let g:pymode_lint_ignore="E501,W601"
+let g:pymode_rope = 0
+let g:pymode_indent = 1
 
 " Set Python file colorcolumn
 autocmd FileType python set colorcolumn=80
@@ -133,9 +137,7 @@ let g:airline_left_sep                      = ''
 let g:airline_left_sep                      = ''
 let g:airline_right_sep                     = ''
 let g:airline_right_sep                     = ''
-"call airline#parts#define_accent('mode', 'none')
-"call airline#parts#define_accent('paste', 'none')
-"call airline#parts#define_accent('ffenc', 'none')
+let g:bufferline_echo                       = 0
 set laststatus=2
 
 au BufNewFile,BufRead *.less set filetype=less
