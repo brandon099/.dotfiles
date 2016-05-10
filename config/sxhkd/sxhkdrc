@@ -137,6 +137,9 @@ alt + shift + z
 super + Return
     termite -e tmux
 
+super + shift + Return
+    termite -e cava -t cava --geometry=200x100
+
 super + space
     rofi -show run
 
