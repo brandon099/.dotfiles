@@ -137,7 +137,7 @@ alt + shift + z
 super + Return
     termite -e tmux
 
-super + shift + Return
+super + alt + Return
     termite -e cava -t cava --geometry=200x100
 
 super + space
