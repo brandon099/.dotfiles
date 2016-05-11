@@ -1,5 +1,8 @@
 [options]
-font = tewi 11
+font            = tewi 11
+allow_bold      = false
+audible_bell    = false
+clickable_url   = false
 
 [colors]
 # special
