@@ -1,11 +1,27 @@
-#!/bin/zsh
+#!/bin/env sh
 
-autoload -U colors
-colors
+# Exit on errors
+set -e
 
-if [ $(which pacaur) ]; then
-    echo $fg[green]Installing from depends ${reset_color}
-    pacaur -S $(cat ~/.dotfiles/scripts/depends | tr '\n' ' ') --needed --devel --noconfirm
+# Output format
+info() { echo -e "\e[34m:: $@\e[0m"; }
+warning() { echo -e "\e[33m:: $@\e[0m"; }
+error() { echo -e "\e[31m:: $@\e[0m"; }
+
+# Cannot run as root user
+test "$UID" -gt 0 || { error "This script cannot be run as root."; exit;}
+
+# Update Cached sudo credentials
+info "Updating cacehd sudo credentials"
+sudo -v
+
+# Check for pacaur to begin installing pkgs, else try installing it
+if [ $(command -v pacaur) ]; then
+    info "Installing from pkgs file"
+    pacaur -S $(cat ~/.dotfiles/scripts/pkgs | tr '\n' ' ') --needed --devel --noconfirm --noedit
 else
-    echo $fg[red]Please install Pacaur first ${reset_color}
+    warning "Pacaur not installed, trying to install..."
+    sh ~/.dotfiles/scripts/install-pacaur
 fi
+
+info "Finished installing packages"
