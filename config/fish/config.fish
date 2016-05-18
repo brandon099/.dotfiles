@@ -48,6 +48,8 @@ set fish_pager_color_progress 96B5B4
 function fish_user_key_bindings
     # Prepend Sudo
     bind \e\e prepend_sudo
+    # Start CTRLP Vim plugin
+    bind \cp 'vim -c CtrlP'
 end
 
 # Title functions

@@ -36,15 +36,15 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 2b300e050d02e15308302c7570cf4169b44b25cd
+    rev: 57a201f2782eac16e4f4b5e3b4b6fe24df65c99a
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 811e51575c1d913ee047307c5bc15d40b45f7a2a
+    rev: 4d39cb6f2078326dd07f2ab680a0365299a2589e
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: bf0be1d52997b0325b7fdda9e78f7ef280988827
+    rev: 97a042a57af7f04e25fddb6e694d75be1d55be02
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -64,15 +64,15 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: bdd216827ae53cdf70d933bb30762da9bf42cad4
+    rev: 3439f999b138254e4bb56187fc91f91f545b4b12
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: ea5d4cbeaf5713c3c3c58483b9cf40f69bf3f215
+    rev: f8da1fd6dbd558ebcc743bd7f91d35d6ca8db56a
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 076fb27c9463a095812227deef2c85cfa977f075
+    rev: a3169545f330ec8080244c3ad755bb2211eca8a0
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 822cb14be50bf0551860b84c07190eb5a2529c37
+    rev: 6e467b89302bd1446c30d5d9896704c8e139ff88
