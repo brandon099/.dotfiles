@@ -2,12 +2,9 @@
 set fish_greeting
 set fish_term24bit 1
 
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_color_dirtystate yellow
-
 # Exports
 set PATH ~/.scripts $PATH
-set -x EDITOR vim
+set -x EDITOR "vim -X"
 set -x VISUAL vim
 set -x LANG "en_US.UTF-8"
 set -x MONITOR_PREFS "DP2-1,DP2-8,DP-1-1,DP-1-2,DP-1-3,LVDS2,DVI-0,DVI-1"
