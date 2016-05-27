@@ -36,7 +36,7 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 57a201f2782eac16e4f4b5e3b4b6fe24df65c99a
+    rev: 22812d9a5eb39c5a284500db0c207a97f6ce0ec8
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
