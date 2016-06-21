@@ -49,6 +49,16 @@ function fish_user_key_bindings
     bind \cp 'vim -c CtrlP'
 end
 
+# Virtualfish wrapper function
+function venvwrapper --description 'Source Virtualfish'
+    eval (python -m virtualfish compat_aliases)
+end
+
+# Aliases
+alias tree="tree --dirsfirst -CF"
+alias pyfind='find . -name "*.py"'
+alias pygrep='grep -r --include="*.py"'
+
 # Title functions
 function fish_title --description 'Set terminal title'
     echo $HOSTNAME
