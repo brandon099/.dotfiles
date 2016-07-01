@@ -12,6 +12,7 @@ scripts/vauth_cron
 scripts/ynab
 scripts/postman
 scripts/reditr
+scripts/soda
 !config/bspwm*
 !config/sxhkd*
 !config/dunst*

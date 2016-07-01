@@ -35,7 +35,7 @@ super + ctrl + {x,y,z}
 	bspc node -g {locked,sticky,private}
 
 #
-# focus/swap
+# focus
 #
 
 # focus the node in the given direction
@@ -160,6 +160,9 @@ super + shift + i
 
 super + shift + n
     calpop
+
+super + shift + s
+    screenshot
 
 super + {_,shift + }Return
     firefox
