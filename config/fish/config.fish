@@ -15,8 +15,8 @@ set -x INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # Base16 Shell
-if not set -q SSH_CONNECTION
-    eval sh $HOME/.config/base16-shell/base16-ocean.dark.sh
+if not set -q SSH_CONNECTION and if not status --is-interactive
+    eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
 end
 
 # Base16-Ocean Syntax
