@@ -24,11 +24,11 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 5acf5629a8bd186399a378c37c10507675525514
+    rev: e45fee56c65a37dd19be19749f95c359e204beef
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
-    rev: df176149db18e929d5dbde4184835b0502af100f
+    rev: c8c0159a42b2cceb1b6eb0dc833e806d801862e9
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo
@@ -36,15 +36,15 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 22812d9a5eb39c5a284500db0c207a97f6ce0ec8
+    rev: 2c8a1f4687a928b4d33fa5aa572fece28502bcdd
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 7b9b68f15dc50ef3c6382bd9df3a5e70c9ddcee9
+    rev: 4d0c4f6b1e3fee30873b0c9734fbe83f4d74b81c
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: 796478723c01a275269b96f63ee5cd5b44a342f4
+    rev: 8b58708ec4318cee43a878ea74f7dedb61c8f07a
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -52,7 +52,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: e711e9b1412b55fec7e8a5cff4ac5c06f9078729
+    rev: 9b8d1d9137b539af0cc49105f5edbd12485dde21
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -64,11 +64,11 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: 3439f999b138254e4bb56187fc91f91f545b4b12
+    rev: c00ebd75ac23f4080c0d0bf9453b16304a3fb316
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 09b9144002e938844df74f48ac72c1e3118e7d39
+    rev: 26c6b549f287b8ae348eda083e7c77f79f4de28b
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: d6b96c079be137c83009827b543a83aa113cc011
+    rev: 663fea9dc9371d574f1a4a6ba15cc9e60ebbe510
