@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: e45fee56c65a37dd19be19749f95c359e204beef
+    rev: 8643aca554eef66a20c1227bc2d41b60ba69eee8
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -36,11 +36,11 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 2c8a1f4687a928b4d33fa5aa572fece28502bcdd
+    rev: 49a3efc76e4a26bcbf8be97076eb72e9ca8e09ef
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 4d0c4f6b1e3fee30873b0c9734fbe83f4d74b81c
+    rev: d00f7b35d2e615ce7a120214e4615912fc09e630
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 663fea9dc9371d574f1a4a6ba15cc9e60ebbe510
+    rev: 88b66584b5c5bdc25bc941a0aae217d420747552
