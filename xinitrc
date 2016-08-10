@@ -29,6 +29,7 @@ redshift &
 
 # Add fonts to path and rehash
 xset fp+ /usr/share/fonts/misc
+xset fp+ /usr/share/fonts/local
 xset fp rehash
 
 # Source Xresources
