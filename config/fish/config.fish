@@ -15,7 +15,7 @@ set -x INFINALITY_FT_FILTER_PARAMS "0.00 0.35 0.35 0.35 0.00"
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
 # Base16 Shell
-if not set -q SSH_CONNECTION and if not status --is-interactive
+if not set -q SSH_CONNECTION
     eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
 end
 
@@ -59,36 +59,29 @@ alias tree="tree --dirsfirst -CF"
 alias pyfind='find . -name "*.py"'
 alias pygrep='grep -r --include="*.py"'
 
-# Title functions
+# Title functions including Tmux titles
 function fish_title --description 'Set terminal title'
     echo $HOSTNAME
-end
+        if test $TMUX
+            if [ "fish" != $_ ]
+                printf "\\033k%s\\033\\\\" $argv
+            else
+                set S_HOME (pwd | string replace $HOME '~')
 
-function fish_tmux_title --description "Set the tmux window title"
-    set SUBSTR (echo $PWD | sed 's|^'$HOME'\(.*\)$|~\1|' | awk '{ print substr( $0, length($0) - 26, length($0) ) }')
-    set SUBSTR_LEN (echo "$SUBSTR" | wc -m)
-    if [ "$SUBSTR_LEN" -gt 25 ]
-        echo "..$SUBSTR"
-    else
-        echo "$SUBSTR"
-    end
-end
+                if [ (string length $S_HOME) -gt 19 ]
+                    set S_HOME ".."(echo $S_HOME | string sub -s-19)
+                end
 
-test $TMUX
-    and test (tmux list-panes | wc -l) -eq 1
-    and set -x TMUX_PRIMARY_PANE set
-
-function fish_set_tmux_title --description "Sets tmux pane title to output of fish_tmux_title, with padding" --on-variable PWD
-    test $TMUX
-        and test $TMUX_PRIMARY_PANE
-        and printf "\\033k%s\\033\\\\" (fish_tmux_title)
+                printf "\\033k%s\\033\\\\" $S_HOME
+            end
+        end
 end
 
 # Start X at login
-if status --is-login
-    if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
-        exec startx -- -keeptty
+if not set -q SSH_CONNECTION
+    if status --is-login
+        if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
+            exec startx -- -keeptty
+        end
     end
 end
-
-fish_set_tmux_title
