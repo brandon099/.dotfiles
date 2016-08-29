@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 8643aca554eef66a20c1227bc2d41b60ba69eee8
+    rev: 96981b9054c97ce2694030d008adf723034bf26a
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -40,11 +40,11 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: d00f7b35d2e615ce7a120214e4615912fc09e630
+    rev: ea98b42a0d7ee7888bcdbb5235b1a704526db1cf
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: 8b58708ec4318cee43a878ea74f7dedb61c8f07a
+    rev: 020b843077f6b2b3b85070b08203babbffbfeaca
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -52,7 +52,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: 9b8d1d9137b539af0cc49105f5edbd12485dde21
+    rev: acf210d5f62410b9b74ac142b7d9bd85cb7d41d4
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: cdfb64db6711f8df6937d368cff75c7213505fe2
+    rev: f527cb1a2d768cb48464048724172160c72f6a51
