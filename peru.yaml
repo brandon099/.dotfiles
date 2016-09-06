@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 96981b9054c97ce2694030d008adf723034bf26a
+    rev: c33699f4474f8bcfac159c80b4b5f0f146aea9c6
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -40,7 +40,7 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: ea98b42a0d7ee7888bcdbb5235b1a704526db1cf
+    rev: 168b18ff0ada3c1324c2af47e932d61bdf32608b
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -68,7 +68,7 @@ git module vim-fugitive:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 26c6b549f287b8ae348eda083e7c77f79f4de28b
+    rev: 43e7c1f542032ec5be1b6a0ff4440a5370e9bce3
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -80,7 +80,7 @@ git module vim-pathogen:
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-    rev: a34cdc673208a1687e8f31be2335369bddb5afc9
+    rev: b65179b2cb0be456fd2474c62adeb9c308799cc6
 
 git module vim-python-mode:
     url: https://github.com/klen/python-mode
@@ -92,7 +92,7 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 9e91be7e0fb42949831fe3161ef583363648aa58
+  rev: 4b7535921819a5b2e39be68f81109ea684232503
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: f527cb1a2d768cb48464048724172160c72f6a51
+    rev: 5532618b6a81a70cd1240b999ba6114b1ee1050f
