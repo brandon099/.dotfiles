@@ -1,6 +1,6 @@
 [roxterm profile]
 colour_scheme=
-font=Roboto Mono 10
+font=Operator Mono weight=330 11
 always_show_tabs=0
 hide_menubar=1
 show_add_tab_btn=0
@@ -10,3 +10,4 @@ bell_highlights_tab=0
 term=xterm-256color
 scrollbar_pos=0
 saturation=1.000000
+cursor_shape=0

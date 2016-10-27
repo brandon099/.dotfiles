@@ -1,6 +1,7 @@
 [options]
-font            = tewi 11
-allow_bold      = false
+font            = Operator Mono Book, Book 10
+#font            = Operator Mono Book Italic, Italic 10
+allow_bold      = true
 audible_bell    = false
 
 [colors]
