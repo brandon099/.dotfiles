@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: c33699f4474f8bcfac159c80b4b5f0f146aea9c6
+    rev: bff76e55e39456142f5f920e240a33f1143fc91a
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -36,15 +36,15 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 49a3efc76e4a26bcbf8be97076eb72e9ca8e09ef
+    rev: 150e337af40d9a5792f8fd0e170ea1cd81a91cd7
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 168b18ff0ada3c1324c2af47e932d61bdf32608b
+    rev: 0ea4daa10350797a949e4354a1dece1b1647e351
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: 020b843077f6b2b3b85070b08203babbffbfeaca
+    rev: e03e9f62d25f9afb04c88ec6ca66cf2098242016
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -52,7 +52,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: acf210d5f62410b9b74ac142b7d9bd85cb7d41d4
+    rev: 0c48348a18bad52f9275d56b4adffa665a280322
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -64,11 +64,11 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: aac85a268e89a6c8be79341e130ac90256fadbd6
+    rev: 58ed86e434951319ff7d438fb1096f24a51e6458
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 43e7c1f542032ec5be1b6a0ff4440a5370e9bce3
+    rev: ee481585d7532c3ca2df855ab895a0b430469723
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -76,7 +76,7 @@ git module vim-markdown:
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: 8c91196cfd9c8fe619f35fac6f2ac81be10677f8
+    rev: 7ba2e1b67a8f8bcbafedaf6763580390dfd93436
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
@@ -104,4 +104,4 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 5532618b6a81a70cd1240b999ba6114b1ee1050f
+    rev: e84f80a68ae7a5b03995ad712f8fbdc8483f0fd8
