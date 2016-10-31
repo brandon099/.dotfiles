@@ -3,7 +3,6 @@ arandr
 bdf-tewi-git
 bind-tools
 bspwm-git
-cava-git
 compton
 dosfstools
 dunst
@@ -17,7 +16,6 @@ gpick
 gtk-theme-arc
 gvfs-smb
 hsetroot
-i3lock-color-git
 iw
 jq
 ldm
@@ -33,7 +31,7 @@ openssh
 openvpn
 pass
 pavucontrol
-phallus-fonts-git
+physlock
 python-pip
 rofi-git
 roxterm
@@ -45,7 +43,8 @@ sutils-git
 sxhkd
 syslinux
 termite
-tmux-git
+the_silver_searcher
+tmux
 tree
 ttf-droid
 ttf-roboto

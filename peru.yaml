@@ -4,23 +4,25 @@ imports:
   fish-prepend-sudo: config/fish/functions
   fish-pure-prompt: config/fish/functions
 
-  vim-airline: vim/bundle/airline
   vim-airline-themes: vim/bundle/airline-themes
-  vim-bufferline: vim/bundle/vim-bufferline
+  vim-airline: vim/bundle/airline
   vim-base16: vim/bundle/base16-vim
+  vim-bufferline: vim/bundle/vim-bufferline
   vim-ctrlp: vim/bundle/ctrlp
   vim-fish: vim
+  vim-flake8: vim/bundle/vim-flake8
   vim-fugitive: vim/bundle/fugitive
   vim-gitgutter: vim/bundle/vim-gitgutter
+  vim-indentpython: vim/bundle/indentpython
   vim-markdown: vim/bundle/vim-markdown
   vim-pathogen: vim
   vim-pydocstring: vim/bundle/pydocstring
-  vim-python-mode: vim/bundle/python-mode
   vim-salt: vim/bundle/salt-vim
   vim-sensible: vim/bundle/sensible
   vim-sudoedit: vim/bundle/sudoedit
   vim-supertab: vim/bundle/supertab
   vim-syntastic: vim/bundle/syntastic
+  vim-simpylfold: vim/bundle/simpylfold
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
@@ -62,13 +64,21 @@ git module vim-fish:
     url: https://github.com/aliva/vim-fish
     rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
 
+git module vim-flake8:
+    url: https://github.com/nvie/vim-flake8
+    rev: 91818a7d5f5a0af5139e9adfedc9d00fa963e699
+
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
     rev: 58ed86e434951319ff7d438fb1096f24a51e6458
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: ee481585d7532c3ca2df855ab895a0b430469723
+    rev: 1742a8f568df549f4daeda90174b54d0c371501f
+
+git module vim-indentpython:
+    url: https://github.com/vim-scripts/indentpython.vim
+    rev: 6aaddfde21fe9e7acbe448b92b3cbb67f2fe1fc1
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -81,10 +91,6 @@ git module vim-pathogen:
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
     rev: b65179b2cb0be456fd2474c62adeb9c308799cc6
-
-git module vim-python-mode:
-    url: https://github.com/klen/python-mode
-    rev: 4bda3035ce9523a6d31792bc6c22ce2b9e0ae9a3
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -104,4 +110,8 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: e84f80a68ae7a5b03995ad712f8fbdc8483f0fd8
+    rev: 734fde7f0b84ff3f670ab5772ed1b8b0c8c16770
+
+git module vim-simpylfold:
+    url: https://github.com/tmhedberg/SimpylFold
+    rev: e7352b65e8b41b90b9000507687f12e631661105
