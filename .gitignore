@@ -26,3 +26,4 @@ scripts/soda
 config/fish/*
 !config/fish/config.fish
 !config/fish/completions*
+!config/flake8
