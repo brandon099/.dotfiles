@@ -60,8 +60,6 @@ set fish_pager_color_progress 96B5B4
 function fish_user_key_bindings
     # Prepend Sudo
     bind \e\e prepend_sudo
-    # Start CTRLP Vim plugin
-    bind \cp 'vim -c CtrlP'
 end
 
 # Virtualfish wrapper function
@@ -73,6 +71,12 @@ end
 alias tree="tree --dirsfirst -CF"
 alias pyfind='find . -name "*.py"'
 alias pygrep='grep -r --include="*.py"'
+
+# SSH Function to override TERM
+function ssh
+    set -x TERM xterm-256color
+    command ssh $argv -F ~/.ssh/config
+end
 
 # Title functions including Tmux titles
 function fish_title --description 'Set terminal title'
