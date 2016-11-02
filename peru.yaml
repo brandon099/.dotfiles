@@ -10,7 +10,6 @@ imports:
   vim-bufferline: vim/bundle/vim-bufferline
   vim-ctrlp: vim/bundle/ctrlp
   vim-fish: vim
-  vim-flake8: vim/bundle/vim-flake8
   vim-fugitive: vim/bundle/fugitive
   vim-gitgutter: vim/bundle/vim-gitgutter
   vim-indentpython: vim/bundle/indentpython
@@ -63,10 +62,6 @@ git module vim-ctrlp:
 git module vim-fish:
     url: https://github.com/aliva/vim-fish
     rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
-
-git module vim-flake8:
-    url: https://github.com/nvie/vim-flake8
-    rev: 91818a7d5f5a0af5139e9adfedc9d00fa963e699
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
