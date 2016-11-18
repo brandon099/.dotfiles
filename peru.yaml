@@ -13,6 +13,7 @@ imports:
   vim-fugitive: vim/bundle/fugitive
   vim-gitgutter: vim/bundle/vim-gitgutter
   vim-indentpython: vim/bundle/indentpython
+  vim-jinja: vim/bundle/vim-jinja2-syntax
   vim-markdown: vim/bundle/vim-markdown
   vim-pathogen: vim
   vim-pydocstring: vim/bundle/pydocstring
@@ -37,11 +38,11 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 150e337af40d9a5792f8fd0e170ea1cd81a91cd7
+    rev: 903287cb3fa4f4fb71a2939a97b280c187a91290
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 0ea4daa10350797a949e4354a1dece1b1647e351
+    rev: 2dae2b364e23d653730cd65e33f374a93734241a
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -65,7 +66,7 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: 58ed86e434951319ff7d438fb1096f24a51e6458
+    rev: b754bc2031f21a532c083dd0d072ba373bbe3a37
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
@@ -74,6 +75,10 @@ git module vim-gitgutter:
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
     rev: 6aaddfde21fe9e7acbe448b92b3cbb67f2fe1fc1
+
+git module vim-jinja:
+    url: https://github.com/Glench/Vim-Jinja2-Syntax
+    rev: ce9edd3e4e6d97d5b4132470f2b5a1cd8cdf0f01
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -105,7 +110,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 734fde7f0b84ff3f670ab5772ed1b8b0c8c16770
+    rev: f3a5344f0808f873ff3aa4b60bd09ad0ecccde48
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold

@@ -122,7 +122,7 @@ let g:syntastic_check_on_open = 1
 autocmd FileType python set colorcolumn=120
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 softtabstop=4 shiftwidth=4 textwidth=119 expandtab autoindent fileformat=unix
+    \ set shiftwidth=4 textwidth=119 fileformat=unix
 
 " =================== Airline =============================
 
