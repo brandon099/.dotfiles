@@ -23,6 +23,7 @@ imports:
   vim-supertab: vim/bundle/supertab
   vim-syntastic: vim/bundle/syntastic
   vim-simpylfold: vim/bundle/simpylfold
+  vim-sxhkdrc: vim/bundle/sxhkdrc
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
@@ -115,3 +116,7 @@ git module vim-syntastic:
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
     rev: e7352b65e8b41b90b9000507687f12e631661105
+
+git module vim-sxhkdrc:
+    url: https://github.com/baskerville/vim-sxhkdrc
+    rev: 8be49e107009d52a4f30b315514ef261eef3ccc9
