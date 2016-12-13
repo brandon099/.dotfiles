@@ -26,7 +26,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: bff76e55e39456142f5f920e240a33f1143fc91a
+    rev: c1503b84f8803fd63991079ed2a8fe6c2e890d71
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -42,11 +42,11 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: 2dae2b364e23d653730cd65e33f374a93734241a
+    rev: 7cb5c2415172372ecd89662279350baf890dc8a0
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
-    rev: e03e9f62d25f9afb04c88ec6ca66cf2098242016
+    rev: 2a97d9ee410d7b9980a7741fc6e705d53eea23c2
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -54,7 +54,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: 0c48348a18bad52f9275d56b4adffa665a280322
+    rev: 9bc705129abec076c3336ec806b6defad0c246f0
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -70,7 +70,7 @@ git module vim-fugitive:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 1742a8f568df549f4daeda90174b54d0c371501f
+    rev: eaea1c5bba8e0f72cbc923c51a18c5c9918eb513
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -78,7 +78,7 @@ git module vim-indentpython:
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: ce9edd3e4e6d97d5b4132470f2b5a1cd8cdf0f01
+    rev: db595ffa54d7f1c939bcf793055e08dc2b2e9eac
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -90,7 +90,7 @@ git module vim-pathogen:
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-    rev: b65179b2cb0be456fd2474c62adeb9c308799cc6
+    rev: b3d37f83fe3fa4adc1e3af458bfa900b158bb488
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -106,11 +106,11 @@ git module vim-sudoedit:
 
 git module vim-supertab:
   url: https://github.com/ervandew/supertab
-  rev: 66511772a430a5eaad7f7d03dbb02e8f33c4a641
+  rev: cdaa5c27c5a7f8b08a43d0b2e65929512299e33a
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: f3a5344f0808f873ff3aa4b60bd09ad0ecccde48
+    rev: 675f67eea29308537438eb49b3b28a444c1e4689
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold

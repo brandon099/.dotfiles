@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Set up displays -- monitors script returns the xrandr command needed to set up the displays
 xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | xargs string_set | monitors | sh
 
@@ -36,6 +37,7 @@ xset fp rehash
 xrdb ~/.Xresources
 
 # Start Simple X Hotkey Daemon
+export SXHDK_SHELL='/usr/bin/sh'
 sxhkd &
 
 # Monitor Scripts
