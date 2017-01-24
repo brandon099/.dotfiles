@@ -182,4 +182,4 @@ XF86AudioMute
     amixer -c 1 set Master 5%{+,-}
 
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-    xbacklight -{inc,dec} 5
+    light -{A,U} 5%
