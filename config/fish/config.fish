@@ -7,7 +7,7 @@ set PATH ~/.scripts $PATH
 set -x EDITOR "vim -X"
 set -x VISUAL vim
 set -x LANG "en_US.UTF-8"
-set -x MONITOR_PREFS "DP2-8,DP2-1-8,LVDS2,DVI-0,DVI-1"
+set -x MONITOR_PREFS "DP-2-8,DP-2-1-8,LVDS2,DVI-0,DVI-1"
 set -x GOPATH $HOME/.golang/
 set -x LD_LIBRARY_PATH /lib:/usr/lib:/usr/local/lib
 set -x INFINALITY_FT_FILTER_PARAMS "11 22 38 22 11"

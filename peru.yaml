@@ -43,7 +43,7 @@ git module fish-pure-prompt:
 
 git module vim-airline:
     url: https://github.com/vim-airline/vim-airline
-    rev: b56a064377fcd4340e60ffd9a7fcf157f8a26939
+    rev: 7df411d59b71e8950954a7cb981e8b7c902e8b0d
 
 git module vim-airline-themes:
     url: https://github.com/vim-airline/vim-airline-themes
@@ -67,11 +67,11 @@ git module vim-fish:
 
 git module vim-fugitive:
     url: https://github.com/tpope/vim-fugitive
-    rev: b754bc2031f21a532c083dd0d072ba373bbe3a37
+    rev: 444ba9fda5d05aa14c7e8664fa4a66a59c62a550
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 77aa7ea225b41f0121719fcc166cc9087f39f78e
+    rev: 5d1a0bfa1bd2b8d8a77fff09d13394e5abbc6143
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -83,7 +83,7 @@ git module vim-jinja:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: a3169545f330ec8080244c3ad755bb2211eca8a0
+    rev: d6d59eef6f604b6430fd6adade9e18364666232b
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -111,11 +111,11 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: b03f26d049c31c9ae341a94f4f3c680fecd9eda5
+    rev: 2124af80abfb856e8806c3b508b3982b7157c4a3
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
-    rev: 48c5bc4fd82a9ca4e2472348ebaaed31df77bf91
+    rev: dad648405f6b59c7835f0c7e46635cfe95a267ba
 
 git module vim-sxhkdrc:
     url: https://github.com/baskerville/vim-sxhkdrc

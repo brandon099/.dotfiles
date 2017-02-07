@@ -105,26 +105,6 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     xdo move {-x -20,-y +20,-y -20,-x +20}
 
-#
-# pointer focus/move/resize
-#
-
-# focus
-~button1
-    bspc pointer -g focus
-
-# start move/resize
-super + button{1-3}
-    bspc pointer -g {move,resize_side,resize_corner}
-
-# track move/resize on drag
-super + !button{1-3}
-    bspc pointer -t %i %i
-
-# end move/resize
-super + @button{1-3}
-    bspc pointer -u
-
 # hide/show window node on (stays on current desktop)
 super + {_,shift + }minus
     bspc {node,query -N -d -n .hidden | xargs -I nodeid -n1 bspc node nodeid} -g hidden

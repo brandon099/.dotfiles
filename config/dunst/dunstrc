@@ -1,5 +1,5 @@
 [global]
-    font = "Siji 10, Tewi 9"
+    font = "Wuncon Siji 10, lucy tewi 9"
 
     # Allow a small subset of html markup in notifications and formats.
     allow_markup = yes

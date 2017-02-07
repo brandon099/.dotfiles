@@ -1,6 +1,5 @@
 [options]
-font            = Operator Mono Book, Book 10
-#font            = Operator Mono Book Italic, Italic 10
+font            = Operator Mono Book, Book 11
 allow_bold      = true
 audible_bell    = false
 
