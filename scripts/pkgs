@@ -1,8 +1,9 @@
 alsa-utils
 arandr
+arc-gtk-theme
 bdf-tewi-git
 bind-tools
-bspwm-git
+bspwm
 compton
 dosfstools
 dunst
@@ -13,7 +14,6 @@ fish
 git
 gnome-calculator
 gpick
-gtk-theme-arc
 gvfs-smb
 hsetroot
 iw
@@ -33,7 +33,7 @@ pass
 pavucontrol
 physlock
 python-pip
-rofi-git
+rofi
 roxterm
 rsync
 scrot
@@ -57,7 +57,7 @@ wget
 wpa_actiond
 wpa_supplicant
 xcursor-human
-xdo-git
+xdo
 xorg-server
 xorg-server-utils
 xorg-xdpyinfo

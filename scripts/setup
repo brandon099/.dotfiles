@@ -12,7 +12,7 @@ error() { echo -e "\e[31m:: $@\e[0m"; }
 test "$UID" -gt 0 || { error "This script cannot be run as root."; exit;}
 
 # Update Cached sudo credentials
-info "Updating cacehd sudo credentials"
+info "Updating cached sudo credentials"
 sudo -v
 
 # Check for pacaur to begin installing pkgs, else try installing it
