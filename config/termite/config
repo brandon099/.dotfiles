@@ -1,43 +1,45 @@
 [options]
-font            = Operator Mono Book, Book 11
+font            = Operator Mono Book, Book 10
 allow_bold      = true
 audible_bell    = false
 
 [colors]
 # special
-foreground      = #c0c5ce
-foreground_bold = #c0c5ce
-cursor          = #c0c5ce
-background      = #2b303b
+foreground        = #D8DEE9
+foreground_bold   = #D8DEE9
+cursor            = #D8DEE9
+cursor_foreground = #2E3440
+background        = #2E3440
+highlight         = #4C566A
 
 # black
-color0  = #2b303b
-color8  = #65737e
+color0  = #3B4252
+color8  = #4C566A
 
 # red
-color1  = #bf616a
-color9  = #bf616a
+color1  = #BF616A
+color9  = #BF616A
 
 # green
-color2  = #a3be8c
-color10 = #a3be8c
+color2  = #A3BE8C
+color10 = #A3BE8C
 
 # yellow
-color3  = #ebcb8b
-color11 = #ebcb8b
+color3  = #EBCB8B
+color11 = #EBCB8B
 
 # blue
-color4  = #8fa1b3
-color12 = #8fa1b3
+color4  = #81A1C1
+color12 = #81A1C1
 
 # magenta
-color5  = #b48ead
-color13 = #b48ead
+color5  = #B48EAD
+color13 = #B48EAD
 
 # cyan
-color6  = #96b5b4
-color14 = #96b5b4
+color6  = #88C0D0
+color14 = #8FBCBB
 
 # white
-color7  = #c0c5ce
-color15 = #eff1f5
+color7  = #E5E9F0
+color15 = #ECEFF4

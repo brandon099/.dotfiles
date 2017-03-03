@@ -35,9 +35,8 @@ syntax on                           "Turn on syntax highlighting
 
 syntax enable
 set background=dark
-let base16colorspace=256
 set t_Co=16
-colorscheme base16-ocean
+colorscheme nord
 
 " Italics for comments
 let &t_ZH="\e[3m"
@@ -127,7 +126,7 @@ au BufNewFile,BufRead *.py
 " =================== Airline =============================
 
 let g:airline_symbols                       = {}
-let g:airline_theme                         = "base16"
+let g:airline_theme                         = "nord"
 let g:airline#extensions#branch#enabled     = 1
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#syntastic#enabled  = 1
