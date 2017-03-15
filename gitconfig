@@ -15,7 +15,22 @@
     tool = vimdiff
     conflictstyle = diff3
 [color]
+    interactive = auto
+    pager = true
     ui = auto
+[color "branch"]
+    current = red bold
+    local = magenta bold
+    remote = yellow
+[color "diff"]
+    meta = cyan
+    frag = blue
+    old = red
+    new = green
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = magenta
 [diff]
     renames = copies
 [push]
