@@ -3,15 +3,14 @@ imports:
   fish-prepend-sudo: config/fish/functions
   fish-pure-prompt: config/fish/functions
 
-  vim-airline-themes: vim/bundle/airline-themes
-  vim-airline: vim/bundle/airline
   vim-bufferline: vim/bundle/vim-bufferline
   vim-ctrlp: vim/bundle/ctrlp
   vim-fish: vim
-  vim-fugitive: vim/bundle/fugitive
   vim-gitgutter: vim/bundle/vim-gitgutter
+  vim-gitbranch: vim/bundle/vim-gitbranch
   vim-indentpython: vim/bundle/indentpython
   vim-jinja: vim/bundle/vim-jinja2-syntax
+  vim-lightline: vim/bundle/vim-lightline
   vim-markdown: vim/bundle/vim-markdown
   vim-nord: vim/bundle/vim-nord
   vim-pathogen: vim
@@ -23,10 +22,6 @@ imports:
   vim-syntastic: vim/bundle/syntastic
   vim-simpylfold: vim/bundle/simpylfold
   vim-sxhkdrc: vim/bundle/sxhkdrc
-
-git module base16-shell:
-    url: https://github.com/chriskempson/base16-shell
-    rev: 980122519cf3464dfd9794acf61cdd645f2497da
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -40,21 +35,9 @@ git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
     rev: 404740c82af7faa6a4fb99c4dca5446fe605e45a
 
-git module vim-airline:
-    url: https://github.com/vim-airline/vim-airline
-    rev: fbd791e7f0431e18b987a2a8937a4c3d34dd2125
-
-git module vim-airline-themes:
-    url: https://github.com/vim-airline/vim-airline-themes
-    rev: 205f6964be55d17c908baaf89066928090b02729
-
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
     rev: 651fd010aa9613a4b8636a4af8a2db0d22800262
-
-git module vim-base16:
-    url: https://github.com/chriskempson/base16-vim
-    rev: b6a4075594806b0d9d7759506b6e84fcec8b22c1
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -64,13 +47,13 @@ git module vim-fish:
     url: https://github.com/aliva/vim-fish
     rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
 
-git module vim-fugitive:
-    url: https://github.com/tpope/vim-fugitive
-    rev: 87c1bda4d5573185a1f79c42a919c4b62bc34c42
+git module vim-gitbranch:
+    url: https://github.com/itchyny/vim-gitbranch
+    rev: 43937dfa395ddec226ab873fe23b63c91811cbea
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 1c034be0d31168c8f4770ef7b69adb67d00d6f3d
+    rev: fd4fa5bed7a306aea758c4cb8c77e7c6e12000b9
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -80,13 +63,17 @@ git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
     rev: 1d525a8cb4bcdc4311f42e8523467547e67aa983
 
+git module vim-lightline:
+    url: https://github.com/itchyny/lightline.vim
+    rev: 6034e639e871cb33a436508a6c6ccbe3e236de4c
+
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: d6d59eef6f604b6430fd6adade9e18364666232b
+    rev: 2cd50d2ca657091c6aa787a3847284fb4cceff49
 
 git module vim-nord:
     url: https://github.com/arcticicestudio/nord-vim
-    rev: cc1ca97be11857136ee89a5f19889fd88c61b434
+    rev: 735d1fc0a67693f51c09958a1c17e75f82666cc7
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -94,7 +81,7 @@ git module vim-pathogen:
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-    rev: 91832bf94b17d96c5ae476f903b127f5ccdc19ee
+    rev: 5ea29d4d5101e0d23f3bf538c0c9af1fe967f416
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -102,7 +89,7 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 4b7535921819a5b2e39be68f81109ea684232503
+  rev: e57222db3b3236782dc33b7cdbb648528b7377d9
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
@@ -114,11 +101,11 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 48e8b0e9d2721f608fd1d1157c9388b2626cbddf
+    rev: 2cfb29d0a4bffd674ebab1b0d7139e8e3908ce7b
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
-    rev: d451d538674c79a26da2ba72d1047b0a21c6bfeb
+    rev: ef2dc656047af2ea82ff695cfa127e2d91ae0b6f
 
 git module vim-sxhkdrc:
     url: https://github.com/baskerville/vim-sxhkdrc

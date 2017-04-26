@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # Packages to install from the AUR
 pkgs="cower pacaur"
 

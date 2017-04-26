@@ -1,6 +1,6 @@
 [options]
 font            = Operator Mono Book, Book 10
-allow_bold      = true
+allow_bold      = false
 audible_bell    = false
 
 [colors]

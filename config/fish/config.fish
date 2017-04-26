@@ -60,9 +60,7 @@ function fish_user_key_bindings
 end
 
 # Virtualfish wrapper function
-function venvwrapper --description 'Source Virtualfish'
-    eval (python -m virtualfish compat_aliases)
-end
+eval (python -m virtualfish compat_aliases)
 
 # Aliases
 alias tree="tree --dirsfirst -CF"
