@@ -1,5 +1,5 @@
 [global]
-    font = "Wuncon Siji 10, Operator Mono Light 10"
+    font = "Wuncon Siji 10, Operator Mono Medium 9"
 
     # Allow a small subset of html markup in notifications and formats.
     allow_markup = yes
