@@ -58,8 +58,8 @@ wpa_actiond
 wpa_supplicant
 xcursor-human
 xdo
+xorg-apps
 xorg-server
-xorg-server-utils
 xorg-xdpyinfo
 xorg-xev
 xorg-xfd

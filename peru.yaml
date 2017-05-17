@@ -69,7 +69,7 @@ git module vim-lightline:
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 2cd50d2ca657091c6aa787a3847284fb4cceff49
+    rev: 3fcde7215e22913f004c2836fd46ff61746be6db
 
 git module vim-nord:
     url: https://github.com/arcticicestudio/nord-vim
@@ -77,7 +77,7 @@ git module vim-nord:
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: 020ab25c38f62627c1dab6c7a851176c6ad309f9
+    rev: 0f4710063ecc98d77dc03698c4a917a3215bdf09
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
@@ -89,7 +89,7 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: e57222db3b3236782dc33b7cdbb648528b7377d9
+  rev: 49ee364222dc2a5a00dddf89fd61880e3e39d46a
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
@@ -101,11 +101,11 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 6cf4f5ca76059caf229bc32c8e613cb137e0faed
+    rev: 5efeecece3f512076513e8ee1e7444157a16a77b
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
-    rev: ef2dc656047af2ea82ff695cfa127e2d91ae0b6f
+    rev: 4624031f65d78196d55be0180a31bd352460aebc
 
 git module vim-sxhkdrc:
     url: https://github.com/baskerville/vim-sxhkdrc
