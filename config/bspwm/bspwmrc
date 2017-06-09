@@ -32,6 +32,7 @@ bspc rule -a Pavucontrol state=floating
 bspc rule -a rofi manage=off
 bspc rule -a Galculator state=floating
 bspc rule -a Moolticute state=floating
+bspc rule -a MooltiApp state=floating
 
 desktops=$(bspc query --monitors)
 
