@@ -31,27 +31,32 @@ set -x INFINALITY_FT_USE_KNOWN_SETTINGS_ON_SELECTED_FONTS true
 # Java GUI in BSPWM
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
-# Fish Syntax
-set fish_color_autosuggestion 4C566A EBCB8B
+# Base16 Shell
+if not set -q SSH_CONNECTION
+    eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
+end
+
+# Base16-Ocean Syntax
+set fish_color_autosuggestion 65737E EBCB8B
 set fish_color_command A3BE8C
 set fish_color_comment BF616A
 set fish_color_cwd A3BE8C
 set fish_color_cwd_root BF616A
 set fish_color_error BF616A --bold
-set fish_color_escape 88C0D0
-set fish_color_history_current 88C0D0
-set fish_color_match 88C0D0
-set fish_color_normal E5E9F0
-set fish_color_operator 88C0D0
-set fish_color_param E5E9F0 88C0D0
-set fish_color_quote 88C0D0
-set fish_color_redirection E5E9F0
-set fish_color_search_match --background=3B4252
-set fish_color_selection --background=3B4252
-set fish_pager_color_completion E5E9F0
-set fish_pager_color_description 4C566A
-set fish_pager_color_prefix 88C0D0
-set fish_pager_color_progress 88C0D0
+set fish_color_escape 96B5B4
+set fish_color_history_current 96B5B4
+set fish_color_match 96B5B4
+set fish_color_normal C0C5CE
+set fish_color_operator 96B5B4
+set fish_color_param C0C5CE 96B5B4
+set fish_color_quote 96B5B4
+set fish_color_redirection C0C5CE
+set fish_color_search_match --background=343D46
+set fish_color_selection --background=343D46
+set fish_pager_color_completion C0C5CE
+set fish_pager_color_description 65737E
+set fish_pager_color_prefix 96B5B4
+set fish_pager_color_progress 96B5B4
 
 # Custom Key Bindings
 function fish_user_key_bindings

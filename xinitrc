@@ -37,7 +37,7 @@ xset fp rehash
 xrdb ~/.Xresources
 
 # Start Simple X Hotkey Daemon
-export SXHKD_SHELL='/usr/bin/sh'
+export SXHDK_SHELL='/usr/bin/sh'
 sxhkd &
 
 # Monitor Scripts

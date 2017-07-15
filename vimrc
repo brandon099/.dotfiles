@@ -35,8 +35,9 @@ syntax on                           "Turn on syntax highlighting
 
 syntax enable
 set background=dark
+let base16colorspace=256
 set t_Co=16
-colorscheme nord
+colorscheme base16-ocean
 
 " Italics for comments
 let &t_ZH="\e[3m"
