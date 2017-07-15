@@ -101,7 +101,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 6cf4f5ca76059caf229bc32c8e613cb137e0faed
+    rev: 2cfb29d0a4bffd674ebab1b0d7139e8e3908ce7b
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
