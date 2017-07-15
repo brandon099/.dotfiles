@@ -127,7 +127,7 @@ au BufNewFile,BufRead *.py
 " =================== Lightline ===========================
 
 let g:lightline = {
-    \ 'colorscheme': 'nord',
+    \ 'colorscheme': 'base16_ocean',
     \ 'active': {
     \     'left': [
     \         ['mode', 'paste'],
