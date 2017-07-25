@@ -87,7 +87,7 @@ git module vim-markdown:
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: ddfb1f14d7597e6aedc749be06b559a673c437ab
+    rev: 0f4710063ecc98d77dc03698c4a917a3215bdf09
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
@@ -111,7 +111,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: e1161a723a353db99780f9a9351340df7abbb106
+    rev: 5efeecece3f512076513e8ee1e7444157a16a77b
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
