@@ -1,0 +1,22 @@
+#!/usr/bin/bash
+
+# Configuration:
+OUT=/tmp/unsplash.jpg
+
+WIDTH=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
+HEIGHT=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2)
+
+URL="https://source.unsplash.com/random/$WIDTH"x"$HEIGHT"
+TMP=/tmp/unsplash
+
+# Download and, if successful, process the resulting photo
+wget "$URL" -O "$TMP" >/dev/null 2>&1
+if [ $? -eq 0 ]; then
+    if hash convert 2>/dev/null; then
+        convert $TMP  -fill white  -undercolor '#00000080'  -gravity SouthEast -annotate +0+5 " $NAME " $OUT
+    else
+        mv $TMP $OUT
+    fi
+fi
+
+hsetroot -fill $OUT
