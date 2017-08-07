@@ -27,7 +27,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 2251b7db71b2a48602cc4d858c4ce326a5874bdd
+    rev: 06768c712789963a935f7512a5b821b1f63458af
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -39,7 +39,7 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 404740c82af7faa6a4fb99c4dca5446fe605e45a
+    rev: 2bd33831a723130909fa7658bb61a99227416a2f
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -47,7 +47,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: c1c3e6ccb1a4cd4ea00162abb4ccece4a3e69d0b
+    rev: 2d991f14f688a38b7b2bcd397bad5efadd0f80a9
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -67,7 +67,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: dcac1f74ee5c26125363dca164463bde6657c838
+    rev: dc73a81bfe59a9de090b89a1312ded3c6f6a6f89
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -87,11 +87,11 @@ git module vim-markdown:
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: 0f4710063ecc98d77dc03698c4a917a3215bdf09
+    rev: e7857bed4e0705f91f781dbe99706f07d08d104b
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-    rev: 952cc47b45d3d05a1e172ce6388e1e4f37f0ec26
+    rev: ec0f0b60624f40b9634d8b0004b3cf9428599446
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -111,7 +111,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: 5efeecece3f512076513e8ee1e7444157a16a77b
+    rev: e1161a723a353db99780f9a9351340df7abbb106
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
