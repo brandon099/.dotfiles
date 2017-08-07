@@ -1,0 +1,47 @@
+conky.config = {
+    background = true,
+    update_interval = 1,
+
+    double_buffer = true,
+    no_buffers = true,
+    text_buffer_size = 2048,
+
+    minimum_width = 200, minimum_height = 200,
+    maximum_width = 200,
+    own_window = true,
+    own_window_type = 'desktop',
+
+    own_window_argb_visual = true,
+    own_window_transparent = false,
+    own_window_colour = '111111',
+    own_window_argb_value = 90,
+
+    own_window_class = 'conky-semi',
+    own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+    border_inner_margin = 0,
+    border_outer_margin = 0,
+
+    -- EDIT THIS TO CHANGE POSITION
+    alignment = 'middle_middle',
+
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = true,
+    border_width = 12,
+    border_inner_margin = 10,
+
+    override_utf8_locale = true,
+    use_xft = true,
+    font = 'Open Sans Light:size=20',
+    xftalpha = 0.5,
+    uppercase = false,
+
+    -- Defining colors
+    default_color = '#FFFFFF',
+};
+
+conky.text = [[
+    ${alignc}${voffset 10}${offset -15}${font Open Sans Light:size=50}${time %I:%M}${font}
+    ${alignc}${voffset 20}${time %A}
+    ${alignc}${time %B} ${time %e}
+]];
