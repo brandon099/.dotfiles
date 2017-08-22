@@ -27,7 +27,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 06768c712789963a935f7512a5b821b1f63458af
+    rev: a3314cf066db4df2ffab5298b1f90fe5066bccb1
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -79,7 +79,7 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: ff74d6561487d220ed9d878172d8b55a79a4c17e
+    rev: 96d6d108bf6cd7bfdaa9872add4bb47d6ddbf7fd
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -91,7 +91,7 @@ git module vim-pathogen:
 
 git module vim-pydocstring:
     url: https://github.com/heavenshell/vim-pydocstring
-    rev: ec0f0b60624f40b9634d8b0004b3cf9428599446
+    rev: 1bd96bb67afeaf4a22d3b51e31a7bb32f6ece9b1
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -111,7 +111,7 @@ git module vim-supertab:
 
 git module vim-syntastic:
     url: https://github.com/scrooloose/syntastic
-    rev: e1161a723a353db99780f9a9351340df7abbb106
+    rev: 5e1b26c1724448c9d870b08dc93ce71528489333
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
