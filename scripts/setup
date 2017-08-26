@@ -1,27 +1,30 @@
-#!/bin/env sh
-
-# Exit on errors
-set -e
+#!/bin/env fish
 
 # Output format
-info() { echo -e "\e[34m:: $@\e[0m"; }
-warning() { echo -e "\e[33m:: $@\e[0m"; }
-error() { echo -e "\e[31m:: $@\e[0m"; }
+function info --description 'Info logging wrapper'
+    echo -e "\e[34m:: $argv\e[0m"
+end
+function warning
+    echo -e "\e[33m:: $argv\e[0m"
+end
+function error
+    echo -e "\e[31m:: $argv\e[0m"
+end
 
 # Cannot run as root user
-test "$UID" -gt 0 || { error "This script cannot be run as root."; exit;}
+test (id -u) -gt 0; or error "This script cannot be run as root."
 
 # Update Cached sudo credentials
 info "Updating cached sudo credentials"
 sudo -v
 
 # Check for pacaur to begin installing pkgs, else try installing it
-if [ $(command -v pacaur) ]; then
+if (command -v pacaur)
     info "Installing from pkgs file"
-    pacaur -S $(cat ~/.dotfiles/scripts/pkgs | tr '\n' ' ') --needed --devel --noconfirm --noedit
+    pacaur -S (cat ~/.dotfiles/scripts/pkgs | tr '\n' ' ') --needed --devel --noconfirm --noedit
 else
     warning "Pacaur not installed, trying to install..."
     sh ~/.dotfiles/scripts/install-pacaur
-fi
+end
 
 info "Finished installing packages"
