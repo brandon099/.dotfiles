@@ -14,20 +14,18 @@ imports:
   vim-indentpython: vim/bundle/indentpython
   vim-jinja: vim/bundle/vim-jinja2-syntax
   vim-lightline: vim/bundle/vim-lightline
+  vim-no-line-indicator: vim/bundle/vim-no-line-indicator
   vim-markdown: vim/bundle/vim-markdown
   vim-pathogen: vim
-  vim-pydocstring: vim/bundle/pydocstring
   vim-salt: vim/bundle/salt-vim
   vim-sensible: vim/bundle/sensible
   vim-sudoedit: vim/bundle/sudoedit
-  vim-supertab: vim/bundle/supertab
-  vim-syntastic: vim/bundle/syntastic
   vim-simpylfold: vim/bundle/simpylfold
   vim-sxhkdrc: vim/bundle/sxhkdrc
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: a3314cf066db4df2ffab5298b1f90fe5066bccb1
+    rev: 82ca06a36cef3c7d0f0e084a86d4a470608c2c37
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -52,6 +50,10 @@ git module vim-base16:
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
     rev: 09413d7b9c001b43168118fd841e2dd18ea558ed
+
+git module vim-no-line-indicator:
+    url: https://github.com/drzel/vim-line-no-indicator
+    rev: b664ac7d9e33aafd4f3aec53451a8e91d5ff2653
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -89,10 +91,6 @@ git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
     rev: e7857bed4e0705f91f781dbe99706f07d08d104b
 
-git module vim-pydocstring:
-    url: https://github.com/heavenshell/vim-pydocstring
-    rev: 1bd96bb67afeaf4a22d3b51e31a7bb32f6ece9b1
-
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
     rev: 6ca9e3500cc39dd417b411435d58a1b720b331cc
@@ -104,14 +102,6 @@ git module vim-sensible:
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
   rev: 920d8033042912d882d53f47bd4374c30c057f57
-
-git module vim-supertab:
-  url: https://github.com/ervandew/supertab
-  rev: 22aac5c2cb6a8ebe906bf1495eb727717390e62e
-
-git module vim-syntastic:
-    url: https://github.com/scrooloose/syntastic
-    rev: 5e1b26c1724448c9d870b08dc93ce71528489333
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
