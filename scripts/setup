@@ -19,7 +19,7 @@ info "Updating cached sudo credentials"
 sudo -v
 
 # Check for pacaur to begin installing pkgs, else try installing it
-if (command -v pacaur)
+if command -v pacaur
     info "Installing from pkgs file"
     pacaur -S (cat ~/.dotfiles/scripts/pkgs | tr '\n' ' ') --needed --devel --noconfirm --noedit
 else
