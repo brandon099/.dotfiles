@@ -150,7 +150,7 @@ super + shift + s
     screenshot
 
 super + {_,shift + }Return
-    firefox
+    firefox-developer
 
 super + Escape
     pkill -USR1 -x sxhkd

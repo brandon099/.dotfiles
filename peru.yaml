@@ -25,7 +25,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 82ca06a36cef3c7d0f0e084a86d4a470608c2c37
+    rev: 18e791e7af5907956d17cf2319feda82dd4a2762
 
 git module fish-git-alias:
     url: https://github.com/brandon099/fish-git-alias
@@ -53,7 +53,7 @@ git module vim-base16-lightline:
 
 git module vim-no-line-indicator:
     url: https://github.com/drzel/vim-line-no-indicator
-    rev: b664ac7d9e33aafd4f3aec53451a8e91d5ff2653
+    rev: 029e033aeb08317cb27139eeb5b2e4e50e47c90c
 
 git module vim-ctrlp:
     url: https://github.com/kien/ctrlp.vim
@@ -69,7 +69,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: dc73a81bfe59a9de090b89a1312ded3c6f6a6f89
+    rev: 54209a0199bcb9f6b7c452deb0ffbc3aa60b857d
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -81,7 +81,7 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 96d6d108bf6cd7bfdaa9872add4bb47d6ddbf7fd
+    rev: 89b32d170405b9085bed9cfb6bc4bab8cd8bd81c
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
