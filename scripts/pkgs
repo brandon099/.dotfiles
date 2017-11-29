@@ -30,7 +30,6 @@ openvpn
 pass
 pavucontrol
 physlock
-python-pip
 rofi
 roxterm
 rsync
@@ -44,9 +43,7 @@ termite
 the_silver_searcher
 tmux
 tree
-ttf-droid
 ttf-roboto
-ttf-roboto-mono
 unclutter-patched
 unrar
 unzip
