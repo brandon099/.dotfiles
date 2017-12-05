@@ -1,6 +1,5 @@
 imports:
   base16-shell: config/base16-shell
-  fish-git-alias: config/fish/functions
   fish-prepend-sudo: config/fish/functions
   fish-pure-prompt: config/fish/functions
 
@@ -26,10 +25,6 @@ imports:
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
     rev: faeae9c61e997106641845000d01d6b520558820
-
-git module fish-git-alias:
-    url: https://github.com/brandon099/fish-git-alias
-    rev: c8c0159a42b2cceb1b6eb0dc833e806d801862e9
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo

@@ -97,6 +97,12 @@ function fish_title --description 'Set terminal title'
         end
 end
 
+# Load Git Abbreviations
+set abbr_file $HOME/.config/fish/git-abbr.fish
+if test -e $abbr_file
+    source $abbr_file
+end
+
 # Start X at login
 if not set -q SSH_CONNECTION
     if status --is-login

@@ -18,6 +18,7 @@ vim/*
 !config/dunst*
 !config/fish/completions*
 !config/fish/config.fish
+!config/fish/git-abbr.fish
 !config/flake8
 !config/fontconfig*
 !config/global.conf
