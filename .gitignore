@@ -11,6 +11,7 @@ scripts/vauth
 scripts/vauth_cron
 scripts/webmail
 scripts/ynab
+scripts/outlook
 vim/*
 !config/alacritty*
 !config/bspwm*
