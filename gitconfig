@@ -1,8 +1,6 @@
 [user]
     email = brandon.clifford@vivint.com
     name = Brandon Clifford
-[alias]
-    lu = !git for-each-ref --sort='-authordate:iso8601' --format='%(color:bold red)%(objectname:short)%(color:reset) - %(color:reset)%(color:yellow) (%(refname:short)) %(color:reset)%(color:white)%(subject)%(color:reset) %(color:green)(%(authordate:relative))%(color:reset) %(color:blue)<%(authorname)>%(color:reset)' refs/heads refs/remotes
 [core]
     editor = vim
     autocrlf = input

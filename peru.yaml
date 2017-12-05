@@ -76,7 +76,7 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: c63eb5514b3cd829f1d8f30d2736b24ae4ba217a
+    rev: b19faca129f7921766c0a32a7c378dc89a61e590
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
