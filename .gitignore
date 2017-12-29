@@ -25,6 +25,7 @@ vim/*
 !config/global.conf
 !config/jumanji*
 !config/redshift.conf
+!config/rofi*
 !config/roxterm*
 !config/sxhkd*
 !config/termite*

@@ -1,0 +1,139 @@
+/**
+ * Base16 Ocean Light ROFI Color theme
+ * User: Chris Kempson (http://chriskempson.com)
+ */
+* {
+    selected-normal-foreground:  @foreground;
+    foreground:                  rgba ( 79, 91, 102, 100 % );
+    normal-foreground:           @foreground;
+    alternate-normal-background: @lightbg;
+    red:                         rgba ( 191, 97, 106, 100 % );
+    selected-urgent-foreground:  @background;
+    blue:                        rgba ( 129, 161, 193, 100 % );
+    urgent-foreground:           @red;
+    alternate-urgent-background: @lightbg;
+    active-foreground:           @blue;
+    lightbg:                     rgba ( 223, 225, 232, 100 % );
+    selected-active-foreground:  @background;
+    alternate-active-background: @lightbg;
+    background:                  rgba ( 239, 241, 245, 100 % );
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    lightfg:                     rgba ( 79, 91, 102, 100 % );
+    selected-normal-background:  @lightbg;
+    border-color:                @foreground;
+    spacing:                     2;
+    separatorcolor:              @foreground;
+    urgent-background:           @background;
+    selected-urgent-background:  @red;
+    alternate-urgent-foreground: @red;
+    background-color:            rgba ( 239, 241, 245, 100 % );
+    alternate-active-foreground: @blue;
+    active-background:           @background;
+    selected-active-background:  @blue;
+    font:                        "Noto Sans 10";
+}
+#window {
+    background-color: @background;
+    border:           1;
+    border-radius:    3;
+    padding:          10;
+    width:            20%;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       0px dash 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       0px dash 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+}
+#element {
+    border:  0;
+    padding: 1px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    text-color: @normal-foreground;
+    padding:    5 0 5 0;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+    font:       "Operator Mono Book 12";
+}
+#prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+    font:       "Operator Mono Book Italic 12";
+}
