@@ -54,6 +54,7 @@ eval (python -m virtualfish compat_aliases)
 alias tree="tree --dirsfirst -CF"
 alias pyfind='find . -name "*.py"'
 alias pygrep='grep -r --include="*.py"'
+alias ls='ls --color -h --group-directories-first'
 
 # SSH Function to override TERM
 function ssh

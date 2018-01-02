@@ -113,17 +113,6 @@ if &term =~ '^tmux'
   execute "set <xLeft>=\e[1;*D"
 endif
 
-" =================== Code ================================
-
-let python_space_errors = 1
-let g:SimpylFold_docstring_preview=1
-let g:SimpylFold_fold_import = 0
-let g:syntastic_check_on_open = 1
-autocmd FileType python set colorcolumn=120
-
-au BufNewFile,BufRead *.py
-    \ set shiftwidth=4 textwidth=119 fileformat=unix
-
 " =================== Lightline ===========================
 
 let g:lightline = {
