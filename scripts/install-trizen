@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Packages to install from the AUR
-pkgs="cower pacaur"
+pkgs="trizen"
 
 # Exit on errors
 set -e
@@ -26,7 +26,7 @@ info "Installing system requirements"
 sudo pacman -S --needed --noconfirm base-devel curl
 
 # Create temporary directory for build
-buildroot=$(mktemp -d /tmp/install-pacaur-XXXXXXXX)
+buildroot=$(mktemp -d /tmp/install-trizen-XXXXXXXX)
 mkdir -p ${buildroot}
 info "Created temp directory: $buildroot"
 
