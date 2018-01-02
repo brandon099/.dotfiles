@@ -17,6 +17,7 @@ gnome-calculator
 gpick
 gvfs-smb
 hsetroot
+i3lock-color-git
 iw
 jq
 ldm
@@ -24,13 +25,13 @@ lxappearance
 mtr
 nautilus
 net-tools
+noto-fonts
 ntp
 numlockx
 openssh
 openvpn
 pass
 pavucontrol
-physlock
 rofi
 roxterm
 rsync
@@ -50,8 +51,6 @@ unrar
 unzip
 vim
 wget
-wpa_actiond
-wpa_supplicant
 xcursor-human
 xdo
 xorg-apps
