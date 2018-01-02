@@ -1,9 +1,40 @@
 #!/usr/bin/env fish
 
+set BG "343D46FF"
+set BGLITE "65737EFF"
+set FG "C0C5CEFF"
+set RED "BF616AFF"
+set GRN "A3BE8CFF"
+
 # Suspend notifications
 notify-send DUNST_COMMAND_PAUSE
 
-physlock -dm
+i3lock -n -e --clock \
+             --force-clock \
+             --timepos="x-90:h-ch+30" \
+             --datepos="tx+24:ty+25" \
+             --indpos="x+220:h-70" \
+             --timestr="%l:%M %p" \
+             --datestr="%a, %b %d" \
+             --radius=24 \
+             --ring-width=4 \
+             --veriftext="" \
+             --wrongtext="" \
+             --line-uses-inside \
+             --color=343D46 \
+             --textcolor=$FG \
+             --timecolor=$FG \
+             --datecolor=$FG \
+             --separatorcolor=$FG \
+             --ringcolor=$FG \
+             --keyhlcolor=$BGLITE \
+             --bshlcolor=$RED \
+             --insidecolor=$BG \
+             --insidevercolor=$GRN \
+             --insidewrongcolor=$RED \
+             --ringcolor=$FG \
+             --ringvercolor=$GRN \
+             --ringwrongcolor=$RED
 
 # Resume notifications
 notify-send DUNST_COMMAND_RESUME
