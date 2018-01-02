@@ -1,3 +1,0 @@
-#!/bin/python
-import sys
-print(' '.join(sorted(set(sys.argv[1:]))))

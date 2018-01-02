@@ -1,5 +1,4 @@
 #! /bin/sh
-
 source ~/.config/global.conf
 
 bspc config top_padding                 0
@@ -34,6 +33,7 @@ bspc rule -a Galculator state=floating
 bspc rule -a Moolticute state=floating
 bspc rule -a MooltiApp state=floating
 bspc rule -a Pinentry layer=above state=floating
+bspc rule -a Firefox*:Places state=floating
 
 desktops=$(bspc query --monitors)
 
@@ -47,3 +47,10 @@ for monitor in $desktops; do
         bspc monitor "$monitor" -d $i/{i,ii,iii,iv,v}
     let i++
 done
+
+bspc wm --adopt-orphans
+
+# BSPWM Workspace manager
+if ! pgrep bspwm-workspaces; then
+    bspwm-workspaces
+fi

@@ -1,20 +1,9 @@
 #!/usr/bin/env bash
-# Set up displays -- monitors script returns the xrandr command needed to set up the displays
-xrandr --query | grep " connected" | awk -F' ' '{print $1 $2}' | xargs string_set | monitors | sh
-
-# Set default cursor
-xsetroot -cursor_name left_ptr
-
-# Map menu button to Mod4
-if [ -s ~/.Xmodmap ]; then
-    xmodmap ~/.Xmodmap
-fi
-
 # Set Desktop Background
 hsetroot -solid "#8FA1B3"
 
 # Start compositor
-compton -b
+compton &
 
 # Start Dunst Notification Daemon
 dunst &
@@ -33,8 +22,19 @@ xset fp+ /usr/share/fonts/misc
 xset fp+ /usr/share/fonts/local
 xset fp rehash
 
+# Set default cursor
+xsetroot -cursor_name left_ptr
+
 # Source Xresources
 xrdb ~/.Xresources
+
+# Load machine specific keyboard mappings
+if [ -s ~/.Xmodmap ]; then
+    xmodmap ~/.Xmodmap
+fi
+
+# Map CapsLock to Super
+setxkbmap -option caps:super
 
 # Start Simple X Hotkey Daemon
 export SXHKD_SHELL='/usr/bin/sh'
