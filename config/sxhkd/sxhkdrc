@@ -126,10 +126,10 @@ super + alt + Return
     termite -e cava -t cava --geometry=200x100
 
 super + space
-    rofi -show run
+    rofi -theme base16-ocean-light -show run
 
 alt + Tab
-    rofi -show window
+    rofi -theme base16-ocean-light -show window
 
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -162,7 +162,7 @@ super + shift + s
     screenshot
 
 super + {_,shift + }Return
-    firefox-developer
+    firefox-developer-edition
 
 super + Escape
     pkill -USR1 -x sxhkd

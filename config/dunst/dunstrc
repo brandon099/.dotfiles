@@ -1,8 +1,5 @@
 [global]
-    font = "Wuncon Siji 10, Operator Mono Medium 9"
-
-    # Allow a small subset of html markup in notifications and formats.
-    allow_markup = yes
+    font = "Wuncon Siji 10, Operator Mono Book 9"
 
     # Treat incoming notifications as plain text
     plain_text = no
@@ -101,10 +98,6 @@
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-    width = 0
-    color = "#4F5B66"
-
 [shortcuts]
     # Close notification.
     close = ctrl+space
@@ -120,13 +113,13 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#343D46"
-    foreground = "#C0C5CE"
+    foreground = "#4F5B66"
+    background = "#EFF1F5"
     timeout = 5
 
 [urgency_normal]
-    background = "#343D46"
-    foreground = "#C0C5CE"
+    foreground = "#4F5B66"
+    background = "#EFF1F5"
     timeout = 5
 
 [urgency_critical]
