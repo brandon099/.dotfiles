@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: faeae9c61e997106641845000d01d6b520558820
+    rev: e2b695b0432a600ff6d023ed4c9b9f3516673c7f
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo
@@ -40,7 +40,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: dfe039591ab935803de0c028a2be859a5a425611
+    rev: bc76580f01d6f4f9559056882e887c13b1837674
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -76,11 +76,11 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: b19faca129f7921766c0a32a7c378dc89a61e590
+    rev: 6f84195f109d3e7f7ecb5e4a9ae8c5d3009259ac
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 3fcde7215e22913f004c2836fd46ff61746be6db
+    rev: f416b35dba4505f85dca9cafb984ab7d89e57f96
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
