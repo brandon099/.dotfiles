@@ -11,13 +11,13 @@ notify-send DUNST_COMMAND_PAUSE
 
 i3lock -n -e --clock \
              --force-clock \
-             --timepos="x-90:h-ch+30" \
-             --datepos="tx+24:ty+25" \
-             --indpos="x+220:h-70" \
+             --timepos="x-100:y-45" \
+             --datepos="tx+25:ty+25" \
+             --indpos="x+210:y+55" \
              --timestr="%l:%M %p" \
              --datestr="%a, %b %d" \
-             --radius=24 \
-             --ring-width=4 \
+             --radius=20 \
+             --ring-width=2 \
              --veriftext="" \
              --wrongtext="" \
              --line-uses-inside \
