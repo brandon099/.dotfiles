@@ -126,10 +126,10 @@ super + alt + Return
     termite -e cava -t cava --geometry=200x100
 
 super + space
-    rofi -theme base16-ocean-light -show run
+    rofi -theme base16-ocean-light -show run -display-run "run: "
 
 alt + Tab
-    rofi -theme base16-ocean-light -show window
+    rofi -theme base16-ocean-light -show window -display-window "window: "
 
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause

@@ -7,6 +7,8 @@
     whitespace = cr-at-eol
     excludesfile = /home/bclifford/.gitignore_global
     pager = less -+F
+[advice]
+    waitingForEditor = false
 [mergetool]
     prompt = false
 [merge]
