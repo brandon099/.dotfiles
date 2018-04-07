@@ -6,12 +6,17 @@ set FG "C0C5CEFF"
 set RED "BF616AFF"
 set GRN "A3BE8CFF"
 
+set disp (string replace ':' "_" $DISPLAY)
+
+dbus-send --print-reply --dest=com.github.chjj.compton.$disp / \
+    com.github.chjj.compton.opts_set string:no_fading_openclose boolean:false
+
 # Suspend notifications
 notify-send DUNST_COMMAND_PAUSE
 
 i3lock -n -e --clock \
              --force-clock \
-             --timepos="x-100:y-45" \
+             --timepos="x+100:y+56" \
              --datepos="tx+25:ty+25" \
              --indpos="x+210:y+55" \
              --timestr="%l:%M %p" \
@@ -20,11 +25,13 @@ i3lock -n -e --clock \
              --ring-width=2 \
              --veriftext="" \
              --wrongtext="" \
+             --noinputtext="" \
              --line-uses-inside \
              --color=343D46 \
-             --textcolor=$FG \
              --timecolor=$FG \
              --datecolor=$FG \
+             --verifcolor=FFFFFF00 \
+             --wrongcolor=FFFFFF00 \
              --separatorcolor=$FG \
              --ringcolor=$FG \
              --keyhlcolor=$BGLITE \
@@ -32,9 +39,12 @@ i3lock -n -e --clock \
              --insidecolor=$BG \
              --insidevercolor=$GRN \
              --insidewrongcolor=$RED \
-             --ringcolor=$FG \
              --ringvercolor=$GRN \
              --ringwrongcolor=$RED
 
 # Resume notifications
 notify-send DUNST_COMMAND_RESUME
+
+sleep 0.2
+dbus-send --print-reply --dest=com.github.chjj.compton.$disp / \
+    com.github.chjj.compton.opts_set string:no_fading_openclose boolean:true

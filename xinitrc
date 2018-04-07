@@ -3,7 +3,7 @@
 hsetroot -solid "#8FA1B3"
 
 # Start compositor
-compton &
+compton --dbus &
 
 # Start Dunst Notification Daemon
 dunst &
@@ -42,6 +42,10 @@ sxhkd &
 
 # Monitor Scripts
 battmon &
+
+# Gnome-Keyring
+dbus-update-activation-environment --systemd DISPLAY
+eval $(/usr/bin/gnome-keyring-daemon --start --components=secrets)
 
 # Start Window Manager
 exec bspwm
