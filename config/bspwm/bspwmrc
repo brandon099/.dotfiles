@@ -29,7 +29,7 @@ bspc rule -a Leafpad state=floating
 bspc rule -a Lxappearance state=floating
 bspc rule -a Pavucontrol state=floating
 bspc rule -a rofi manage=off
-bspc rule -a Galculator state=floating
+bspc rule -a Gnome-calculator state=floating
 bspc rule -a Moolticute state=floating
 bspc rule -a MooltiApp state=floating
 bspc rule -a Pinentry layer=above state=floating
