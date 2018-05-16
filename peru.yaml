@@ -64,7 +64,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 22c3fc0bf5055e877e850c745906346585b4fcba
+    rev: a7206c41fc174f576b3f7085d48319dbdad760a5
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
