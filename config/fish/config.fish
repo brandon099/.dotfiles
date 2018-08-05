@@ -11,6 +11,10 @@ set -x GOPATH $HOME/.golang/
 set -x LD_LIBRARY_PATH /lib:/usr/lib:/usr/local/lib
 set -x VAGRANT_DEFAULT_PROVIDER libvirt
 
+if test -e ~/.bws
+    source ~/.bws
+end
+
 # Java GUI in BSPWM
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
