@@ -24,7 +24,7 @@ imports:
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
-    rev: 911459645f76c7fb977520beddec2d552117e7b2
+    rev: cd19a7bc5c57e5dccc95f1493a2a0ff3b15f4499
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo
@@ -40,7 +40,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: 7959654e57c05511134e55bda20e9a6bcb8fcfb0
+    rev: 7e9af12d680d81cc1277c07ef5acee8c83828f3f
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -64,7 +64,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 22c3fc0bf5055e877e850c745906346585b4fcba
+    rev: 0597380f6b22f43a3ea6ff8364d5c239bb2504ea
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -72,15 +72,15 @@ git module vim-indentpython:
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: f21d99eeeff55986c47966f9af7af563c4527531
+    rev: 42ddd7bb3796486b1b07b941e28b1956f28e486d
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 41fb97e85b0386b976b39051de4f7eaa42ba6b2b
+    rev: 47765c787ddc981c2eab6105ade84067d164893c
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 8ace66328c7a2f416671b863cd842712d36c53cc
+    rev: 52ee2eb68a706972a1840ca036035033046568d6
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -92,11 +92,11 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 2d60332fa5b2b1ea346864245569df426052865a
+  rev: 7f46e82fc7e343be84df6c06bec63dd6494b6712
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
-  rev: 4d29eaaaef9dc55e8fcf47e6975b7753eef137c8
+  rev: 80c04e0c7b297ce96771700b95cc94259f302ce7
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
