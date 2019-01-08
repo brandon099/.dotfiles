@@ -76,7 +76,7 @@ set expandtab
 filetype plugin on
 filetype indent on
 
-set list listchars=tab:»·,trail:· "Display tabs and trailing spaces visually
+set list listchars=tab:»·,trail:·   "Display tabs and trailing spaces visually
 set nowrap                          "Don't wrap lines
 set linebreak                       "Wrap lines at convenient points
 

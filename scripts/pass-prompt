@@ -12,11 +12,11 @@ prefix=${PASSWORD_STORE_DIR-~/.password-store}
 password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
-password=$(printf '%s\n' "${password_files[@]}" | rofi -theme base16-ocean-light -dmenu -p "pass: ")
+password=$(bw list items | jq -j '[.[].name] | join("\n")' | rofi -theme base16-ocean-light -dmenu -p "pass: ")
 [[ -n $password ]] || exit
 
 if [[ $typeit -eq 0 ]]; then
-	pass show -c "$password" 2>/dev/null
+	bw get password "$password" 2>/dev/null | tr -d '\n' | xclip -sel c
 else
-	xdotool - <<<"type --clearmodifiers -- $(pass show "$password" | head -n 1)"
+	xdotool - <<<"type --clearmodifiers -- $(bw get password "$password")"
 fi
