@@ -32,7 +32,7 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: b242bc54f891dbef2e9c5d466bbf6c20350c4aaf
+    rev: 36d22d155d3ac05b6d6b74f1b50287b05b2085af
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -40,7 +40,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/chriskempson/base16-vim
-    rev: 7e9af12d680d81cc1277c07ef5acee8c83828f3f
+    rev: 2073e2dd9fa0172ccdba92b3f0df25642a69f7db
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -64,7 +64,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: a7206c41fc174f576b3f7085d48319dbdad760a5
+    rev: 7eeea63e62b1cc088a75c7a7c244fc774d82e5bb
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -72,19 +72,19 @@ git module vim-indentpython:
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: 42ddd7bb3796486b1b07b941e28b1956f28e486d
+    rev: ff113baf049525efb94ff32c3d845f817351de11
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 47765c787ddc981c2eab6105ade84067d164893c
+    rev: 83ae633be323a7fb5baf77e493232cf3358d02bf
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 52ee2eb68a706972a1840ca036035033046568d6
+    rev: fa52c903ec03002a1f9003ba41572bfe75d29fee
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
-    rev: 06da921608b971fb47603671bcafdb2843992eb3
+    rev: e9fb0914dba5bdfe2feaa364dda2e9495c5620a2
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
@@ -92,11 +92,11 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 7f46e82fc7e343be84df6c06bec63dd6494b6712
+  rev: 8db5a732eff08c796de188a52e7af66b99a8b9f2
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
-  rev: 80c04e0c7b297ce96771700b95cc94259f302ce7
+  rev: db7ef0b21c96399d64cb69dd5d2172ac8d482533
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
