@@ -39,8 +39,7 @@ git module vim-bufferline:
     rev: 651fd010aa9613a4b8636a4af8a2db0d22800262
 
 git module vim-base16:
-    url: https://github.com/chriskempson/base16-vim
-    rev: 2073e2dd9fa0172ccdba92b3f0df25642a69f7db
+    url: https://github.com/danielwe/base16-vim
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
