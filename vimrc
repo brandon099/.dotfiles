@@ -16,6 +16,7 @@ set history=1000                    "Store lots of :cmdline history
 set showcmd                         "Show incomplete cmds down the bottom
 set noshowmode                      "Do not show current mode down the bottom
 set visualbell                      "No sounds
+set novb                            "No visualbell
 set autoread                        "Reload files changed outside vim
 set cursorline                      "Highlight Current selected line
 set shortmess=atI                   "Shorten command-line text and other info tokens
@@ -124,7 +125,7 @@ let g:lightline = {
     \         ['bufferline']
     \     ],
     \     'right': [
-    \         ['filetype']
+    \         ['filetype'],['percent'],['lineinfo']
     \     ]
     \ },
     \ 'component': {
