@@ -32,7 +32,7 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 36d22d155d3ac05b6d6b74f1b50287b05b2085af
+    rev: 4ca716dde676c69fd00094cf2b32f03ba2d940f0
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -40,6 +40,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/danielwe/base16-vim
+    rev: a40a4514ce82619e32028d39966a2fa61ebbf7e4
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -63,7 +64,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 7eeea63e62b1cc088a75c7a7c244fc774d82e5bb
+    rev: e5936a22cfd2e25893e2ac34af4b0afdec1e36f5
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -71,11 +72,11 @@ git module vim-indentpython:
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: ff113baf049525efb94ff32c3d845f817351de11
+    rev: 331a41a9bb33b4a1d1fc26afee5ce658e664740f
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 83ae633be323a7fb5baf77e493232cf3358d02bf
+    rev: bb0b4013611e11200d2ae5a65e8804bbd930a770
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -95,7 +96,7 @@ git module vim-sensible:
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
-  rev: db7ef0b21c96399d64cb69dd5d2172ac8d482533
+  rev: e6e0fd8840a2c026ec2b37993d848364460d9b39
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
