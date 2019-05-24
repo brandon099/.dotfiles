@@ -32,7 +32,7 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 4ca716dde676c69fd00094cf2b32f03ba2d940f0
+    rev: 47aad5f3e042018ca98b4f710f591b9c3ddfc38e
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
@@ -40,7 +40,7 @@ git module vim-bufferline:
 
 git module vim-base16:
     url: https://github.com/danielwe/base16-vim
-    rev: a40a4514ce82619e32028d39966a2fa61ebbf7e4
+    rev: 4533d1ccab2483deabc743e51321d29a259a819e
 
 git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
@@ -55,8 +55,8 @@ git module vim-ctrlp:
     rev: 564176f01d7f3f7f8ab452ff4e1f5314de7b0981
 
 git module vim-fish:
-    url: https://github.com/aliva/vim-fish
-    rev: f631e6a57a0bfe5f8445398825ce7683c22fab5c
+    url: https://github.com/dag/vim-fish
+    rev: 50b95cbbcd09c046121367d49039710e9dc9c15f
 
 git module vim-gitbranch:
     url: https://github.com/itchyny/vim-gitbranch
