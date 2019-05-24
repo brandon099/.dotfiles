@@ -69,24 +69,23 @@ end
 # Title functions including Tmux titles
 function fish_title --description 'Set terminal title'
     echo $HOSTNAME
-        if test $TMUX
-            if [ "fish" != $_ ]
-                printf "\\033k%s\\033\\\\" $argv
-            else
-                set S_HOME (pwd | string replace $HOME '~')
+    if set -q TMUX
+        if [ "fish" != $_ ]
+            printf "\\033k%s\\033\\\\" $argv
+        else
+            set S_HOME (pwd | string replace $HOME '~')
 
-                if [ (string length $S_HOME) -gt 19 ]
-                    set S_HOME ".."(echo $S_HOME | string sub -s-19)
-                end
-
-                printf "\\033k%s\\033\\\\" $S_HOME
+            if [ (string length $S_HOME) -gt 19 ]
+                set S_HOME ".."(echo $S_HOME | string sub -s-19)
             end
+
+            printf "\\033k%s\\033\\\\" $S_HOME
         end
+    end
 end
 
 # Load Git Abbreviations
-set abbr_file $HOME/.config/fish/git-abbr.fish
-if test -e $abbr_file
+if test -e ~/.config/fish/git-abbr.fish
     source $abbr_file
 end
 
