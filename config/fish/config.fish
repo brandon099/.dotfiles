@@ -3,7 +3,7 @@ set fish_greeting
 set fish_term24bit 1
 
 # Exports
-set PATH ~/.scripts $PATH
+set PATH $HOME/.scripts $HOME/.golang/bin $PATH
 set -x EDITOR "vim -X"
 set -x VISUAL vim
 set -x LANG "en_US.UTF-8"
@@ -11,8 +11,8 @@ set -x GOPATH $HOME/.golang/
 set -x LD_LIBRARY_PATH /lib:/usr/lib:/usr/local/lib
 set -x VAGRANT_DEFAULT_PROVIDER libvirt
 
-if test -e ~/.bws
-    source ~/.bws
+if test -e $HOME/.bws
+    source $HOME/.bws
 end
 
 # Java GUI in BSPWM
@@ -63,7 +63,7 @@ alias ls='ls --color -h --group-directories-first'
 # SSH Function to override TERM
 function ssh
     set -x TERM xterm-256color
-    command ssh $argv -F ~/.ssh/config
+    command ssh $argv -F $HOME/.ssh/config
 end
 
 # Title functions including Tmux titles
