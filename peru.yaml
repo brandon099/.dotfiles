@@ -64,7 +64,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 91471746fe687ee867877508dfd809460dab5698
+    rev: c75c83df531881008f8cf903eab7cd68bc19ff7a
 
 git module vim-indentpython:
     url: https://github.com/vim-scripts/indentpython.vim
@@ -76,11 +76,11 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 80c242c3c5394fd5143b5d7e2741989ba04ae46a
+    rev: d589eb55305043955e65df8f326580f06e4533c9
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: 0e43b4c5b06466cb54540b7452db6c6b22e33539
+    rev: da5a7ac96f517e0fd6f886bc3fbe27156ca1f946
 
 git module vim-pathogen:
     url: https://github.com/tpope/vim-pathogen
@@ -92,11 +92,11 @@ git module vim-salt:
 
 git module vim-sensible:
   url: https://github.com/tpope/vim-sensible
-  rev: 8db5a732eff08c796de188a52e7af66b99a8b9f2
+  rev: 67fe033b2b56b6f631a4c7a1179865178665f2a4
 
 git module vim-sudoedit:
   url: https://github.com/chrisbra/SudoEdit.vim
-  rev: e6e0fd8840a2c026ec2b37993d848364460d9b39
+  rev: 62c76e367811bf9dc007a23d8de1a05438c07a45
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
