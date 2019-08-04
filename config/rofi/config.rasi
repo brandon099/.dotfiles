@@ -1,0 +1,6 @@
+configuration {
+    lines: 7;
+    font: "Roboto 10";
+    terminal: "termite";
+    theme: "base16-ocean-light";
+}
