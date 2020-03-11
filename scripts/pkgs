@@ -2,11 +2,8 @@ alsa-utils
 arandr
 arc-gtk-theme
 autorandr
-bdf-tewi-git
 bind-tools
 bspwm
-compton
-dosfstools
 dunst
 feh
 file-roller
@@ -25,13 +22,12 @@ lxappearance
 mtr
 nautilus
 net-tools
-noto-fonts
 ntp
 numlockx
 openssh
 openvpn
-pass
 pavucontrol
+picom
 rofi
 roxterm
 rsync
@@ -46,7 +42,7 @@ the_silver_searcher
 tmux
 tree
 ttf-roboto
-unclutter-patched
+unclutter
 unrar
 unzip
 vim

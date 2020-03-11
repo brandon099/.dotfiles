@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Packages to install from the AUR
-pkgs="trizen"
+pkgs="yay"
 
 # Exit on errors
 set -e

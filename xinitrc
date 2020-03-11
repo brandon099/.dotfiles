@@ -3,7 +3,7 @@
 hsetroot -solid "#8FA1B3"
 
 # Start compositor
-compton --dbus &
+picom --dbus &
 
 # Start Dunst Notification Daemon
 dunst &

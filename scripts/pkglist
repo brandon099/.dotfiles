@@ -23,13 +23,13 @@ def get_inst_grp_pkgs(groups):
     """
     if not isinstance(groups, (tuple, list)):
         raise ValueError(groups)
-    output = _get_sproc_stdout_lines('trizen', '-Qg', *groups)
+    output = _get_sproc_stdout_lines('yay', '-Qg', *groups)
     return set(l.split(None, 1)[1] for l in output)
 
 
 def get_exp_inst_pkgs():
     """Get explicitly installed packages on the system"""
-    output = _get_sproc_stdout_lines('trizen', '-Qe')
+    output = _get_sproc_stdout_lines('yay', '-Qe')
     return set(l.split(None, 1)[0] for l in output)
 
 
@@ -39,7 +39,7 @@ def get_packages_info(names):
     :param names: list of package names to retreive information for
     """
     packages = {}
-    output = _get_sproc_stdout_lines('trizen', '-Si', *names)
+    output = _get_sproc_stdout_lines('yay', '-Si', *names)
 
     info = {}
     for line in output:

@@ -12,7 +12,7 @@ network() {
                 ip_addr=$(ip -4 addr show $interface| grep -oP '(?<=inet\s)\d+(\.\d+){3}')
                 notify-send " $interface" "$ip_addr"
             fi
-        elif [[ $interface == *"wlp"* ]] ; then
+        elif [[ $interface == *"wl"* ]] ; then
             if [[ $(cat /sys/class/net/$interface/operstate) = "up" ]] ; then
                 ip_addr=$(ip -4 addr show $interface| grep -oP '(?<=inet\s)\d+(\.\d+){3}')
                 notify-send " $(essid -w $interface)" "$ip_addr"

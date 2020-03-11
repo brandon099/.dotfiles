@@ -12,7 +12,7 @@ Xft*hintstyle:                          hintslight
 Xft*lcdfilter:                          lcddefault
 Xft*rgba:                               rgb
 
-!---- Rofi - General Settings
+!--- Rofi - General Settings
 rofi*lines:                             7
 rofi*font:                              Roboto 10
 rofi*terminal:                          termite

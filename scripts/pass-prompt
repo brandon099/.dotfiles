@@ -4,19 +4,16 @@ shopt -s nullglob globstar
 
 typeit=0
 if [[ $1 == "--type" ]]; then
-	typeit=1
-	shift
+    typeit=1
+    shift
 fi
 
-prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/*.gpg )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
-password=$(bw list items | jq -j '[.[].name] | join("\n")' | rofi -theme base16-ocean-light -dmenu -p "pass: ")
+bw_folder_id=$(bw get folder Work | jq -j ' .id')
+password=$(bw list items --folderid $bw_folder_id | jq -j '[.[].name] | join("\n")' | rofi -theme base16-ocean-light -dmenu -p "pass: ")
 [[ -n $password ]] || exit
 
 if [[ $typeit -eq 0 ]]; then
-	bw get password "$password" 2>/dev/null | tr -d '\n' | xclip -sel c
+    bw get password "$password" 2>/dev/null | tr -d '\n' | xclip -sel c
 else
-	xdotool - <<<"type --clearmodifiers -- $(bw get password "$password")"
+    xdotool - <<<"type --clearmodifiers -- $(bw get password "$password")"
 fi
