@@ -24,7 +24,7 @@ bspc config presel_feedback_color       $BLUE
 bspc config remove_disabled_monitors    true
 bspc config remove_unplugged_monitors   true
 
-bspc rule -a "Firefox Developer Edition":Places state=floating
+bspc rule -a "firefoxdeveloperedition":Places state=floating
 bspc rule -a Gcolor3 state=floating
 bspc rule -a Gnome-calculator state=floating
 bspc rule -a Gpick state=floating
