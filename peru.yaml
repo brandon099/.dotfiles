@@ -3,24 +3,18 @@ imports:
   fish-prepend-sudo: config/fish/functions
   fish-pure-prompt: config/fish/functions
 
-  vim-base16: vim/bundle/base16-vim
-  vim-base16-lightline: vim/bundle/base16-lightline
-  vim-bufferline: vim/bundle/vim-bufferline
-  vim-ctrlp: vim/bundle/ctrlp
+  vim-base16: vim/pack/plugins/start/base16-vim
+  vim-base16-lightline: vim/pack/plugins/start/base16-lightline
+  vim-bufferline: vim/pack/plugins/start/vim-bufferline
   vim-fish: vim
-  vim-gitgutter: vim/bundle/vim-gitgutter
-  vim-gitbranch: vim/bundle/vim-gitbranch
-  vim-indentpython: vim/bundle/indentpython
-  vim-jinja: vim/bundle/vim-jinja2-syntax
-  vim-lightline: vim/bundle/vim-lightline
-  vim-no-line-indicator: vim/bundle/vim-no-line-indicator
-  vim-markdown: vim/bundle/vim-markdown
-  vim-pathogen: vim
-  vim-salt: vim/bundle/salt-vim
-  vim-sensible: vim/bundle/sensible
-  vim-sudoedit: vim/bundle/sudoedit
-  vim-simpylfold: vim/bundle/simpylfold
-  vim-sxhkdrc: vim/bundle/sxhkdrc
+  vim-gitgutter: vim/pack/plugins/start/vim-gitgutter
+  vim-gitbranch: vim/pack/plugins/start/vim-gitbranch
+  vim-jinja: vim/pack/plugins/start/vim-jinja2-syntax
+  vim-lightline: vim/pack/plugins/start/vim-lightline
+  vim-markdown: vim/pack/plugins/start/vim-markdown
+  vim-salt: vim/pack/plugins/start/salt-vim
+  vim-simpylfold: vim/pack/plugins/start/simpylfold
+  vim-sxhkdrc: vim/pack/plugins/start/sxhkdrc
 
 git module base16-shell:
     url: https://github.com/chriskempson/base16-shell
@@ -46,14 +40,6 @@ git module vim-base16-lightline:
     url: https://github.com/felixjung/vim-base16-lightline
     rev: 09413d7b9c001b43168118fd841e2dd18ea558ed
 
-git module vim-no-line-indicator:
-    url: https://github.com/drzel/vim-line-no-indicator
-    rev: 029e033aeb08317cb27139eeb5b2e4e50e47c90c
-
-git module vim-ctrlp:
-    url: https://github.com/kien/ctrlp.vim
-    rev: 564176f01d7f3f7f8ab452ff4e1f5314de7b0981
-
 git module vim-fish:
     url: https://github.com/dag/vim-fish
     rev: 50b95cbbcd09c046121367d49039710e9dc9c15f
@@ -64,39 +50,23 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: c75c83df531881008f8cf903eab7cd68bc19ff7a
-
-git module vim-indentpython:
-    url: https://github.com/vim-scripts/indentpython.vim
-    rev: 6aaddfde21fe9e7acbe448b92b3cbb67f2fe1fc1
+    rev: 0e509fb0ac56b24203800a1fab35162c8da9c9b4
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: 331a41a9bb33b4a1d1fc26afee5ce658e664740f
+    rev: 6eff8287c4b61e9fb8657773f36402b33750fc27
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: d589eb55305043955e65df8f326580f06e4533c9
+    rev: e8577f3654cac97ee18faae28c80a2200aaaad5a
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
     rev: da5a7ac96f517e0fd6f886bc3fbe27156ca1f946
 
-git module vim-pathogen:
-    url: https://github.com/tpope/vim-pathogen
-    rev: e9fb0914dba5bdfe2feaa364dda2e9495c5620a2
-
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim
     rev: 6ca9e3500cc39dd417b411435d58a1b720b331cc
-
-git module vim-sensible:
-  url: https://github.com/tpope/vim-sensible
-  rev: 67fe033b2b56b6f631a4c7a1179865178665f2a4
-
-git module vim-sudoedit:
-  url: https://github.com/chrisbra/SudoEdit.vim
-  rev: 62c76e367811bf9dc007a23d8de1a05438c07a45
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold

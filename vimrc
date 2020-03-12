@@ -2,11 +2,6 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" =============== Pathogen Initialization ==================
-
-execute pathogen#infect()
-execute pathogen#helptags()
-
 " =================== General Config =======================
 
 set shell=/bin/bash                 "Set bash as shell
@@ -27,10 +22,12 @@ set ttimeoutlen=10                  "Set Key code delay to 10ms
 set mouse-=a                        "Turn off mouse mode
 syntax on                           "Turn on syntax highlighting
 
-" Remapped Keys
+" Mapped and Remapped Keys
+cmap w!! w !sudo tee > /dev/null %
 :nnoremap <space> za
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+
 
 " =================== Theme Settings ====================
 
@@ -80,12 +77,6 @@ filetype indent on
 set list listchars=tab:»·,trail:·   "Display tabs and trailing spaces visually
 set nowrap                          "Don't wrap lines
 set linebreak                       "Wrap lines at convenient points
-
-" =================== Folds ===============================
-
-set foldmethod=indent               "fold based on indent
-set foldnestmax=3                   "deepest fold is 3 levels
-set nofoldenable                    "dont fold by default
 
 " =================== Completion ==========================
 
@@ -175,10 +166,3 @@ endfunction
 let g:bufferline_echo = 0
 
 set laststatus=2
-
-" =================== Ctrl-P ==============================
-
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""' " Requires Silver Searcher to be installed
