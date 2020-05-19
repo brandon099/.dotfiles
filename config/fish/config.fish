@@ -85,8 +85,10 @@ function fish_title --description 'Set terminal title'
 end
 
 # Load Git Abbreviations
-if test -e ~/.config/fish/git-abbr.fish
-    source $abbr_file
+if status --is-interactive
+    if test -e ~/.config/fish/git-abbr.fish
+        source $abbr_file
+    end
 end
 
 # Start X at login
