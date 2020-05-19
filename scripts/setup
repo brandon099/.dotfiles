@@ -18,13 +18,13 @@ test (id -u) -gt 0; or error "This script cannot be run as root."
 info "Updating cached sudo credentials"
 sudo -v
 
-# Check for trizen to begin installing pkgs, else try installing it
-if command -v trizen
+# Check for yay to begin installing pkgs, else try installing it
+if command -v yay
     info "Installing from pkgs file"
-    trizen -S (cat ~/.dotfiles/scripts/pkgs | sed 's/\\n/\n/g') --needed --devel --noconfirm --noedit
+    yay -S (cat ~/.dotfiles/scripts/pkgs | sed 's/\\n/\n/g') --needed --noconfirm
 else
-    warning "Trizen not installed, trying to install..."
-    sh ~/.dotfiles/scripts/install-trizen
+    warning "Yay not installed, trying to install..."
+    sh ~/.dotfiles/scripts/install-yay
 end
 
 info "Finished installing packages"
