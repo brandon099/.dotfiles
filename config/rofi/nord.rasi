@@ -1,0 +1,149 @@
+
+* {
+    nord0:                       #2E3440;
+    nord1:                       #3B4252;
+    nord2:                       #434C5E;
+    nord3:                       #4C566A;
+    nord4:                       #D8DEE9;
+    nord5:                       #E5E9F0;
+    nord6:                       #ECEFF4;
+    nord7:                       #8FBCBB;
+    nord8:                       #88C0D0;
+    nord9:                       #81A1C1;
+    nord10:                      #5E81AC;
+    nord11:                      #BF616A;
+    nord12:                      #D08770;
+    nord13:                      #EBCB8B;
+    nord14:                      #A3BE8C;
+    nord15:                      #B48EAD;
+    background:                  @nord1;
+    foreground:                  @nord6;
+    selected-normal-foreground:  @nord6;
+    normal-foreground:           @foreground;
+    alternate-normal-background: @nord1;
+    selected-urgent-foreground:  @nord6;
+    urgent-foreground:           @foreground;
+    alternate-urgent-background: @nord1;
+    active-foreground:           @foreground;
+    selected-active-foreground:  @foreground;
+    alternate-active-background: @nord1;
+    bordercolor:                 @nord8;
+    alternate-normal-foreground: @foreground;
+    normal-background:           @background;
+    selected-normal-background:  @nord3;
+    border-color:                @nord8;
+    spacing:                     2;
+    separatorcolor:              @nord1;
+    urgent-background:           @background;
+    selected-urgent-background:  @nord2;
+    alternate-urgent-foreground: @urgent-foreground;
+    background-color:            @background;
+    alternate-active-foreground: @active-foreground;
+    active-background:           @background;
+    selected-active-background:  @nord2;
+}
+
+#window {
+    background-color: @background;
+    border:           0;
+    border-radius:    2;
+    padding:          10;
+    width:            25%;
+}
+#mainbox {
+    border:  0;
+    padding: 0;
+}
+#message {
+    border:       0px dash 0px 0px ;
+    border-color: @separatorcolor;
+    padding:      1px ;
+}
+#textbox {
+    text-color: @foreground;
+}
+#listview {
+    fixed-height: 0;
+    border:       0px dash 0px 0px ;
+    border-color: @separatorcolor;
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
+}
+#element {
+    border:  0;
+    padding: 1px ;
+}
+#element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+#element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+#element.alternate.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+#element.alternate.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+#element.alternate.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+#scrollbar {
+    width:        4px ;
+    border:       0;
+    handle-color: @normal-foreground;
+    handle-width: 8px ;
+    padding:      0;
+}
+#sidebar {
+    border:       2px dash 0px 0px ;
+    border-color: @separatorcolor;
+}
+#button {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+#inputbar {
+    text-color: @normal-foreground;
+    padding:    5 0 5 0;
+}
+#case-indicator {
+    spacing:    0;
+    text-color: @normal-foreground;
+}
+#entry {
+    spacing:    0;
+    text-color: @normal-foreground;
+    font:       "Operator Mono Book 12";
+}
+#prompt {
+    spacing:    0;
+    text-color: @normal-foreground;
+    font:       "Operator Mono Book Italic 12";
+}

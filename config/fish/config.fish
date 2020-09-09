@@ -18,32 +18,32 @@ end
 # Java GUI in BSPWM
 set -x _JAVA_AWT_WM_NONREPARENTING 1
 
-# Base16 Shell
-if not set -q SSH_CONNECTION
-    eval sh $HOME/.config/base16-shell/scripts/base16-ocean.sh
-end
-
-# Base16-Ocean Syntax
-set fish_color_autosuggestion 65737E EBCB8B
-set fish_color_command A3BE8C
-set fish_color_comment BF616A
-set fish_color_cwd A3BE8C
-set fish_color_cwd_root BF616A
-set fish_color_error BF616A --bold
-set fish_color_escape 96B5B4
-set fish_color_history_current 96B5B4
-set fish_color_match 96B5B4
-set fish_color_normal C0C5CE
-set fish_color_operator 96B5B4
-set fish_color_param C0C5CE 96B5B4
-set fish_color_quote 96B5B4
-set fish_color_redirection C0C5CE
-set fish_color_search_match --background=343D46
-set fish_color_selection --background=343D46
-set fish_pager_color_completion C0C5CE
-set fish_pager_color_description 65737E
-set fish_pager_color_prefix 96B5B4
-set fish_pager_color_progress 96B5B4
+# Theme
+set fish_color_normal normal
+set fish_color_command 81a1c1
+set fish_color_quote a3be8c
+set fish_color_redirection b48ead
+set fish_color_end 88c0d0
+set fish_color_error ebcb8b
+set fish_color_param eceff4
+set fish_color_selection white --bold --background=brblack
+set fish_color_search_match bryellow --background=brblack
+set fish_color_history_current --bold
+set fish_color_operator 00a6b2
+set fish_color_escape 00a6b2
+set fish_color_cwd green
+set fish_color_cwd_root red
+set fish_color_valid_path --underline
+set fish_color_autosuggestion 4c566a
+set fish_color_user brgreen
+set fish_color_host normal
+set fish_color_cancel -r
+set fish_pager_color_completion normal
+set fish_pager_color_description B3A06D yellow
+set fish_pager_color_prefix white --bold
+set fish_pager_color_progress brwhite --background=cyan
+set fish_color_comment 434c5e
+set fish_color_match --background=brblue
 
 # Custom Key Bindings
 function fish_user_key_bindings

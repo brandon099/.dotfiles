@@ -33,9 +33,8 @@ cmap w!! w !sudo tee > /dev/null %
 
 syntax enable
 set background=dark
-let base16colorspace=256
 set t_Co=16
-colorscheme base16-ocean
+colorscheme nord
 
 " Italics for comments
 let &t_ZH="\e[3m"
@@ -108,7 +107,7 @@ endif
 " =================== Lightline ===========================
 
 let g:lightline = {
-    \ 'colorscheme': 'base16_ocean',
+    \ 'colorscheme': 'nord',
     \ 'active': {
     \     'left': [
     \         ['mode', 'paste'],

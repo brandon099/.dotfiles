@@ -1,10 +1,7 @@
 imports:
-  base16-shell: config/base16-shell
   fish-prepend-sudo: config/fish/functions
   fish-pure-prompt: config/fish/functions
 
-  vim-base16: vim/pack/plugins/start/base16-vim
-  vim-base16-lightline: vim/pack/plugins/start/base16-lightline
   vim-bufferline: vim/pack/plugins/start/vim-bufferline
   vim-fish: vim
   vim-gitgutter: vim/pack/plugins/start/vim-gitgutter
@@ -12,13 +9,10 @@ imports:
   vim-jinja: vim/pack/plugins/start/vim-jinja2-syntax
   vim-lightline: vim/pack/plugins/start/vim-lightline
   vim-markdown: vim/pack/plugins/start/vim-markdown
+  vim-nord: vim/pack/plugins/start/nord-vim
   vim-salt: vim/pack/plugins/start/salt-vim
   vim-simpylfold: vim/pack/plugins/start/simpylfold
   vim-sxhkdrc: vim/pack/plugins/start/sxhkdrc
-
-git module base16-shell:
-    url: https://github.com/chriskempson/base16-shell
-    rev: ce8e1e540367ea83cc3e01eec7b2a11783b3f9e1
 
 git module fish-prepend-sudo:
     url: https://github.com/brandon099/fish-prepend-sudo
@@ -26,19 +20,11 @@ git module fish-prepend-sudo:
 
 git module fish-pure-prompt:
     url: https://github.com/brandon099/pure.fish
-    rev: 47aad5f3e042018ca98b4f710f591b9c3ddfc38e
+    rev: 9fd076f106234ec3ce67a1f1213b3c8392772028
 
 git module vim-bufferline:
     url: https://github.com/bling/vim-bufferline
     rev: 651fd010aa9613a4b8636a4af8a2db0d22800262
-
-git module vim-base16:
-    url: https://github.com/danielwe/base16-vim
-    rev: 4533d1ccab2483deabc743e51321d29a259a819e
-
-git module vim-base16-lightline:
-    url: https://github.com/felixjung/vim-base16-lightline
-    rev: 09413d7b9c001b43168118fd841e2dd18ea558ed
 
 git module vim-fish:
     url: https://github.com/dag/vim-fish
@@ -50,19 +36,23 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 0e509fb0ac56b24203800a1fab35162c8da9c9b4
+    rev: 62ff20f9797fcf11f132f8aab4e882807d0e2593
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
-    rev: 6eff8287c4b61e9fb8657773f36402b33750fc27
+    rev: ceb0f8076ee9aa802668448cefdd782edff4f6b2
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: e8577f3654cac97ee18faae28c80a2200aaaad5a
+    rev: 079dc5754c87b4d18b40f916273c2fe56810c4a1
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
-    rev: da5a7ac96f517e0fd6f886bc3fbe27156ca1f946
+    rev: 8e5d86f7b85234d3d1b4207dceebc43a768ed5d4
+
+git module vim-nord:
+    url: https://github.com/arcticicestudio/nord-vim
+    rev: 57dffa746907e8ce5c4b520146ed0d89d3c29a51
 
 git module vim-salt:
     url: https://github.com/saltstack/salt-vim

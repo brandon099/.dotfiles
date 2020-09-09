@@ -126,10 +126,10 @@ super + alt + Return
     termite -e cava -t cava --geometry=200x100
 
 super + space
-    rofi -theme base16-ocean-light -show run -display-run "run: "
+    rofi -theme nord -show run -display-run "run: "
 
 alt + Tab
-    rofi -theme base16-ocean-light -show window -display-window "window: "
+    rofi -theme nord -show window -display-window "window: "
 
 XF86AudioPlay
     dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
@@ -174,4 +174,4 @@ XF86AudioMute
     pactl set-sink-mute @DEFAULT_SINK@ false; pactl set-sink-volume @DEFAULT_SINK@ {+,-}5%
 
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-    light -{A,U} 5%
+    xbacklight -{inc,dec} 5%
