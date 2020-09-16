@@ -36,7 +36,7 @@ git module vim-gitbranch:
 
 git module vim-gitgutter:
     url: https://github.com/airblade/vim-gitgutter
-    rev: 62ff20f9797fcf11f132f8aab4e882807d0e2593
+    rev: ea79bc01c2efc84cf8e71fbe5fd8adbf4242739d
 
 git module vim-jinja:
     url: https://github.com/Glench/Vim-Jinja2-Syntax
@@ -44,7 +44,7 @@ git module vim-jinja:
 
 git module vim-lightline:
     url: https://github.com/itchyny/lightline.vim
-    rev: 079dc5754c87b4d18b40f916273c2fe56810c4a1
+    rev: f5f870e0ac67542fd83cb6ff99632940fe8795f9
 
 git module vim-markdown:
     url: https://github.com/plasticboy/vim-markdown
@@ -60,7 +60,7 @@ git module vim-salt:
 
 git module vim-simpylfold:
     url: https://github.com/tmhedberg/SimpylFold
-    rev: aa0371d9d708388f3ba385ccc67a7504586a20d9
+    rev: 0459df8a0bbfc8ef1bfd88db889e881626f65914
 
 git module vim-sxhkdrc:
     url: https://github.com/baskerville/vim-sxhkdrc
