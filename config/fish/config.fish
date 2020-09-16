@@ -51,51 +51,32 @@ function fish_user_key_bindings
     bind \e\e prepend_sudo
 end
 
-# Virtualfish wrapper function
-eval (python -m virtualfish compat_aliases)
-
-# Aliases
-alias tree="tree --dirsfirst -CF"
-alias pyfind='find . -name "*.py"'
-alias pygrep='grep -r --include="*.py"'
-alias ls='ls --color -h --group-directories-first'
-
 # SSH Function to override TERM
 function ssh
     set -x TERM xterm-256color
     command ssh $argv -F $HOME/.ssh/config
 end
 
-# Title functions including Tmux titles
-function fish_title --description 'Set terminal title'
-    echo $HOSTNAME
-    if set -q TMUX
-        if [ "fish" != $_ ]
-            printf "\\033k%s\\033\\\\" $argv
-        else
-            set S_HOME (pwd | string replace $HOME '~')
-
-            if [ (string length $S_HOME) -gt 19 ]
-                set S_HOME ".."(echo $S_HOME | string sub -s-19)
-            end
-
-            printf "\\033k%s\\033\\\\" $S_HOME
-        end
-    end
-end
-
-# Load Git Abbreviations
+# Load Git Abbreviations and start/attach tmux session
 if status --is-interactive
     if test -e ~/.config/fish/git-abbr.fish
         source $abbr_file
     end
-end
-
-# Start X at login
-if not set -q SSH_CONNECTION
-    if status --is-login
-        if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
-            exec startx -- -keeptty
-        end
+    if not set -q TMUX
+      # Create session '0' or attach to '0' if already exists.
+      tmux new-session -A -s 0
     end
 end
+
+# Start X at login on Linux
+switch (uname)
+    case Linux
+        if not set -q SSH_CONNECTION
+            if status --is-login
+                if test -z "$DISPLAY" -a $XDG_VTNR -eq 1
+                    exec startx -- -keeptty
+                end
+            end
+        end
+end
+
