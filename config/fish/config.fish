@@ -3,7 +3,7 @@ set fish_greeting
 set fish_term24bit 1
 
 # Exports
-set PATH $HOME/.scripts $HOME/.golang/bin $PATH
+set PATH $HOME/.bin $HOME/.golang/bin $PATH
 set -x EDITOR "vim -X"
 set -x VISUAL vim
 set -x LANG "en_US.UTF-8"

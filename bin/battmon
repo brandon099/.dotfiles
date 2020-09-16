@@ -1,0 +1,17 @@
+#!/bin/sh
+source ~/.config/global.conf
+
+while true; do
+    batt_level=$(cat $batt_file)
+    batt_status=$(cat /sys/class/power_supply/BAT0/status)
+    # Check if there is a battery
+    if [ -f $batt_file ]; then
+        # If the battery level is less than or equal to 10% and not plugged in, launch battery popup
+        if [ $batt_level -le 10 ] && [ $batt_status == 'Discharging' ]; then
+            $(battpop)
+        fi
+    else
+        exit 0
+    fi
+    sleep 60
+done

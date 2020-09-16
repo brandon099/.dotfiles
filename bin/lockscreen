@@ -1,0 +1,50 @@
+#!/usr/bin/env fish
+
+set BG "343D46FF"
+set BGLITE "65737EFF"
+set FG "C0C5CEFF"
+set RED "BF616AFF"
+set GRN "A3BE8CFF"
+
+set disp (string replace ':' "_" $DISPLAY)
+
+dbus-send --print-reply --dest=com.github.chjj.compton.$disp / \
+    com.github.chjj.compton.opts_set string:no_fading_openclose boolean:false
+
+# Suspend notifications
+notify-send DUNST_COMMAND_PAUSE
+
+i3lock -n -e --clock \
+             --force-clock \
+             --timepos="x+100:y+56" \
+             --datepos="tx+25:ty+25" \
+             --indpos="x+210:y+55" \
+             --timestr="%l:%M %p" \
+             --datestr="%a, %b %d" \
+             --radius=20 \
+             --ring-width=2 \
+             --veriftext="" \
+             --wrongtext="" \
+             --noinputtext="" \
+             --line-uses-inside \
+             --color=343D46 \
+             --timecolor=$FG \
+             --datecolor=$FG \
+             --verifcolor=FFFFFF00 \
+             --wrongcolor=FFFFFF00 \
+             --separatorcolor=$FG \
+             --ringcolor=$FG \
+             --keyhlcolor=$BGLITE \
+             --bshlcolor=$RED \
+             --insidecolor=$BG \
+             --insidevercolor=$GRN \
+             --insidewrongcolor=$RED \
+             --ringvercolor=$GRN \
+             --ringwrongcolor=$RED
+
+# Resume notifications
+notify-send DUNST_COMMAND_RESUME
+
+sleep 0.2
+dbus-send --print-reply --dest=com.github.chjj.compton.$disp / \
+    com.github.chjj.compton.opts_set string:no_fading_openclose boolean:true

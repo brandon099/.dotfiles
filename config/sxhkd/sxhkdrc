@@ -117,10 +117,10 @@ super + Escape
     pkill -USR1 -x sxhkd
 
 alt + shift + z
-    /home/bclifford/.scripts/lockscreen
+    /home/bclifford/.bin/lockscreen
 
 super + Return
-    termite -e tmux
+    termite
 
 super + alt + Return
     termite -e cava -t cava --geometry=200x100

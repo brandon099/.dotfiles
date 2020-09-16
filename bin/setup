@@ -1,0 +1,30 @@
+#!/bin/env fish
+
+# Output format
+function info --description 'Info logging wrapper'
+    echo -e "\e[34m:: $argv\e[0m"
+end
+function warning
+    echo -e "\e[33m:: $argv\e[0m"
+end
+function error
+    echo -e "\e[31m:: $argv\e[0m"
+end
+
+# Cannot run as root user
+test (id -u) -gt 0; or error "This script cannot be run as root."
+
+# Update Cached sudo credentials
+info "Updating cached sudo credentials"
+sudo -v
+
+# Check for yay to begin installing pkgs, else try installing it
+if command -v yay
+    info "Installing from pkgs file"
+    yay -S (cat ~/.dotfiles/bin/pkgs | sed 's/\\n/\n/g') --needed --noconfirm
+else
+    warning "Yay not installed, trying to install..."
+    sh ~/.dotfiles/bin/install-yay
+end
+
+info "Finished installing packages"

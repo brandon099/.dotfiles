@@ -1,8 +1,0 @@
-#!/bin/sh
-
-source ~/.config/global.conf
-
-calendar() {
-    notify-send "Calendar" "$(cal)"
-}
-calendar

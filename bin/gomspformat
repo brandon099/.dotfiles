@@ -1,0 +1,41 @@
+#!/usr/bin/env sh
+
+while read line; do
+  if [[ $line == \#Fields:* ]]; then
+    line=${line/\#Fields: /}
+    line=${line/LogFilename/%^}
+    line=${line/LogRow/%^}
+    line=${line/date/%d}
+    line=${line/time/%t}
+    line=${line/c-ip/%h}
+    line=${line/cs-username/%^}
+    line=${line/s-sitename/%^}
+    line=${line/s-computername/%^}
+    line=${line/s-ip/%^}
+    line=${line/s-port/%^}
+    line=${line/cs-method/%m}
+    line=${line/cs-uri-stem/%U}
+    line=${line/cs-uri-query/%^}
+    line=${line/sc-status/%s}
+    line=${line/sc-substatus/%^}
+    line=${line/sc-win32-status/%^}
+    line=${line/sc-bytes/%b}
+    line=${line/cs-bytes/%^}
+    line=${line/time-taken/%L}
+    line=${line/cs-version/%^}
+    line=${line/cs-host/%^}
+    line=${line/cs(User-Agent)/%u}
+    line=${line/cs(Cookie)/%^}
+    line=${line/cs(Referer)/%R}
+    line=${line/s-event/%^}
+    line=${line/s-process-type/%^}
+    line=${line/s-user-time/%^}
+    line=${line/s-kernel-time/%^}
+    line=${line/s-page-faults/%^}
+    line=${line/s-total-procs/%^}
+    line=${line/s-active-procs/%^}
+    line=${line/s-stopped-procs/%^}
+    echo $line
+    exit;
+  fi
+done

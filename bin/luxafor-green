@@ -1,0 +1,2 @@
+#!/bin/sh
+/home/bclifford/.virtualenvs/luxafor/bin/python /home/bclifford/git/github/luxafor-python/luxafor-linux.py color -l 255 -g 255

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+source ~/.config/global.conf
+
+clock() {
+    date=$(/usr/sbin/clock -f "%a, %b %d")
+    time=$(/usr/sbin/clock -f "%l:%M %p")
+    notify-send "Date" "$date $time"
+}
+ clock
